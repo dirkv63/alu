@@ -1,0 +1,4 @@
+use validation;
+
+
+create table ci_summary select ci_type,cmdb_id,data_description,data_externalid,sm_data_technical_owner,data_name,data_origin,rde_data_solution_lead_email,rde_data_solution_lead_details,sm_data_sourcing_accountable,sm_data_slo_group_enum from ci;

@@ -1,0 +1,3081 @@
+; Thu Aug 09 14:15:38 CEST 2012
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot has_Assignment_Info
+;+		(comment "Links the CI to Assignment related Information.\nThis links to the initial and escalation assignment group. \nESL specific on System level and on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Assignment)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_data_location_code
+;+		(comment "Location Code in the Master data file under which the Location is known.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot floor
+;+		(comment "Floor on the address for this location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot state_province
+;+		(comment "State or Province information.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot billing_resourceunit_code
+;+		(comment "Resource codes 1..16 & 45 as defined in the contract.\nBilling group ID assignment.\nCBB Data owner: 'RU ID'.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot has_installed_applications
+;+		(comment "Indicates which computersystems have this application installed.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+;+		(inverse-slot installed_on)
+		(create-accessor read-write))
+	(single-slot system_usage_primary
+;+		(comment "Indicates if this system usage is the primary usage for the computersystem.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot preferred_contact_method
+		(type SYMBOL)
+		(allowed-values Phone eMail)
+		(default Phone)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot has_Availability
+;+		(comment "Links to the Availability Related Information for the CI.\nThis contains (Runtime_) Environment, metallic level, ...)")
+		(type INSTANCE)
+;+		(allowed-classes Availability)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values ApplicationInstance CollaborationInstance DBInstance OperatingSystemInstance SAPInstance TechnicalProductInstance WebInstance CustomSoftwareInstance StandardSoftwareInstance ESLBusinessProductInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ext_source_system
+;+		(comment "ESL Specific. Source System identifier for the system that fed the data into ESL.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_owner
+;+		(comment "Contact person between Configuration Management and the Owner Organization.\nIn ESL this field typically maps to the Technical Owner. In uCMDB this field maps to the rde_data_ci_owner attribute of the business application.")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot management_region
+;+		(comment "The region that is managing this ComputerSystem.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_stakeholder_organization
+;+		(comment "Organization related to the Business Stakeholder.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot runtime_environment
+;+		(comment "Identifier for the value to be used from RuntimeEnvironmentEnum.")
+		(type SYMBOL)
+		(allowed-values Development Disaster_Recovery Production Staging Standby Test Training Lab)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot lastname
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot resourceunit_id
+;+		(comment "Utility of the equipment / Resource Unit Code.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot hasBillingInfo
+;+		(comment "Link to the Billing info for the CBB project.\nDatabase instances require Billing info on Technical Instance level.\nApplications require Billing info on Business Application Instance level, but CBB / ESL specifications dictate to provide the info on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Billing)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sox_system
+;+		(comment "These values are used to support the life cycle of a server in SOX mode. Additional software than standard platform may be required by the customer to be installed. Certain Risk assessment processes must be executed prior the server can be moved into system status production.\nESL accepts this value only on System Layer, not on Application Layer. (To Be Added!)")
+		(type SYMBOL)
+		(allowed-values Pre_SOX SOX_Production SOX Post_SOX SOX_HW)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firstname
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot permanent_address
+;+		(comment "PermanentAddress defines the network address that is hardcoded into a port. This \\'hardcoded\\' address can be changed using a firmware upgrade or a software configuration. When this change is made, the field should be updated at the same time.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot serviceprovider
+;+		(comment "Organization code that provides the service.\nThis is OrganizationName in ESL terminology.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_category
+;+		(comment "Category of the Location.")
+		(type SYMBOL)
+		(allowed-values Data_Center Site_Server-Infra_Room)
+		(default Data_Center)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot on_location
+;+		(comment "Specifies on which location this detailed location object is attached.")
+		(type INSTANCE)
+;+		(allowed-classes Location)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ci_owner_company
+;+		(comment "Value to indicate if the CI is ALU Retained or not.\nThis is for Applications (as in 'vs Products') and for Infrastructure CIs.")
+		(type SYMBOL)
+		(allowed-values ALU_Retained ALU_Owner HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot full_shipping_address
+;+		(comment "The full shipping address for this Location Address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasServiceFunction
+;+		(comment "Links the Computersystem to the Service Functions.\nA number of services are mandatory, depending on the system type.")
+		(type INSTANCE)
+;+		(allowed-classes ServiceFunction)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot country_iso_code
+;+		(comment "ISO Code for the Country.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_workgroup
+;+		(comment "Links the object to the Workgroup information. \nFor now all workgroup information is consolidated into one object.")
+		(type INSTANCE)
+;+		(allowed-classes Workgroups)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_status
+;+		(comment "Status of the application.\n(Assigned to Application and DB_Instance database).\nBut also known on Application level, since this is often managed on Portfolio level.\nInstalled_Application_Status is different from application_status!\nDO NOT CONFUSE WITH lifecyclestatus!")
+		(type SYMBOL)
+		(allowed-values Target_Strategic Target_Tactical Decom_Plan_secured Decom_Plan_Not_secured Stopped Stopped_Read_only Status_to_be_determined)
+		(default Target_Tactical)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot alternate_cluster_node
+;+		(comment "In ESL Terminology, this links cluster type package to Node. It indicates which node is the alternate Node. Any link that is not primary will be alternate.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot partnumber
+;+		(comment "The part number assigned by the organization that is responsible for producing or manufacturing the PhysicalElement. The partnumber identifies the build / specifications of the part. Partnumber is unique per type product for this manufacturer.\nex: Compaq 6530b has other partnumber than Compaq 6580.\nIn ESL Partnumbers can be linked to all part details using the myPRS application. (ex. fr70wc004cc0)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasRemoteAttribute
+;+		(comment "Link to the Remote Access Attributes")
+		(type INSTANCE)
+;+		(allowed-classes)
+		(create-accessor read-write))
+	(single-slot op_cap_mgmt_notes
+;+		(comment "Describes how a DBA should manage the capacity of this database instance. Typically, only exceptions would be listed here.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_shutdown_notes
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasContactRole
+;+		(comment "Link for specific roles.\nTechnical Contact Owner Role is mandatory for ComputerSystems, other roles are optional.\nContact Roles are optional for Application Class (used in AssetCenter)")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+		(create-accessor read-write))
+	(single-slot listener_ports
+;+		(comment "Listener Ports")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_code
+;+		(comment "The A7/OVSD Location Code or the ESL Location Name. This code can have two formats:\nLOC-SAP-**** - pointing to a SAP location code?\nOR: build up of known location elements:\n/Country/City/Detail1/Detail2/\nFirst position: country.\nSecond position (if available): City\nThird Position can be street, building, ...\nFollowing positions provide more detail.\nCountry name is avaialble, other values seem to be optional.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_data
+;+		(comment "Interface specific data.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot virtualization_technology
+;+		(comment "This attributes describes the hypervisor technology that is used for the virtualization.")
+		(type SYMBOL)
+		(allowed-values VMWare MS_Virtual_Machine-HyperV Virtual_Partition Xen Solaris_Zones)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_access
+;+		(comment "Access information related to the Location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_architecture
+;+		(comment "This attribute specifies the architecture of the cluster.")
+		(type SYMBOL)
+		(allowed-values Campus Continental Local Metro)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot depends_on
+;+		(comment "Business Application Instance depends on Technical Application Instance or on ComputerSystem. \nBusiness Application is composition of different components.")
+		(type INSTANCE)
+;+		(allowed-classes Techn_Prod_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot has_technical_products
+;+		(comment "Consolidates the technical products.")
+		(type INSTANCE)
+;+		(allowed-classes TechnicalProduct)
+		(create-accessor read-write))
+	(single-slot application_category_esl
+;+		(comment "ESL Category of the Solution.")
+		(type SYMBOL)
+		(allowed-values business_application business_service collaboration database management_tool os standard_software webcomponent)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inst_appl_notes_DO_NOT_USE
+;+		(comment "Different types of Notes related to the installed application.\nUse the hasNotes link instead.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_critical
+;+		(comment "Business Critical App Identification.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot system_usage_details
+;+		(comment "Details related to this system service usage code.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Operations
+;+		(comment "Links Installed Applicaiton to the Operations attributes.\nOperations are on how to handle this specific (installed) instance on a system, so it must be Technical_Application specific.")
+		(type INSTANCE)
+;+		(allowed-classes Operations)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot security_level
+;+		(comment "A string defining the security sensitivity level. )")
+		(type SYMBOL)
+		(allowed-values internet stringent baseline workstation)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cma
+;+		(comment "Application Code is based on a list of standard applications (maintained by ESM Event Monitoring Team) that are considered as supported by OVO-based monitoring and have appropriate monitoring solutions/templates available.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_daylight_savings
+;+		(comment "Daylight Savings Sensitivity")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot portfolio_id
+;+		(comment "Unique identifier for the Application in the Apps Portfolio.\nThis attribute has been added to Business Application class to allow easier data processing.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot available_diskspace
+;+		(comment "Total mounted/formatted disk space on the system. RAW/Unmounted/Unformatted disk space is not included, as Radia cannot detect this")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hyperthreading_enabled
+;+		(comment "Is hyperthreading enabled by the Operating System?\nThis value can be used to calucate the total number of logical cores available for the computer system.\nSince hyperthreading needs to be enabled by Operating System, it is an attribute of (Computer System) Processor, not of (Physical Box) CPU.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_technology
+;+		(comment "Indicates what the clustertechnology is for this system that is part of the cluster.")
+		(type SYMBOL)
+		(allowed-values MC-SG Veritas-Cluster VMWare_Cluster RedHat_Cluster Microsoft_Cluster HACMP TruCluster Sysplex)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot workgroup_type
+;+		(comment "Type of the Workgroup")
+		(type SYMBOL)
+		(allowed-values change_management_workgroup primary_incident_resolution_group approver_groups change_implementer_workgroup change_supervisor_workgroup config_management_workgroup)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot remote_access_value
+;+		(comment "Value for this remote access type")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot hasOperatingSystem
+;+		(comment "Link to the Operating System on the ComputerSystem.")
+		(type INSTANCE)
+;+		(allowed-classes OperatingSystem)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot installed_application_tag
+;+		(comment "Unique name for the Transformation Model that identifies the Installed Product. \nFor now, this is the Technical Product Instance Name, with \"inst.\" pre-pended.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot isvirtual
+;+		(comment "Indicates if the object is virtual or not.\nDo we need \"isvirtual\", or does it need to be part of cs_type?")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot in_enclosure
+;+		(comment "For physical products(cards) that are in a blade server, relates the product to the blade server in which it is installed. A card can be installed in one blade enclosure maximum.\n(Requirements for class Source and Target?)\nThis is not part of PhysicalProduct Table / comes with Dependency.")
+		(type INSTANCE)
+;+		(allowed-classes Physical_Product)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fqdn
+;+		(comment "Fully qualified domain name.\nKey for the computer system.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot security_category
+;+		(comment "Data field as delivered from extract Ken Hughes (mail 4/04/2012) - Archer extract Application Data Classifications Ratings")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_business
+;+		(comment "ESL Business for the CI.\nAlcatel-Lucent is the business for the current project. \nThis is relevant for ESL Solutions, since only solutions from the Alcatel-Lucent business should be touched.")
+		(type SYMBOL)
+		(allowed-values Alcatel-Lucent)
+		(default Alcatel-Lucent)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_total_size
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot version
+;+		(comment "A string describing the (Operating System\\'s) version number. The format of the version information is as follows: <Major Number>.<Minor Number>.<Revision>")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sourcing_accountable
+;+		(comment "Sourcing Accountable is the party that is responsible for the development of the project.\nValues for uCMDB - uCMDB to review enumeration list.\nSolution Portfolio File has the master information. OVSD and Assetcenter are only updated periodically.")
+		(type SYMBOL)
+		(allowed-values CDC CG-Direct HP Retained To_be_confirmed)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasRemoteConnectivity
+;+		(comment "Links to the Remote Connectivity object")
+		(type INSTANCE)
+;+		(allowed-classes Remote_Access_Info)
+		(create-accessor read-write))
+	(single-slot service_level_code
+;+		(comment "Service levels\nA list is available\nESL Doc: Overall indicator for the level of support provided by HP for the appropriate System CI.")
+		(type SYMBOL)
+		(allowed-values not_supported backup_only hosting_only monitoring_only basic standard high_availability mission_critical)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_type
+;+		(comment "Type of the Remote Access Info, e.g. Remote Console.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot computersystem_source
+;+		(comment "Source system for the Computersystem data.\nDo not use, use source_system instead.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot serialnumber
+;+		(comment "A manufacturer-allocated number used to uniquely identify the Physical Element.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot escalation_assignment_group
+;+		(comment "\"The Escalation Assignment Group plays a key role in the automated incident routing process. It is critical to properly route incidents to the next level of Initial Assignment Group in an automated way. \n\nPlease ensure that this attribute is populated 100% correctly, as otherwise Incidents will not get routed properly, which will result in a miss of the SLAs!\n\nThe escalation assignment group should be a populated list.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot esl_system_type
+;+		(comment "ESL System Type specification. Mandatory parameter to determine the actual CI Category of the ESL system record.")
+		(type SYMBOL)
+		(allowed-values appliance cabinet cluster_node cluster_package farm load_balancer mainframe server tape_library ups workstation)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot streetaddress
+;+		(comment "Street and number information for the address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot billing_change_date
+;+		(comment "CBB Data owner: 'Detail 5'")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot logical_cpus
+;+		(comment "Number of logical CPUs. This value should be calculated from number_of_cpus, cores_per_cpu and Processor.hyperthreading.\nHowever it can be entered directly if one of the values is missing, or for virtual systems.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_partners
+;+		(comment "Interface Specific partners")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nsa
+;+		(comment "NSA (National Security Agreement) is an agreement with the US Administration for companies which deliver sensitive products or services to the US Department of Defense.\nNSA systems are those company systems specifically dedicated to the DoD and are considered restricted.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connectivity_instructions
+;+		(comment "Describes how a DBA should connect to the database to undertake administration functions. For example, there may be multiple jump hosts to navigate or their may be no remote database connectivity so a local server connection is required.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot security_class
+;+		(comment "Data field as delivered from extract Ken Hughes (mail 4/04/2012) - Archer extract Application Data Classifications Ratings")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot monitoring_solution
+;+		(comment "Used to show which automated database monitoring solution and its version is implemented for this database instance.\nESL Instance level attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ext_source_system_element_id
+;+		(comment "ESL Specific. source system element id from the source that fed the data into ESL.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot from_Business_Application
+;+		(comment "Links the Instance to a Business Application. This can only exist for Applications of  type 'Business Application', and it must exist for these types.")
+		(type INSTANCE)
+;+		(allowed-classes BusinessApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot op_backup_notes
+;+		(comment "Describes the high level backup solution.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_instance_tag
+;+		(comment "Unique Name for the Application Instance. \nThis is the key that is used in the transformation model.\nOVSD uses search code, A7 uses the application name. (*° Serial \")")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ip_type
+		(type SYMBOL)
+		(allowed-values Alias Primary_IP Alternate_IP Internet_facing_IP Package_Name Cluster_Name Virtual_Partition SAN_Controller SAN_switch Host_Bus_Adapter Storage_Array Tape_Library Gateway DNS_Server Primary_WINS_Server Secondary_WINS_Server NAT NTP_Server Device_WWN Virtual_Connect_IP)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot assigned_memory
+;+		(comment "This returns the amount (in MB) memory that is assigned to be used by this computersysteThis returns the amount (in MB) memory that is assigned to be used by this computersystem. This is not necessarily equal to the installed memory.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_location_contract_id
+;+		(comment "De Master Location Contract ID attribute. The Contract ID is not unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_description
+;+		(comment "Application Description, related to but not equal to Portfolio Application Description.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Admin_Info
+;+		(comment "Links the ComputerSystem to the Admin Info.")
+		(type INSTANCE)
+;+		(allowed-classes Admin)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot doc_ref_url
+;+		(comment "Reference Documentation URL related to the Application Instance.\nOVSD Applications Specific.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_location_familiar_name
+;+		(comment "The master location familiar name for location. A familiar name is not unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_stakeholder_name
+;+		(comment "Name of the Business Stakeholder.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot assetnumber
+;+		(comment "States the (HP) Asset Number of the Asset.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot orderdate
+;+		(comment "The date upon which this element was ordered.\nIs this the same as purchase date?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot model
+;+		(comment "The name by which the PhysicalElement is generally known.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inst_appl_component_of
+;+		(comment "This installed application is a component of a higher-level installed application.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+;+		(inverse-slot inst_appl_depends_on)
+		(create-accessor read-write))
+	(single-slot maint_contract_details
+;+		(comment "Details of the Maintenance Contract.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot coverage_end_date
+;+		(comment "End date of the Maintenance Contract.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note_type
+;+		(comment "The detailed instructions.\nList available")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot used_diskspace
+;+		(comment "The used disk space refers to the space that is actually used on the server. Note that this number might be inaccurate, especially on UNIX, as RAW-FileSystems are not included.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot billing_change_request_id
+;+		(comment "CBB Data owner: 'Detail 2'.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot application_type_group
+;+		(comment "ALU specific identifier to define the Application Type Group for the OS Instance.\nThis field is mandatory for ?")
+		(type SYMBOL)
+		(allowed-values R%26D_and_BU IT_managed_application IT_infrastructure Hosting)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot op_total_used_size
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot initial_assignment_group
+;+		(comment "This attribute is used for automated Event Routing and determines to which assignment group within the respective workflow tool Incidents should be routed to.\nPlease ensure that this attribute is populated 100% correctly, as otherwise Incidents will not get routed properly, which will result in a miss of the SLA with the customer !\nThe Initial Assgnment Group should be a populated list.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot on_Location
+;+		(comment "The physical location of a piece of hardware or an installed application.")
+		(type INSTANCE)
+;+		(allowed-classes DetailedLocation)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot external_id
+;+		(comment "External ID that is used to synchronize CIs with external systems. ALU will use this external ID to address a CI in uCMDB.\nESL uses this external_id to sync relations back from ESL to uCMDB.\nValue MUST be unique.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot mobile
+;+		(comment "Mobile phone number(s)")
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot contact_for_patch
+;+		(comment "ESL value to indicate if this contact has to be informed in case of a patch deployment.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot support_code
+;+		(comment "A7 specific Support Code")
+		(type SYMBOL)
+		(allowed-values INFRA_1 INFRA_2 INFRA_3 SOLUTION_1 SOLUTION_2 SOLUTION_3 SOLUTION_4 NO_SERVICE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot email
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot physical_diskspace
+;+		(comment "The total amount of physical disks/LUNs seen by the system (in GB). This includes internal and external disks/LUNs. CD-ROM, DVD-ROMS or NFS storage are not included.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_long
+;+		(comment "Long name for the application or application instance.\nThis is the commonly used name for the application or the application instance.\nIt should be required, but ESL Instances do not necessarily have instances names.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot possible_downtime
+;+		(comment "keeps information on time windows during which it is possible to reboot the server safely (without causing productivity leaks).\nTemplate knows this as planned_outage_coverage_details.\nThe window that is available for planned outage.\nThis is required for all CI's and in complex systems, in all levels of the Technology Stack, where all elements must have a synchronised window in order to allow a hardware reset or maintenance to take place.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_notes
+;+		(comment "Notes associated with the location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_type
+;+		(comment "Type of the Cluster CI. Known types include Node, Package, Cluster.\nThis could be the same as the ComputerSystem Type - to be investigated.")
+		(type SYMBOL)
+		(allowed-values cluster_node cluster_package cluster storage_array)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot customer_notes
+;+		(comment "Generic free-text attribute that can be used to track special instructions from the customer.\nReview if this is a special Notes field or if it should be with the Notes Class.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_application_status
+;+		(comment "The status of the application instance.\nThis is used for A7 (same values as lifecycle_status!) and OVSD Solutions only. Some debate goes on whether it is a selection criterium only, or also a migration value. (ESL does not has a place for this);")
+		(type SYMBOL)
+		(allowed-values Active Inactive New)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasAsPerson
+;+		(comment "Relation between a class (the Contact Role and) the person. Specifies who is the contact for a specific role.\nAt least one person must be assigned to a role, otherwise the role shouldn't be defined for the contact.\nExplore to link to teams.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot os_patchlevel
+;+		(comment "Patch Level of the System, for Windows Servers this means the 'Service Pack'")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_status
+;+		(comment "Indicates the current statuses of the element. Various operational statuses are defined.\nThis is no longer used in favour of lifecyclestatus.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot country
+;+		(comment "Country")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot billing_change_category
+;+		(comment "CBB Data Owner: 'Detail 1'")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot op_patch_notes
+;+		(comment "Describe any special handling relating to patch management for this instance. Some instances may not be candidates for patching or may require other instances to be patched first for quality assurance purposes.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot primary_cluster_node
+;+		(comment "In ESL Terminology, this links cluster type package to Node. It indicates which node is the primary Node.\nPrimary node is not mandatory. A cluster could be made up of alternate nodes only.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot busappl2server_tag
+;+		(comment "Key in use in Transformation model to uniquely identify the object.\nIn Protege model, this will value will be stored in the application_instance_tag.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot appl_id_version
+;+		(comment "The version of the application.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cs_type
+;+		(comment "Computersystem Type.\nThis field is used in triple ways and cannot be accepted as is defined today in Templates!")
+		(type SYMBOL)
+		(allowed-values PhysicalServer VirtualServer Farm ClusterPacakage Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_access_key
+;+		(comment "Key value for the Remote Access attributes")
+		(type SYMBOL)
+		(allowed-values Console_Type Console_Name Console_IP)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot remote_console_ip
+;+		(comment "IP-Address of the remote console. Even DiskArrays/TapeLibraries sometimes do have a unique IP Address !")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasProcessor
+;+		(comment "Links the computer system to the logical processor(s).\nProcessor information is not mandatory to accept a computer system. E.g. a virtual system does not necessarily need to specify the processor.")
+		(type INSTANCE)
+;+		(allowed-classes Processor)
+		(create-accessor read-write))
+	(single-slot pf_critical_application
+;+		(comment "Criticality of the application. ALU has blank - crisis - critical / uCMDB has Yes/No.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot person_code
+;+		(comment "The unique code that identifies a person in Assetcenter and OVSD.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot impact_description
+;+		(comment "The impact on the business if the system is unavailable / performing poorly / no workaround. This field is used for incident and problem management and can improve service quality if the description is meaningful.\nThis field maps to uCMDB 'Description' field.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_name
+;+		(comment "The name of the remote console, normally DNS-resolvable. Also used to identify other types of peripherals, e.g. Disk Arrays (XP 256), Tape Libraries, etc... (depending on the chosen Console Type)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Portfolio_Data
+;+		(comment "Links an application to the Portfolio specific data.")
+		(type INSTANCE)
+;+		(allowed-classes Portfolio_obj)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Physical_Product
+;+		(comment "Links the Physical Box to the Manufactured Product.")
+		(type INSTANCE)
+;+		(allowed-classes Physical_Product)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ordernumber
+;+		(comment "The reference to the order in another system. Can be a number.\nESL Doc: states the HP Asset Number")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rel_from_bus_instance
+;+		(comment "Business Application Instance Leg of the Relation.")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot book_close_impact
+;+		(comment "Is this application critical to the book close process? Applications that answer YES will be closely monitored for changes during the qtr close periods.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot minimum_availability
+;+		(comment "Defines the committed minimum availability for the system.\n(Should this be in SLA?)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_cluster_attribs
+;+		(comment "Indicates that the CI is part of Cluster environment. Links to the attributes for this CI in the Cluster Environment.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot is_part_of
+;+		(comment "Indicates that this Cluster Computersystem is part of a higher-level Cluster ComputerSystem.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot home_directory
+;+		(comment "The directory in which the base database software is installed. For example, an Oracle instance on a Unix node, might be installed in /oracle/product/9.2.0/db_1")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasMaintenanceContract
+;+		(comment "Link to the Maintenance Contract Object.")
+		(type INSTANCE)
+;+		(allowed-classes Maintenance_Contract)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_category_ovsd
+;+		(comment "Category for the application.\nNot sure yet how to map A7 and OVSD Categories - 2 different attributes for now.")
+		(type SYMBOL)
+		(allowed-values BU_Managed_Applications Custom_Applications R_D_Applications)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_tag
+;+		(comment "Used to identify the Application. Currently it is not yet unique, since different DB applicaitons may refer to Oracle, while different version numbers may be used.\nThe unique key that is required in the Transformation Model is the appl_name_long.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot clockspeed
+;+		(comment "The maximum speed (in MHz) of this Processor.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot service_provider
+;+		(comment "The Service Provider, to whom the CI is outsourced.\nMail Dan Bruzdzinski 13/06/201123:03 (ALU Retained Infra): \nRetained CIs: \nALCATEL-LUCENT-NSABU-RETAINED\nALCATEL-LUCENT-NSACO-RETAINED\nALCATEL-LUCENT-RETAINED\nmainly used for ComputerSystems and OVSD Applications and OVSD Databases.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ovsd_searchcode
+;+		(comment "OVSD SearchCode. This attribute is required for the External ID field for Retained Objects in uCMDB.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot portfolio_id_long
+;+		(comment "Portfolio ID, that can be extended with Environment variable.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_application_id
+;+		(comment "Link to the Application ID class.\nIn case of link Application - Application_Id, the application_id name and version uniquely identifies the shrinkwrapped application.")
+		(type INSTANCE)
+;+		(allowed-classes)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot interface_technology
+;+		(comment "Interface Technology")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_external_input
+;+		(comment "Interface External Input.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot contact_type
+;+		(comment "Enumerated list with the contact types")
+		(type SYMBOL)
+		(allowed-values Backup_Lead Downtime_Contact Patching_Lead Restore_Contact Security_Owner Technical_Owner Technical_Lead Privilege_Access_Approver Technical_Lead_Backup Technical_Owner_Backup)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot hasDiskspace
+;+		(comment "Links a computersystem to it's diskspace.")
+		(type INSTANCE)
+;+		(allowed-classes Diskspace)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot db_type
+;+		(comment "The generic purpose of the Database.")
+		(type SYMBOL)
+		(allowed-values Data_Warehouse OLTP Web_DB)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot local_appl_diskspace
+;+		(comment "The total size of all local disks connected to the server, excluding those used for the operating system. Note: Unused local disks are also included in this number.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasCPUs
+;+		(comment "Link to the CPU in the physical product.\nEach CPU is represented individually - so as many links as CPUs are required.")
+		(type INSTANCE)
+;+		(allowed-classes CPU)
+		(create-accessor read-write))
+	(single-slot application_type
+;+		(comment "Type of the Application.\nTechnical Application is shrink-wrapped, COTS and needs to be installed on a ComputerSystem before it can be used.\nBusiness Application is a composition of business and technical applications and server dependencies.")
+		(type SYMBOL)
+		(allowed-values BusinessApplication TechnicalApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot master_location_uli
+;+		(comment "Master Location File ULI Code. De ULI Code is unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_language
+;+		(comment "shows the Operating System Language (e.g. french, german, english,...)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_subbusiness
+;+		(comment "The ESL Sub-Business is sufficient to specify the complete ESL Business structure.")
+		(type SYMBOL)
+		(allowed-values CMO_Martinique ALU_AMS ALU_APJ ALU_EMEA)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tag
+;+		(comment "An arbitrary string that uniquely identifies the Physical Element and serves as the key of the Element. The Tag property can contain information such as asset tag or serial number data.\nIn case of EnclosureSystem, the tag may contain  the fqdn.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot transitionmodel_Class110001
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot from_Installed_Application
+;+		(comment "Links the Instance to an Installed Application. This is only possible for Applications of type 'TechnicalApplication' - and required for TechnicalApplication.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot lifecyclestatus
+;+		(comment "It determines in what state of the life-cycle the server currently is. List of values.\nBy default lifecycle status of the physical box should be value from the lifecycle from the operating system implemented on the physical box. \nThis value needs to exist also on physicalbox for boxes without operating systems implemented. (although these boxes shouldn't be in ESL but rather in Assetcenter only).")
+		(type SYMBOL)
+		(allowed-values ordered delivered installed_in_DC move_to_production in_production move_to_obsolescence obsolete deinstalled out_of_production)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_type
+;+		(comment "Type of OperatingSystem.\nList of values provided\nCIM_OperatingSystem.OSType.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot virtualization_role
+;+		(comment "The virtualization role for the CI in the Virtual Environment.\nNote that ESL Documentation specifies Role of \"Virtual Center Manager\". However a Virtual Guest can also be a \"Virtual Center Manager\". Therefore in this model, the role \"Virtual Center Manager\" is implemented as a relation, and from \"ComputerSystem\" to \"Virtual_CI\"")
+		(type SYMBOL)
+		(allowed-values Server_for_Virtual_Guests Virtual_Guest Farm)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot contract_elements
+;+		(comment "Contract Elements data from Assetcenter")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot vendorequipmenttype
+;+		(comment "Defines what the hardware is, i.e. Server, tapedrive, router, ....;  As opposed to for what it is used, i.e. db server, app server, backup, ....\nThis used to be called type_of_hardware.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_external_output
+;+		(comment "Interface External Output")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sends_to
+;+		(comment "Interface Sends To Business Application Instance.")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot maint_contract_name
+;+		(comment "Name of the Maintenance Contract company.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot network_id_type
+;+		(comment "Represents the various network identities that may be used for an IPProtocolEndpoint.\nList of values provided")
+		(type SYMBOL)
+		(allowed-values IP_Address Subnet_Mask Subnet_Name MAC_Address Adapter_ID IP_Name Port Notes)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot note_value
+;+		(comment "The detailed instruction of the notes.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot enabled_cores
+;+		(comment "Number of processor cores enabled for the Computer System.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cores_per_cpu
+;+		(comment "Number of Cores per CPU.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_installationdate
+;+		(comment "Installation date of the Operating System.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot phone
+;+		(comment "Fixed phone number(s)")
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot application_category_ucmdb
+;+		(comment "uCMDB application_type field. \nBusiness_Applications are replicated to ESL. All other application types are not replicated.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_id
+;+		(comment "The value refers to the Source System. (ESL in this case - so review if this value is required).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_subnet
+;+		(comment "The Subnet of the remote console (used for either the real Subnet Name or the Subnet Mask)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_port
+;+		(comment "Refers to the Port on which the console can be accessed.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_name
+;+		(comment "Name of the OperatingSystem instance within a ComputerSystem")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_category
+;+		(comment "Defines the Class of the Server. This is an easy way to quickly categorize a Server.\nCategory is a mandatory field for all systems entered into ESL.")
+		(type SYMBOL)
+		(allowed-values HP_IT HP_Trade_Infra Trade)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hw_type
+;+		(comment "Hardware Type. Review the differenct between hw_type and vendorequipmenttype!")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_class_a7
+;+		(comment "A7 Class for the Application, reflecting the ownership:\nSOL_A&S, SOL_BU, SOL_CUS are Customer owned applications.\nSOL_INSTANCE and SOL_SOLUTION are HP owned applications.")
+		(type SYMBOL)
+		(allowed-values SOL_INSTANCE SOL_SOLUTION SOL_A%26S SOL_BU SOL_CUS)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot id
+;+		(comment "Unique identifier of the component.\nAlthough this is unque for implementation reasons, it is not required for logical design (protege) reasons.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot servicecoverage_type
+;+		(comment "The type applicable to this ComputerSystem-SLA relationship.\nESL: Service Coverage Type is calculated (In coverage, Out of Coverage, Unknown Coverage). Metallic level is stored in slo parameter.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot zip
+;+		(comment "Zip or postal code for the address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot building
+;+		(comment "Building name for this address location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot is_virtual_manager_for
+;+		(comment "Indicates the computersytem that is virtual center manger for the CI in the Virtual Environment. Note that the source domain is not necessarily a Virtual_CI. Any ComputerSystem CI can be a Virtual Center Manager for a virtual environment.\nThe expectation is that a Virtual Center Manager links to the Farm in the Virtual Environment, to indicate that it is the vc manager for all components in this environment. But this (single) link cannot be guaranteed.")
+		(type INSTANCE)
+;+		(allowed-classes Virtual_CI)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cpu_type
+;+		(comment "Details the processor type on the system.  This value is more specific than the CPU Family.\nSee cpu_family attribute for an example.\nNote that ESL documentation is not very accurate for \"CPU Type\" and \"Processor Type\".")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot risk_acceptance
+;+		(comment "If the Vendor Support for this product has expired, then HP must follow the risk acceptance process with the customer so they are aware of potential problems.\nESL Instance specific attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_acronym
+;+		(comment "Application Acronym. Short name that is used as unique application identifier.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasSystemUsage
+;+		(comment "Link to the System usage codes and detailed descriptions.")
+		(type INSTANCE)
+;+		(allowed-classes System_Usage)
+		(create-accessor read-write))
+	(single-slot business_area
+;+		(comment "Main business process supported.")
+		(type SYMBOL)
+		(allowed-values Corporate_Governance Customer_Relationship_Management Finance Human_Resources Information_Technology Legal Procurement Product_Lifecycle_Management Quality_Management Services_Management Supply_Chain)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot is_implementation_of
+;+		(comment "Points to the application (product) that this instance is an implementation of.")
+		(type INSTANCE)
+;+		(allowed-classes TechnicalProduct)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot manufacturer
+;+		(comment "(ENUM) The name of the organization responsible for producing the PhysicalElement or Application. This organization might be the entity from whom the Element is purchased, but this is not necessarily true.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_virtual_attribs
+;+		(comment "Indicates that the CI is part of a Virtual Environment. Links to the attributes for this CI in the virtual environment.")
+		(type INSTANCE)
+;+		(allowed-classes Virtual_CI)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inst_appl_depends_on
+;+		(comment "This installed application depends on other installed applications.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+;+		(inverse-slot inst_appl_component_of)
+		(create-accessor read-write))
+	(single-slot location_owner
+;+		(comment "Owner of this location.")
+		(type SYMBOL)
+		(allowed-values Customer_managed HP_account_managed HP_ITO_managed)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rel_to_computersystem
+;+		(comment "Computer System Leg of the Relation.")
+		(type INSTANCE)
+;+		(allowed-classes ComputerSystem)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot servicefunction
+;+		(comment "Services functions that are available for standard services.\nThis is \"ServiceFunction\" in ESL Terminology.")
+		(type SYMBOL)
+		(allowed-values availability_mgmt backup_client_mgmt_1st_level backup_client_mgmt_2nd_level backup_client_mgmt_3rd_level restore_mgmt event_detect_notification incident_mgmt_1st_level incident_mgmt_2nd_level incident_mgmt_3rd_level operation_mgmt output_mgmt problem_mgmt production_scheduling security_mgmt service_level_mgmt)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot receives_from
+;+		(comment "Interface receives from Business Application Instance")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_startup_notes
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_tag
+;+		(comment "Unique identifier for transition model to identify the instance.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot floor_slot
+;+		(comment "Floor space / Slot information for the location.\nIn A7/OVSD: Additional Location details in format that is close to locationcode format.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasESLValues
+;+		(comment "ESL Specific Attributes for the ComputerSystem - or for the EnclosureSystem.")
+		(type INSTANCE)
+;+		(allowed-classes CompSys_ESL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot impact
+;+		(comment "Depicts the type of audience to be impacted should there be an issue with this instance; enterprise, regional, local, single-user")
+		(type SYMBOL)
+		(allowed-values 1_Enterprise 2_Site_Department 3_Multiple_Users 4_User)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot workgroup_value
+;+		(comment "The workgroup value for this workgroup label.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot hasOrder
+;+		(comment "Links the physical box with the order.")
+		(type INSTANCE)
+;+		(allowed-classes Asset)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot system_usage_code
+;+		(comment "Defines for what it is used, i.e. db server, app server, backup, ....\nAs opposed to what the hardware is, i.e. Server, tapedrive, router, ....;   Link to enumeration.\nA single CS can fulfill multiple usages.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot has_address
+;+		(comment "A Location must have an address object.")
+		(type INSTANCE)
+;+		(allowed-classes Address)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot is_in_product_class
+;+		(comment "Links the Technical Product with the Product_Class object, that will allow product consolidation over technical products.")
+		(type INSTANCE)
+;+		(allowed-classes Product_Class)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot managed_url
+;+		(comment "URL to the a specific Web Server functionality (link under which a function can be probed from the Internet).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot owner
+;+		(comment "Keeps the company that owns the asset (from which it is rented/bought/leased).\nDo not mix-up with ci_owner_company, that is used for the ALU Retained, ALU or HP Owned CIs.")
+		(type SYMBOL)
+		(allowed-values 3rd_Party Customer HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot servicecoverage_window
+;+		(comment "Reflects the Coverage Window of the Configuration Item.\nTogether with the CI Time Zone, the Coverage allows to state at any given time whether a CI is currently in coverage or not.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot mem_capacity
+;+		(comment "The total capacity of this PhysicalMemory, in bytes. )\nDo we need this here?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot slo
+;+		(comment "Service Level Objective for the CI. This is the metallic level.\nAccording to Ivan Nanevski (21/11/11 - 10:30) - this is only required for Business Applications, and for all business applications.")
+		(type SYMBOL)
+		(allowed-values Platinum Gold Silver Bronze)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasNotes
+;+		(comment "Allows to add Notes to the ComputerSystem (ESL Usage).")
+		(type INSTANCE)
+;+		(allowed-classes Notes)
+		(create-accessor read-write))
+	(single-slot cluster_package_name
+;+		(comment "The High Availability (eg Service Guard) package name that this database instance is attached to. Only packages that are assigned as IP Types to the underlying servers are selectable.\nThis links the Application Instance to the Cluster Package.\nThis should be implemented as a relation!")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_tier
+;+		(comment "Tier of the Location.")
+		(type SYMBOL)
+		(allowed-values 1 2 3 A-Critical_Site B-Major_Site C-Satellite_Site D-Home_Site)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot network_id_value
+;+		(comment "IdentityValue contains a string encoding of the Identity. \nThe value depends on the selected Network Identity Type")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot op_tx_log
+;+		(comment "Describes special handling of transaction logs for this instance.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_responsible
+;+		(comment "Team / Group responsible to support the CI - responsible to handle tickets related to the CI.\nThis is CMO group (but it may help to understand FMO responsible, should not be migrated though).\nA7 specific.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasIPConnectivity
+;+		(comment "Links the ComputerSystem to the Network Interface values. At least one Network Interface is required to be part of the Configuration Management Scope.")
+		(type INSTANCE)
+;+		(allowed-classes IP_Connectivity)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot servicename
+;+		(comment "Service Group for which the Services are provided.\nThis is the Service Name in ESL Terminology.")
+		(type SYMBOL)
+		(allowed-values Active_Directory_Management Antivirus_Management Application_Mgmt Backup_Server_Management Collaboration Database_Mgmt File_Management Hardware_Management Monitoring_Operations Network_Management Server_Management Software_Management_Operations Storage_Management VMWare_Management Web_Mgmt)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_restore
+;+		(comment "Describes special handling required during the restore/recovery procedures. Is likely to include a pointer to disaster recovery documentation.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot number_of_cpus
+;+		(comment "The actual number of CPU's physically present. Auto-collected/populated by Radia (for AMS/APJ region currently only).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot installed_on
+;+		(comment "Indicates on which computersystem this application is running on.")
+		(type INSTANCE)
+;+		(allowed-classes ComputerSystem)
+;+		(cardinality 1 1)
+;+		(inverse-slot has_installed_applications)
+		(create-accessor read-write))
+	(multislot hasIPCharacteristics
+;+		(comment "Links to IP Type to it's characteristics.")
+		(type INSTANCE)
+;+		(allowed-classes IP_attributes)
+		(create-accessor read-write))
+	(single-slot application_region
+;+		(comment "Region where the application runs. Related to but not equal to the region of the Infrastructure CI.\nSource: OVSD - Only for Business Applications.")
+		(type SYMBOL)
+		(allowed-values Global APAC CALA EMEA MEA NAR)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_category
+;+		(comment "Category for the application.\nThis is the ESL Category.\nSource System Categorisation can be found in attribute_group and attribute_class.\nBusiness Services should not be delivered. It is available only in ESL, not from Assetcenter or OVSD.")
+		(type SYMBOL)
+		(allowed-values business_application business_service collaboration customer_software database management_tool os sap_erp standard_software webcomponent)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_group
+;+		(comment "Group of the application, currently used in A7 Solutions. Not sure on usage?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cpu_family
+;+		(comment "The CPU / Processor family. For example, values include \\PentiumR) processor with MMXTM) technology.\nThe CPU Family  is more generic than the CPU Type.\nExample of CPU Family value is \"AMD Opteron\", CPU Type then can be \"Six-Core AMD Opteron(tm) Processor 8431\"")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot installedOnPhysicalBox
+;+		(comment "Link to the Physical Box for this computer system.\nThis link is mandatory for Physical Servers. This link is optional for other computer system classes.\nCardinality can could be multiple for (virtual) computer systems.")
+		(type INSTANCE)
+;+		(allowed-classes PhysicalBox)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot product_class_name
+;+		(comment "Name of the Product Class. This is the ESL Solution Name for Technical Products.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot city
+;+		(comment "City")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot country_iso_name
+;+		(comment "ISO Name for the Country.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ServiceFunction "Each Service consists of a (predefined) set of Service Functions which are detailed through the Function Provider and the Monitoring Time Window."
+	(is-a USER)
+	(role concrete)
+	(single-slot servicename
+;+		(comment "Service Group for which the Services are provided.\nThis is the Service Name in ESL Terminology.")
+		(type SYMBOL)
+		(allowed-values Active_Directory_Management Antivirus_Management Application_Mgmt Backup_Server_Management Collaboration Database_Mgmt File_Management Hardware_Management Monitoring_Operations Network_Management Server_Management Software_Management_Operations Storage_Management VMWare_Management Web_Mgmt)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot servicefunction
+;+		(comment "Services functions that are available for standard services.\nThis is \"ServiceFunction\" in ESL Terminology.")
+		(type SYMBOL)
+		(allowed-values availability_mgmt backup_client_mgmt_1st_level backup_client_mgmt_2nd_level backup_client_mgmt_3rd_level restore_mgmt event_detect_notification incident_mgmt_1st_level incident_mgmt_2nd_level incident_mgmt_3rd_level operation_mgmt output_mgmt problem_mgmt production_scheduling security_mgmt service_level_mgmt)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot serviceprovider
+;+		(comment "Organization code that provides the service.\nThis is OrganizationName in ESL terminology.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ComputerSystem "A computersystem is an entity with processing capability. Examples of computer systems are servers, routers, ...\nComputer systems can be implemented on a hardware box (unitary computer system), running as a virtual system or being implemented as a logical system.\n\nA Blade Enclosure is a specific type of ComputerSystem."
+	(is-a USER)
+	(role concrete)
+	(single-slot hasOperatingSystem
+;+		(comment "Link to the Operating System on the ComputerSystem.")
+		(type INSTANCE)
+;+		(allowed-classes OperatingSystem)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot hasServiceFunction
+;+		(comment "Links the Computersystem to the Service Functions.\nA number of services are mandatory, depending on the system type.")
+		(type INSTANCE)
+;+		(allowed-classes ServiceFunction)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot isvirtual
+;+		(comment "Indicates if the object is virtual or not.\nDo we need \"isvirtual\", or does it need to be part of cs_type?")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot has_Assignment_Info
+;+		(comment "Links the CI to Assignment related Information.\nThis links to the initial and escalation assignment group. \nESL specific on System level and on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Assignment)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fqdn
+;+		(comment "Fully qualified domain name.\nKey for the computer system.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot cs_type
+;+		(comment "Computersystem Type.\nThis field is used in triple ways and cannot be accepted as is defined today in Templates!")
+		(type SYMBOL)
+		(allowed-values PhysicalServer VirtualServer Farm ClusterPacakage Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasProcessor
+;+		(comment "Links the computer system to the logical processor(s).\nProcessor information is not mandatory to accept a computer system. E.g. a virtual system does not necessarily need to specify the processor.")
+		(type INSTANCE)
+;+		(allowed-classes Processor)
+		(create-accessor read-write))
+	(single-slot hasDiskspace
+;+		(comment "Links a computersystem to it's diskspace.")
+		(type INSTANCE)
+;+		(allowed-classes Diskspace)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasRemoteConnectivity
+;+		(comment "Links to the Remote Connectivity object")
+		(type INSTANCE)
+;+		(allowed-classes Remote_Access_Info)
+		(create-accessor read-write))
+	(single-slot is_virtual_manager_for
+;+		(comment "Indicates the computersytem that is virtual center manger for the CI in the Virtual Environment. Note that the source domain is not necessarily a Virtual_CI. Any ComputerSystem CI can be a Virtual Center Manager for a virtual environment.\nThe expectation is that a Virtual Center Manager links to the Farm in the Virtual Environment, to indicate that it is the vc manager for all components in this environment. But this (single) link cannot be guaranteed.")
+		(type INSTANCE)
+;+		(allowed-classes Virtual_CI)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasContactRole
+;+		(comment "Link for specific roles.\nTechnical Contact Owner Role is mandatory for ComputerSystems, other roles are optional.\nContact Roles are optional for Application Class (used in AssetCenter)")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+		(create-accessor read-write))
+	(multislot has_installed_applications
+;+		(comment "Indicates which computersystems have this application installed.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+		(create-accessor read-write))
+	(single-slot serialnumber
+;+		(comment "A manufacturer-allocated number used to uniquely identify the Physical Element.\nVirtual ComputerSystems can have serial number. This serial number can be used to link A7 and OVSD.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasNotes
+;+		(comment "Allows to add Notes to the ComputerSystem (ESL Usage).")
+		(type INSTANCE)
+;+		(allowed-classes Notes)
+		(create-accessor read-write))
+	(single-slot has_Availability
+;+		(comment "Links to the Availability Related Information for the CI.\nThis contains (Runtime_) Environment, metallic level, ...)")
+		(type INSTANCE)
+;+		(allowed-classes Availability)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_owner
+;+		(comment "Contact person between Configuration Management and the Owner Organization.\nIn ESL this field typically maps to the Technical Owner. In uCMDB this field maps to the rde_data_ci_owner attribute of the business application.")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasSystemUsage
+;+		(comment "Link to the System usage codes and detailed descriptions.")
+		(type INSTANCE)
+;+		(allowed-classes System_Usage)
+		(create-accessor read-write))
+	(multislot hasIPConnectivity
+;+		(comment "Links the ComputerSystem to the Network Interface values. At least one Network Interface is required to be part of the Configuration Management Scope.")
+		(type INSTANCE)
+;+		(allowed-classes IP_Connectivity)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot ci_responsible
+;+		(comment "Team / Group responsible to support the CI - responsible to handle tickets related to the CI.\nThis is CMO group (but it may help to understand FMO responsible, should not be migrated though).\nA7 specific.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_virtual_attribs
+;+		(comment "Indicates that the CI is part of a Virtual Environment. Links to the attributes for this CI in the virtual environment.")
+		(type INSTANCE)
+;+		(allowed-classes Virtual_CI)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_cluster_attribs
+;+		(comment "Indicates that the CI is part of Cluster environment. Links to the attributes for this CI in the Cluster Environment.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasMaintenanceContract
+;+		(comment "Link to the Maintenance Contract Object.")
+		(type INSTANCE)
+;+		(allowed-classes Maintenance_Contract)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasBillingInfo
+;+		(comment "Link to the Billing info for the CBB project.\nDatabase instances require Billing info on Technical Instance level.\nApplications require Billing info on Business Application Instance level, but CBB / ESL specifications dictate to provide the info on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Billing)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot assigned_memory
+;+		(comment "This returns the amount (in MB) memory that is assigned to be used by this computersysteThis returns the amount (in MB) memory that is assigned to be used by this computersystem. This is not necessarily equal to the installed memory.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Admin_Info
+;+		(comment "Links the ComputerSystem to the Admin Info.")
+		(type INSTANCE)
+;+		(allowed-classes Admin)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ovsd_searchcode
+;+		(comment "OVSD SearchCode. This attribute is required for the External ID field for Retained Objects in uCMDB.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot installedOnPhysicalBox
+;+		(comment "Link to the Physical Box for this computer system.\nThis link is mandatory for Physical Servers. This link is optional for other computer system classes.\nCardinality can could be multiple for (virtual) computer systems.")
+		(type INSTANCE)
+;+		(allowed-classes PhysicalBox)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasESLValues
+;+		(comment "ESL Specific Attributes for the ComputerSystem - or for the EnclosureSystem.")
+		(type INSTANCE)
+;+		(allowed-classes CompSys_ESL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_owner_company
+;+		(comment "Value to indicate if the CI is ALU Retained or not.\nThis is for Applications (as in 'vs Products') and for Infrastructure CIs.")
+		(type SYMBOL)
+		(allowed-values ALU_Retained ALU_Owner HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Asset "Contains the Asset specific information."
+	(is-a USER)
+	(role concrete)
+	(single-slot ordernumber
+;+		(comment "The reference to the order in another system. Can be a number.\nESL Doc: states the HP Asset Number")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot assetnumber
+;+		(comment "States the (HP) Asset Number of the Asset.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot orderdate
+;+		(comment "The date upon which this element was ordered.\nIs this the same as purchase date?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Physical_Product "Physical Box as it is known by the Manufacturer of the Box."
+	(is-a USER)
+	(role concrete)
+	(single-slot serialnumber
+;+		(comment "A manufacturer-allocated number used to uniquely identify the Physical Element.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot mem_capacity
+;+		(comment "The total capacity of this PhysicalMemory, in bytes. )\nDo we need this here?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasCPUs
+;+		(comment "Link to the CPU in the physical product.\nEach CPU is represented individually - so as many links as CPUs are required.")
+		(type INSTANCE)
+;+		(allowed-classes CPU)
+		(create-accessor read-write))
+	(single-slot partnumber
+;+		(comment "The part number assigned by the organization that is responsible for producing or manufacturing the PhysicalElement. The partnumber identifies the build / specifications of the part. Partnumber is unique per type product for this manufacturer.\nex: Compaq 6530b has other partnumber than Compaq 6580.\nIn ESL Partnumbers can be linked to all part details using the myPRS application. (ex. fr70wc004cc0)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hw_type
+;+		(comment "Hardware Type. Review the differenct between hw_type and vendorequipmenttype!")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot vendorequipmenttype
+;+		(comment "Defines what the hardware is, i.e. Server, tapedrive, router, ....;  As opposed to for what it is used, i.e. db server, app server, backup, ....\nThis used to be called type_of_hardware.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot physical_diskspace
+;+		(comment "The total amount of physical disks/LUNs seen by the system (in GB). This includes internal and external disks/LUNs. CD-ROM, DVD-ROMS or NFS storage are not included.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot manufacturer
+;+		(comment "(ENUM) The name of the organization responsible for producing the PhysicalElement or Application. This organization might be the entity from whom the Element is purchased, but this is not necessarily true.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot model
+;+		(comment "The name by which the PhysicalElement is generally known.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass DetailedLocation "This class consolidates the specific details where a CI is stored within a Location."
+	(is-a USER)
+	(role concrete)
+	(single-slot floor_slot
+;+		(comment "Floor space / Slot information for the location.\nIn A7/OVSD: Additional Location details in format that is close to locationcode format.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot on_location
+;+		(comment "Specifies on which location this detailed location object is attached.")
+		(type INSTANCE)
+;+		(allowed-classes Location)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass PhysicalBox "A PhysicalBox is the (collection of) hardware on which a ComputerSystem can be implemented. \nIn CMDB context, physical boxes that are part of configurations are considered. Lifetime of physical box for the company starts with ordering the box, until disposal. The full lifetime is managed in Asset Management process. Lifetime in CMDB is from configuring the box till ready for disposal."
+	(is-a USER)
+	(role concrete)
+	(single-slot owner
+;+		(comment "Keeps the company that owns the asset (from which it is rented/bought/leased).\nDo not mix-up with ci_owner_company, that is used for the ALU Retained, ALU or HP Owned CIs.")
+		(type SYMBOL)
+		(allowed-values 3rd_Party Customer HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot on_Location
+;+		(comment "The physical location of a piece of hardware or an installed application.")
+		(type INSTANCE)
+;+		(allowed-classes DetailedLocation)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot lifecyclestatus
+;+		(comment "It determines in what state of the life-cycle the server currently is. List of values.\nBy default lifecycle status of the physical box should be value from the lifecycle from the operating system implemented on the physical box. \nThis value needs to exist also on physicalbox for boxes without operating systems implemented. (although these boxes shouldn't be in ESL but rather in Assetcenter only).")
+		(type SYMBOL)
+		(allowed-values ordered delivered installed_in_DC move_to_production in_production move_to_obsolescence obsolete deinstalled out_of_production)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot in_enclosure
+;+		(comment "For physical products(cards) that are in a blade server, relates the product to the blade server in which it is installed. A card can be installed in one blade enclosure maximum.\n(Requirements for class Source and Target?)\nThis is not part of PhysicalProduct Table / comes with Dependency.")
+		(type INSTANCE)
+;+		(allowed-classes Physical_Product)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Physical_Product
+;+		(comment "Links the Physical Box to the Manufactured Product.")
+		(type INSTANCE)
+;+		(allowed-classes Physical_Product)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasOrder
+;+		(comment "Links the physical box with the order.")
+		(type INSTANCE)
+;+		(allowed-classes Asset)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tag
+;+		(comment "An arbitrary string that uniquely identifies the Physical Element and serves as the key of the Element. The Tag property can contain information such as asset tag or serial number data.\nIn case of EnclosureSystem, the tag may contain  the fqdn.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass OperatingSystem "An OperatingSystem is software/firmware that makes a ComputerSystem's hardware usable, and implements and/or manages the resources, file systems, processes, user interfaces, services, ... available on the ComputerSystem.\nInvestigate to model the Operating System as an Installed Application linked to the Application."
+	(is-a USER)
+	(role concrete)
+	(single-slot os_name
+;+		(comment "Name of the OperatingSystem instance within a ComputerSystem")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_type
+;+		(comment "Type of OperatingSystem.\nList of values provided\nCIM_OperatingSystem.OSType.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot os_patchlevel
+;+		(comment "Patch Level of the System, for Windows Servers this means the 'Service Pack'")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_installationdate
+;+		(comment "Installation date of the Operating System.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot version
+;+		(comment "A string describing the (Operating System\\'s) version number. The format of the version information is as follows: <Major Number>.<Minor Number>.<Revision>.\nCIM_OperatingSystem.Version")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot os_language
+;+		(comment "shows the Operating System Language (e.g. french, german, english,...)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass IP_Connectivity "Consolidates IP Connectivity Information for the ComputerSystem"
+	(is-a USER)
+	(role concrete)
+	(multislot hasIPCharacteristics
+;+		(comment "Links to IP Type to it's characteristics.")
+		(type INSTANCE)
+;+		(allowed-classes IP_attributes)
+		(create-accessor read-write))
+	(single-slot ip_type
+		(type SYMBOL)
+		(allowed-values Alias Primary_IP Alternate_IP Internet_facing_IP Package_Name Cluster_Name Virtual_Partition SAN_Controller SAN_switch Host_Bus_Adapter Storage_Array Tape_Library Gateway DNS_Server Primary_WINS_Server Secondary_WINS_Server NAT NTP_Server Device_WWN Virtual_Connect_IP)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Person "Person name and contact information"
+	(is-a USER)
+	(role concrete)
+	(single-slot firstname
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot lastname
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot email
+		(type STRING)
+		(create-accessor read-write))
+	(single-slot person_code
+;+		(comment "The unique code that identifies a person in Assetcenter and OVSD.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ContactRole "Class to consolidate Contact information.\nTry to avoid this class. Use the specific attribute, define the attribute as an instance relation e.g."
+	(is-a USER)
+	(role concrete)
+	(single-slot contact_type
+;+		(comment "Enumerated list with the contact types")
+		(type SYMBOL)
+		(allowed-values Backup_Lead Downtime_Contact Patching_Lead Restore_Contact Security_Owner Technical_Owner Technical_Lead Privilege_Access_Approver Technical_Lead_Backup Technical_Owner_Backup)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot hasAsPerson
+;+		(comment "Relation between a class (the Contact Role and) the person. Specifies who is the contact for a specific role.\nAt least one person must be assigned to a role, otherwise the role shouldn't be defined for the contact.\nExplore to link to teams.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot preferred_contact_method
+		(type SYMBOL)
+		(allowed-values Phone eMail)
+		(default Phone)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot contact_for_patch
+;+		(comment "ESL value to indicate if this contact has to be informed in case of a patch deployment.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Admin "Class to represent different types of Admin-style information, that does not fit into any other class."
+	(is-a USER)
+	(role concrete)
+	(single-slot customer_notes
+;+		(comment "Generic free-text attribute that can be used to track special instructions from the customer.\nReview if this is a special Notes field or if it should be with the Notes Class.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot lifecyclestatus
+;+		(comment "It determines in what state of the life-cycle the server currently is. List of values.\nBy default lifecycle status of the physical box should be value from the lifecycle from the operating system implemented on the physical box. \nThis value needs to exist also on physicalbox for boxes without operating systems implemented. (although these boxes shouldn't be in ESL but rather in Assetcenter only).")
+		(type SYMBOL)
+		(allowed-values ordered delivered installed_in_DC move_to_production in_production move_to_obsolescence obsolete deinstalled out_of_production)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot service_provider
+;+		(comment "The Service Provider, to whom the CI is outsourced.\nMail Dan Bruzdzinski 13/06/201123:03 (ALU Retained Infra): \nRetained CIs: \nALCATEL-LUCENT-NSABU-RETAINED\nALCATEL-LUCENT-NSACO-RETAINED\nALCATEL-LUCENT-RETAINED\nmainly used for ComputerSystems and OVSD Applications and OVSD Databases.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot management_region
+;+		(comment "The region that is managing this ComputerSystem.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sox_system
+;+		(comment "These values are used to support the life cycle of a server in SOX mode. Additional software than standard platform may be required by the customer to be installed. Certain Risk assessment processes must be executed prior the server can be moved into system status production.\nESL accepts this value only on System Layer, not on Application Layer. (To Be Added!)")
+		(type SYMBOL)
+		(allowed-values Pre_SOX SOX_Production SOX Post_SOX SOX_HW)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot security_level
+;+		(comment "A string defining the security sensitivity level. )")
+		(type SYMBOL)
+		(allowed-values internet stringent baseline workstation)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nsa
+;+		(comment "NSA (National Security Agreement) is an agreement with the US Administration for companies which deliver sensitive products or services to the US Department of Defense.\nNSA systems are those company systems specifically dedicated to the DoD and are considered restricted.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_type_group
+;+		(comment "ALU specific identifier to define the Application Type Group for the OS Instance.\nThis field is mandatory for ?")
+		(type SYMBOL)
+		(allowed-values R%26D_and_BU IT_managed_application IT_infrastructure Hosting)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Notes "Class allowing to add Notes to Objects"
+	(is-a USER)
+	(role concrete)
+	(single-slot note_value
+;+		(comment "The detailed instruction of the notes.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note_type
+;+		(comment "The detailed instructions.\nList available")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass CompSys_ESL "ESL Specific Computer System Fields"
+	(is-a USER)
+	(role concrete)
+	(single-slot esl_category
+;+		(comment "Defines the Class of the Server. This is an easy way to quickly categorize a Server.\nCategory is a mandatory field for all systems entered into ESL.")
+		(type SYMBOL)
+		(allowed-values HP_IT HP_Trade_Infra Trade)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_system_type
+;+		(comment "ESL System Type specification. Mandatory parameter to determine the actual CI Category of the ESL system record.")
+		(type SYMBOL)
+		(allowed-values appliance cabinet cluster_node cluster_package farm load_balancer mainframe server tape_library ups workstation)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_business
+;+		(comment "ESL Business for the CI.\nAlcatel-Lucent is the business for the current project. \nThis is relevant for ESL Solutions, since only solutions from the Alcatel-Lucent business should be touched.")
+		(type SYMBOL)
+		(allowed-values Alcatel-Lucent)
+		(default Alcatel-Lucent)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_subbusiness
+;+		(comment "The ESL Sub-Business is sufficient to specify the complete ESL Business structure.")
+		(type SYMBOL)
+		(allowed-values CMO_Martinique ALU_AMS ALU_APJ ALU_EMEA)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot esl_id
+;+		(comment "The value refers to the Source System. (ESL in this case - so review if this value is required).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Diskspace "Used to consolidate DiskSpace as seen by a ComputerSystem."
+	(is-a USER)
+	(role concrete)
+	(single-slot available_diskspace
+;+		(comment "Total mounted/formatted disk space on the system. RAW/Unmounted/Unformatted disk space is not included, as Radia cannot detect this")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot local_appl_diskspace
+;+		(comment "The total size of all local disks connected to the server, excluding those used for the operating system. Note: Unused local disks are also included in this number.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot used_diskspace
+;+		(comment "The used disk space refers to the space that is actually used on the server. Note that this number might be inaccurate, especially on UNIX, as RAW-FileSystems are not included.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass CPU "CPUs as implemented in the physical box. Do not mix up with Processors as seen by the Computer System."
+	(is-a USER)
+	(role concrete)
+	(single-slot clockspeed
+;+		(comment "The maximum speed (in MHz) of this Processor.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot number_of_cpus
+;+		(comment "The actual number of CPU's physically present. Auto-collected/populated by Radia (for AMS/APJ region currently only).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cpu_family
+;+		(comment "The CPU / Processor family. For example, values include \\PentiumR) processor with MMXTM) technology.\nThe CPU Family  is more generic than the CPU Type.\nExample of CPU Family value is \"AMD Opteron\", CPU Type then can be \"Six-Core AMD Opteron(tm) Processor 8431\"")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cores_per_cpu
+;+		(comment "Number of Cores per CPU.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cpu_type
+;+		(comment "Details the processor type on the system.  This value is more specific than the CPU Family.\nSee cpu_family attribute for an example.\nNote that ESL documentation is not very accurate for \"CPU Type\" and \"Processor Type\".")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass IP_attributes "IP Network attribute - value pairs that are connected to an IP connection."
+	(is-a USER)
+	(role concrete)
+	(single-slot network_id_type
+;+		(comment "Represents the various network identities that may be used for an IPProtocolEndpoint.\nList of values provided")
+		(type SYMBOL)
+		(allowed-values IP_Address Subnet_Mask Subnet_Name MAC_Address Adapter_ID IP_Name Port Notes)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot network_id_value
+;+		(comment "IdentityValue contains a string encoding of the Identity. \nThe value depends on the selected Network Identity Type")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Billing "Consumption Based Billing specific fields."
+	(is-a USER)
+	(role concrete)
+	(single-slot billing_resourceunit_code
+;+		(comment "Resource codes 1..16 & 45 as defined in the contract.\nBilling group ID assignment.\nCBB Data owner: 'RU ID'.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot billing_change_date
+;+		(comment "CBB Data owner: 'Detail 5'")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot billing_change_request_id
+;+		(comment "CBB Data owner: 'Detail 2'.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot billing_change_category
+;+		(comment "CBB Data Owner: 'Detail 1'")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Maintenance_Contract "Maintenance Contract Details."
+	(is-a USER)
+	(role concrete)
+	(single-slot maint_contract_details
+;+		(comment "Details of the Maintenance Contract.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot contract_elements
+;+		(comment "Contract Elements data from Assetcenter")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot coverage_end_date
+;+		(comment "End date of the Maintenance Contract.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot maint_contract_name
+;+		(comment "Name of the Maintenance Contract company.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Remote_Access_Info "Consolidates the remote access information"
+	(is-a USER)
+	(role concrete)
+	(single-slot remote_console_type
+;+		(comment "Type of the Remote Access Info, e.g. Remote Console.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_name
+;+		(comment "The name of the remote console, normally DNS-resolvable. Also used to identify other types of peripherals, e.g. Disk Arrays (XP 256), Tape Libraries, etc... (depending on the chosen Console Type)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_ip
+;+		(comment "IP-Address of the remote console. Even DiskArrays/TapeLibraries sometimes do have a unique IP Address !")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_subnet
+;+		(comment "The Subnet of the remote console (used for either the real Subnet Name or the Subnet Mask)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot remote_console_port
+;+		(comment "Refers to the Port on which the console can be accessed.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass System_Usage "Used to mark for what the server is actually used for. Allows multiple selections, including a specification of the details per usage. E.g. if the Server is used as OVO Master, mark Monitoring, and OVO Master in the Details for Monitoring.\nSince mulitpe selection / detail pairs are possible, a separate class with link to Usage class is required."
+	(is-a USER)
+	(role concrete)
+	(single-slot system_usage_primary
+;+		(comment "Indicates if this system usage is the primary usage for the computersystem.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot system_usage_details
+;+		(comment "Details related to this system service usage code.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot system_usage_code
+;+		(comment "Defines for what it is used, i.e. db server, app server, backup, ....\nAs opposed to what the hardware is, i.e. Server, tapedrive, router, ....;   Link to enumeration.\nA single CS can fulfill multiple usages.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Processor "Class to represent the Logical Processor, as it is seen by the Computer System.\nNote that the CPU class is used to represent the Physical CPUs as they make part of a Physical_Product."
+	(is-a USER)
+	(role concrete)
+	(single-slot enabled_cores
+;+		(comment "Number of processor cores enabled for the Computer System.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hyperthreading_enabled
+;+		(comment "Is hyperthreading enabled by the Operating System?\nThis value can be used to calucate the total number of logical cores available for the computer system.\nSince hyperthreading needs to be enabled by Operating System, it is an attribute of (Computer System) Processor, not of (Physical Box) CPU.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot logical_cpus
+;+		(comment "Number of logical CPUs. This value should be calculated from number_of_cpus, cores_per_cpu and Processor.hyperthreading.\nHowever it can be entered directly if one of the values is missing, or for virtual systems.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Availability "Class to collect availability related information and attributes."
+	(is-a USER)
+	(role concrete)
+	(single-slot runtime_environment
+;+		(comment "Identifier for the value to be used from RuntimeEnvironmentEnum.")
+		(type SYMBOL)
+		(allowed-values Development Disaster_Recovery Production Staging Standby Test Training Lab)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot servicecoverage_window
+;+		(comment "Reflects the Coverage Window of the Configuration Item.\nTogether with the CI Time Zone, the Coverage allows to state at any given time whether a CI is currently in coverage or not.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot service_level_code
+;+		(comment "Service levels\nA list is available\nESL Doc: Overall indicator for the level of support provided by HP for the appropriate System CI.")
+		(type SYMBOL)
+		(allowed-values not_supported backup_only hosting_only monitoring_only basic standard high_availability mission_critical)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot impact_description
+;+		(comment "The impact on the business if the system is unavailable / performing poorly / no workaround. This field is used for incident and problem management and can improve service quality if the description is meaningful.\nThis field maps to uCMDB 'Description' field.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot slo
+;+		(comment "Service Level Objective for the CI. This is the metallic level.\nAccording to Ivan Nanevski (21/11/11 - 10:30) - this is only required for Business Applications, and for all business applications.")
+		(type SYMBOL)
+		(allowed-values Platinum Gold Silver Bronze)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot impact
+;+		(comment "Depicts the type of audience to be impacted should there be an issue with this instance; enterprise, regional, local, single-user")
+		(type SYMBOL)
+		(allowed-values 1_Enterprise 2_Site_Department 3_Multiple_Users 4_User)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot minimum_availability
+;+		(comment "Defines the committed minimum availability for the system.\n(Should this be in SLA?)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot possible_downtime
+;+		(comment "keeps information on time windows during which it is possible to reboot the server safely (without causing productivity leaks).\nTemplate knows this as planned_outage_coverage_details.\nThe window that is available for planned outage.\nThis is required for all CI's and in complex systems, in all levels of the Technology Stack, where all elements must have a synchronised window in order to allow a hardware reset or maintenance to take place.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Assignment "Class to consolidate assignment related attributes. Assignment info includes the Incident and the Escalation Assignment group."
+	(is-a USER)
+	(role concrete)
+	(single-slot initial_assignment_group
+;+		(comment "This attribute is used for automated Event Routing and determines to which assignment group within the respective workflow tool Incidents should be routed to.\nPlease ensure that this attribute is populated 100% correctly, as otherwise Incidents will not get routed properly, which will result in a miss of the SLA with the customer !\nThe Initial Assgnment Group should be a populated list.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot escalation_assignment_group
+;+		(comment "\"The Escalation Assignment Group plays a key role in the automated incident routing process. It is critical to properly route incidents to the next level of Initial Assignment Group in an automated way. \n\nPlease ensure that this attribute is populated 100% correctly, as otherwise Incidents will not get routed properly, which will result in a miss of the SLAs!\n\nThe escalation assignment group should be a populated list.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Application "An application is a product as can be acquired of the shelf, or a solution as documented in the solution portfolio file.\nAn application must have a number of installed instances to be relevant.\nThe Application Portfolio File has precendence over fields in other files."
+	(is-a USER)
+	(role abstract)
+	(single-slot application_status
+;+		(comment "Status of the application.\n(Assigned to Application and DB_Instance database).\nBut also known on Application level, since this is often managed on Portfolio level.\nInstalled_Application_Status is different from application_status!\nDO NOT CONFUSE WITH lifecyclestatus!")
+		(type SYMBOL)
+		(allowed-values Target_Strategic Target_Tactical Decom_Plan_secured Decom_Plan_Not_secured Stopped Stopped_Read_only Status_to_be_determined)
+		(default Target_Tactical)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot application_class_a7
+;+		(comment "A7 Class for the Application, reflecting the ownership:\nSOL_A&S, SOL_BU, SOL_CUS are Customer owned applications.\nSOL_INSTANCE and SOL_SOLUTION are HP owned applications.")
+		(type SYMBOL)
+		(allowed-values SOL_INSTANCE SOL_SOLUTION SOL_A%26S SOL_BU SOL_CUS)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot security_category
+;+		(comment "Data field as delivered from extract Ken Hughes (mail 4/04/2012) - Archer extract Application Data Classifications Ratings")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot version
+;+		(comment "A string describing the (Operating System\\'s) version number. The format of the version information is as follows: <Major Number>.<Minor Number>.<Revision>")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot id
+;+		(comment "Unique identifier of the component.\nAlthough this is unque for implementation reasons, it is not required for logical design (protege) reasons.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sourcing_accountable
+;+		(comment "Sourcing Accountable is the party that is responsible for the development of the project.\nValues for uCMDB - uCMDB to review enumeration list.\nSolution Portfolio File has the master information. OVSD and Assetcenter are only updated periodically.")
+		(type SYMBOL)
+		(allowed-values CDC CG-Direct HP Retained To_be_confirmed)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasContactRole
+;+		(comment "Link for specific roles.\nTechnical Contact Owner Role is mandatory for ComputerSystems, other roles are optional.\nContact Roles are optional for Application Class (used in AssetCenter)")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+		(create-accessor read-write))
+	(single-slot ext_source_system
+;+		(comment "ESL Specific. Source System identifier for the system that fed the data into ESL.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_type
+;+		(comment "Type of the Application.\nTechnical Application is shrink-wrapped, COTS and needs to be installed on a ComputerSystem before it can be used.\nBusiness Application is a composition of business and technical applications and server dependencies.")
+		(type SYMBOL)
+		(allowed-values BusinessApplication TechnicalApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot appl_name_acronym
+;+		(comment "Application Acronym. Short name that is used as unique application identifier.\nFor Business Application, this is subject for application name translation.\nFor Technical Application ,this is the product name (that will need to be combined with the Product Version to identify the Product.)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nsa
+;+		(comment "NSA (National Security Agreement) is an agreement with the US Administration for companies which deliver sensitive products or services to the US Department of Defense.\nNSA systems are those company systems specifically dedicated to the DoD and are considered restricted.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot manufacturer
+;+		(comment "(ENUM) The name of the organization responsible for producing the PhysicalElement or Application. This organization might be the entity from whom the Element is purchased, but this is not necessarily true.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot security_class
+;+		(comment "Data field as delivered from extract Ken Hughes (mail 4/04/2012) - Archer extract Application Data Classifications Ratings")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_critical
+;+		(comment "Business Critical App Identification.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ext_source_system_element_id
+;+		(comment "ESL Specific. source system element id from the source that fed the data into ESL.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_category
+;+		(comment "Category for the application.\nThis is the ESL Category.\nSource System Categorisation can be found in attribute_group and attribute_class.\nBusiness Services should not be delivered. It is available only in ESL, not from Assetcenter or OVSD.")
+		(type SYMBOL)
+		(allowed-values business_application business_service collaboration customer_software database management_tool os sap_erp standard_software webcomponent)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cma
+;+		(comment "Application Code is based on a list of standard applications (maintained by ESM Event Monitoring Team) that are considered as supported by OVO-based monitoring and have appropriate monitoring solutions/templates available.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_long
+;+		(comment "Long name for the application or application instance.\nThis is the commonly used name for the application or the application instance.\nIt should be required, but ESL Instances do not necessarily have instances names.\nOn Application Level, FMO Systems no longer use this field. Technical Products use acronym as Product Name. Business Applications use (new) acronym name. Long name is not mapped in uCMDB.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_group
+;+		(comment "Group of the application, currently used in A7 Solutions. Not sure on usage?")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_description
+;+		(comment "Application Description, related to but not equal to Portfolio Application Description.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_tag
+;+		(comment "Used to identify the Application. Currently it is not yet unique, since different DB applicaitons may refer to Oracle, while different version numbers may be used.\nThe unique key that is required in the Transformation Model is the appl_name_long.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot hasESLValues
+;+		(comment "ESL Specific Attributes for the ComputerSystem - or for the EnclosureSystem.")
+		(type INSTANCE)
+;+		(allowed-classes CompSys_ESL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_owner_company
+;+		(comment "Value to indicate if the CI is ALU Retained or not.\nThis is for Applications (as in 'vs Products') and for Infrastructure CIs.")
+		(type SYMBOL)
+		(allowed-values ALU_Retained ALU_Owner HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass BusinessApplication "Consolidates BusinessApplication Specific Attributes."
+	(is-a Application)
+	(role concrete)
+	(single-slot portfolio_id
+;+		(comment "Unique identifier for the Application in the Apps Portfolio.\nThis attribute has been added to Business Application class to allow easier data processing.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Portfolio_Data
+;+		(comment "Links an application to the Portfolio specific data.")
+		(type INSTANCE)
+;+		(allowed-classes Portfolio_obj)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_type
+;+		(comment "Type of the Application.\nTechnical Application is shrink-wrapped, COTS and needs to be installed on a ComputerSystem before it can be used.\nBusiness Application is a composition of business and technical applications and server dependencies.")
+		(type SYMBOL)
+		(allowed-values BusinessApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ci_owner
+;+		(comment "Contact person between Configuration Management and the Owner Organization.\nIn ESL this field typically maps to the Technical Owner. In uCMDB this field maps to the rde_data_ci_owner attribute of the business application.\nALU contact names need to be provided by ALU (Ken).")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass TechnicalProduct "This class consolidates TechnicalProduct Specific Attributes."
+	(is-a Application)
+	(role concrete)
+	(single-slot application_type
+;+		(comment "Type of the Application.\nTechnical Application is shrink-wrapped, COTS and needs to be installed on a ComputerSystem before it can be used.\nBusiness Application is a composition of business and technical applications and server dependencies.")
+		(type SYMBOL)
+		(allowed-values TechnicalApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Installed_Application "A installed instance of a Technical Application. \nThis must be an instance directly running on a computersystem."
+	(is-a USER)
+	(role concrete)
+	(single-slot installed_application_tag
+;+		(comment "Unique name for the Transformation Model that identifies the Installed Product. \nFor now, this is the Technical Product Instance Name, with \"inst.\" pre-pended.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot installed_on
+;+		(comment "Indicates on which computersystem this application is running on.")
+		(type INSTANCE)
+;+		(allowed-classes ComputerSystem)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot is_implementation_of
+;+		(comment "Points to the application (product) that this instance is an implementation of.")
+		(type INSTANCE)
+;+		(allowed-classes TechnicalProduct)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Portfolio_obj "Class to combine the Portfolio specific attributes. The Class has name Portfolio_obj, to see the difference portfolio_obj_id (internal to MySQL CIM database) and portfolio_id (known in ALU Solution Portfolio)"
+	(is-a USER)
+	(role concrete)
+	(single-slot portfolio_id
+;+		(comment "Unique identifier for the Application in the Apps Portfolio.\nThis attribute has been added to Business Application class to allow easier data processing.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_critical
+;+		(comment "Business Critical App Identification.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_stakeholder_name
+;+		(comment "Name of the Business Stakeholder.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pf_critical_application
+;+		(comment "Criticality of the application. ALU has blank - crisis - critical / uCMDB has Yes/No.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot book_close_impact
+;+		(comment "Is this application critical to the book close process? Applications that answer YES will be closely monitored for changes during the qtr close periods.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nsa
+;+		(comment "NSA (National Security Agreement) is an agreement with the US Administration for companies which deliver sensitive products or services to the US Department of Defense.\nNSA systems are those company systems specifically dedicated to the DoD and are considered restricted.")
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+		(default FALSE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_area
+;+		(comment "Main business process supported.")
+		(type SYMBOL)
+		(allowed-values Corporate_Governance Customer_Relationship_Management Finance Human_Resources Information_Technology Legal Procurement Product_Lifecycle_Management Quality_Management Services_Management Supply_Chain)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot business_stakeholder_organization
+;+		(comment "Organization related to the Business Stakeholder.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Operations "Operational attributes related to Installed Applications"
+	(is-a USER)
+	(role concrete)
+	(single-slot op_patch_notes
+;+		(comment "Describe any special handling relating to patch management for this instance. Some instances may not be candidates for patching or may require other instances to be patched first for quality assurance purposes.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_restore
+;+		(comment "Describes special handling required during the restore/recovery procedures. Is likely to include a pointer to disaster recovery documentation.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_startup_notes
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_tx_log
+;+		(comment "Describes special handling of transaction logs for this instance.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_total_size
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_backup_notes
+;+		(comment "Describes the high level backup solution.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_cap_mgmt_notes
+;+		(comment "Describes how a DBA should manage the capacity of this database instance. Typically, only exceptions would be listed here.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_daylight_savings
+;+		(comment "Daylight Savings Sensitivity")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_shutdown_notes
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_total_used_size
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Cluster "This class combines the cluster related attributes and relations."
+	(is-a USER)
+	(role concrete)
+	(single-slot cluster_type
+;+		(comment "Type of the Cluster CI. Known types include Node, Package, Cluster.\nThis could be the same as the ComputerSystem Type - to be investigated.")
+		(type SYMBOL)
+		(allowed-values cluster_node cluster_package cluster storage_array)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot primary_cluster_node
+;+		(comment "In ESL Terminology, this links cluster type package to Node. It indicates which node is the primary Node.\nPrimary node is not mandatory. A cluster could be made up of alternate nodes only.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot is_part_of
+;+		(comment "Indicates that this Cluster Computersystem is part of a higher-level Cluster ComputerSystem.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alternate_cluster_node
+;+		(comment "In ESL Terminology, this links cluster type package to Node. It indicates which node is the alternate Node. Any link that is not primary will be alternate.")
+		(type INSTANCE)
+;+		(allowed-classes Cluster)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_architecture
+;+		(comment "This attribute specifies the architecture of the cluster.")
+		(type SYMBOL)
+		(allowed-values Campus Continental Local Metro)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_technology
+;+		(comment "Indicates what the clustertechnology is for this system that is part of the cluster.")
+		(type SYMBOL)
+		(allowed-values MC-SG Veritas-Cluster VMWare_Cluster RedHat_Cluster Microsoft_Cluster HACMP TruCluster Sysplex)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Address "Class that combines the Address attributes. An address can have a location ID, this is the approved code under which the address is known."
+	(is-a USER)
+	(role concrete)
+	(single-slot state_province
+;+		(comment "State or Province information.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot full_shipping_address
+;+		(comment "The full shipping address for this Location Address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot country_iso_code
+;+		(comment "ISO Code for the Country.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot streetaddress
+;+		(comment "Street and number information for the address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot country
+;+		(comment "Country")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot zip
+;+		(comment "Zip or postal code for the address.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot floor
+;+		(comment "Floor on the address for this location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot building
+;+		(comment "Building name for this address location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot city
+;+		(comment "City")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot country_iso_name
+;+		(comment "ISO Name for the Country.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Location "This class consolidates the Location attributes. Typically a location is a datacenter. A location can be any address where CIs are stored."
+	(is-a USER)
+	(role concrete)
+	(single-slot master_data_location_code
+;+		(comment "Location Code in the Master data file under which the Location is known.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_owner
+;+		(comment "Owner of this location.")
+		(type SYMBOL)
+		(allowed-values Customer_managed HP_account_managed HP_ITO_managed)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_notes
+;+		(comment "Notes associated with the location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_location_contract_id
+;+		(comment "De Master Location Contract ID attribute. The Contract ID is not unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_code
+;+		(comment "The A7/OVSD Location Code or the ESL Location Name. This code can have two formats:\nLOC-SAP-**** - pointing to a SAP location code?\nOR: build up of known location elements:\n/Country/City/Detail1/Detail2/\nFirst position: country.\nSecond position (if available): City\nThird Position can be street, building, ...\nFollowing positions provide more detail.\nCountry name is avaialble, other values seem to be optional.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_category
+;+		(comment "Category of the Location.")
+		(type SYMBOL)
+		(allowed-values Data_Center Site_Server-Infra_Room)
+		(default Data_Center)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_access
+;+		(comment "Access information related to the Location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_tier
+;+		(comment "Tier of the Location.")
+		(type SYMBOL)
+		(allowed-values 1 2 3 A-Critical_Site B-Major_Site C-Satellite_Site D-Home_Site)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_location_uli
+;+		(comment "Master Location File ULI Code. De ULI Code is unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot master_location_familiar_name
+;+		(comment "The master location familiar name for location. A familiar name is not unique per location.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_address
+;+		(comment "A Location must have an address object.")
+		(type INSTANCE)
+;+		(allowed-classes Address)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Virtual_CI "This class combines the attributes that are specific for a CI in a Virtual Environment."
+	(is-a USER)
+	(role concrete)
+	(single-slot virtualization_technology
+;+		(comment "This attributes describes the hypervisor technology that is used for the virtualization.")
+		(type SYMBOL)
+		(allowed-values VMWare MS_Virtual_Machine-HyperV Virtual_Partition Xen Solaris_Zones)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot virtualization_role
+;+		(comment "The virtualization role for the CI in the Virtual Environment.\nNote that ESL Documentation specifies Role of \"Virtual Center Manager\". However a Virtual Guest can also be a \"Virtual Center Manager\". Therefore in this model, the role \"Virtual Center Manager\" is implemented as a relation, and from \"ComputerSystem\" to \"Virtual_CI\"")
+		(type SYMBOL)
+		(allowed-values Server_for_Virtual_Guests Virtual_Guest Farm)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Application_Instance "Instance of an Application. \nFor Application Type 'TechnicalProduct', this is linked to an installed version of the application.\nFor Application Type 'BusinessProduct', this is linked directly to the Application, without the InstalledApplication."
+	(is-a USER)
+	(role abstract)
+	(single-slot lifecyclestatus
+;+		(comment "It determines in what state of the life-cycle the server currently is. List of values.\nBy default lifecycle status of the physical box should be value from the lifecycle from the operating system implemented on the physical box. \nThis value needs to exist also on physicalbox for boxes without operating systems implemented. (although these boxes shouldn't be in ESL but rather in Assetcenter only).\napplication_instance has only subset of allowed values compared to admin.")
+		(type SYMBOL)
+		(allowed-values move_to_production in_production move_to_obsolescence obsolete deinstalled out_of_production)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_workgroup
+;+		(comment "Links the object to the Workgroup information. \nFor now all workgroup information is consolidated into one object.")
+		(type INSTANCE)
+;+		(allowed-classes Workgroups)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasBillingInfo
+;+		(comment "Link to the Billing info for the CBB project.\nDatabase instances require Billing info on Technical Instance level.\nApplications require Billing info on Business Application Instance level, but CBB / ESL specifications dictate to provide the info on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Billing)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot version
+;+		(comment "A string describing the (Operating System\\'s) version number. The format of the version information is as follows: <Major Number>.<Minor Number>.<Revision>")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot id
+;+		(comment "Unique identifier of the component.\nAlthough this is unque for implementation reasons, it is not required for logical design (protege) reasons.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_instance_tag
+;+		(comment "Unique Name for the Application Instance. \nThis is the key that is used in the transformation model.\nOVSD uses search code, A7 uses the application name. (*° Serial \")")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sox_system
+;+		(comment "These values are used to support the life cycle of a server in SOX mode. Additional software than standard platform may be required by the customer to be installed. Certain Risk assessment processes must be executed prior the server can be moved into system status production.\nESL accepts this value only on System Layer, not on Application Layer. (To Be Added!)")
+		(type SYMBOL)
+		(allowed-values Pre_SOX SOX_Production SOX Post_SOX SOX_HW)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_long
+;+		(comment "Long name for the application or application instance.\nThis is the commonly used name for the application or the application instance.\nIt should be required, but ESL Instances do not necessarily have instances names.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasContactRole
+;+		(comment "Link for specific roles.\nTechnical Contact Owner Role is mandatory for ComputerSystems, other roles are optional.\nContact Roles are optional for Application Class (used in AssetCenter)")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+		(create-accessor read-write))
+	(single-slot source_system
+;+		(comment "This is the unique identifier of the source system where the CI has been read.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_description
+;+		(comment "Application Description, related to but not equal to Portfolio Application Description.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot external_id
+;+		(comment "External ID that is used to synchronize CIs with external systems. ALU will use this external ID to address a CI in uCMDB.\nESL uses this external_id to sync relations back from ESL to uCMDB.\nValue MUST be unique.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasNotes
+;+		(comment "Allows to add Notes to the ComputerSystem (ESL Usage).")
+		(type INSTANCE)
+;+		(allowed-classes Notes)
+		(create-accessor read-write))
+	(single-slot has_Availability
+;+		(comment "Links to the Availability Related Information for the CI.\nThis contains (Runtime_) Environment, metallic level, ...)")
+		(type INSTANCE)
+;+		(allowed-classes Availability)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values ApplicationInstance CollaborationInstance DBInstance OperatingSystemInstance SAPInstance TechnicalProductInstance WebInstance CustomSoftwareInstance StandardSoftwareInstance ESLBusinessProductInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ovsd_searchcode
+;+		(comment "OVSD SearchCode. This attribute is required for the External ID field for Retained Objects in uCMDB.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasESLValues
+;+		(comment "ESL Specific Attributes for the ComputerSystem - or for the EnclosureSystem.\nAn ESL Instance can be part of multiple SubBusinesses. This is an error situation, but it must be handled since it cannot be solved automatically.")
+		(type INSTANCE)
+;+		(allowed-classes CompSys_ESL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_acronym
+;+		(comment "Application Acronym. Short name that is used as unique application identifier.\nBe careful with appl_name_acronym usage for Application_Instances.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_owner_company
+;+		(comment "Value to indicate if the CI is ALU Retained or not.\nThis is for Applications (as in 'vs Products') and for Infrastructure CIs.")
+		(type SYMBOL)
+		(allowed-values ALU_Retained ALU_Owner HP)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Bus_Appl_Instance "Consolidates Attributes for Business Application Instances."
+	(is-a Application_Instance)
+	(role concrete)
+	(single-slot on_Location
+;+		(comment "The physical location of a piece of hardware or an installed application.")
+		(type INSTANCE)
+;+		(allowed-classes DetailedLocation)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot instance_application_status
+;+		(comment "The status of the application instance.\nThis is used for A7 (same values as lifecycle_status!) and OVSD Solutions only. Some debate goes on whether it is a selection criterium only, or also a migration value. (ESL does not has a place for this);")
+		(type SYMBOL)
+		(allowed-values Active Inactive New)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot support_code
+;+		(comment "A7 specific Support Code")
+		(type SYMBOL)
+		(allowed-values INFRA_1 INFRA_2 INFRA_3 SOLUTION_1 SOLUTION_2 SOLUTION_3 SOLUTION_4 NO_SERVICE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values BusinessProductInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot service_provider
+;+		(comment "The Service Provider, to whom the CI is outsourced.\nMail Dan Bruzdzinski 13/06/201123:03 (ALU Retained Infra): \nRetained CIs: \nALCATEL-LUCENT-NSABU-RETAINED\nALCATEL-LUCENT-NSACO-RETAINED\nALCATEL-LUCENT-RETAINED\nmainly used for ComputerSystems and OVSD Applications and OVSD Databases.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot from_Business_Application
+;+		(comment "Links the Instance to a Business Application. This can only exist for Applications of  type 'Business Application', and it must exist for these types.")
+		(type INSTANCE)
+;+		(allowed-classes BusinessApplication)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot doc_ref_url
+;+		(comment "Reference Documentation URL related to the Application Instance.\nOVSD Applications Specific.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_region
+;+		(comment "Region where the application runs. Related to but not equal to the region of the Infrastructure CI.\nSource: OVSD - Only for Business Applications.")
+		(type SYMBOL)
+		(allowed-values Global APAC CALA EMEA MEA NAR)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot portfolio_id_long
+;+		(comment "Portfolio ID, that can be extended with Environment variable.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot depends_on
+;+		(comment "Business Application Instance depends on Technical Application Instance or on ComputerSystem. \nBusiness Application is composition of different components.")
+		(type INSTANCE)
+;+		(allowed-classes Techn_Prod_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ci_responsible
+;+		(comment "Team / Group responsible to support the CI - responsible to handle tickets related to the CI.\nThis is CMO group (but it may help to understand FMO responsible, should not be migrated though).\nA7 specific.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Techn_Prod_Instance "Consolidates attributes for Technical Product Instances."
+	(is-a Application_Instance)
+	(role concrete)
+	(single-slot risk_acceptance
+;+		(comment "If the Vendor Support for this product has expired, then HP must follow the risk acceptance process with the customer so they are aware of potential problems.\nESL Instance specific attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot listener_ports
+;+		(comment "Listener Ports")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot has_Assignment_Info
+;+		(comment "Links the CI to Assignment related Information.\nThis links to the initial and escalation assignment group. \nESL specific on System level and on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Assignment)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot monitoring_solution
+;+		(comment "Used to show which automated database monitoring solution and its version is implemented for this database instance.\nESL Instance level attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values TechnicalProductInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot has_Operations
+;+		(comment "Links Installed Applicaiton to the Operations attributes.\nOperations are on how to handle this specific (installed) instance on a system, so it must be Technical_Application specific.")
+		(type INSTANCE)
+;+		(allowed-classes Operations)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot from_Installed_Application
+;+		(comment "Links the Instance to an Installed Application. This is only possible for Applications of type 'TechnicalApplication' - and required for TechnicalApplication.")
+		(type INSTANCE)
+;+		(allowed-classes Installed_Application)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass DB_Instance
+	(is-a Techn_Prod_Instance)
+	(role concrete)
+	(single-slot db_type
+;+		(comment "The generic purpose of the Database.")
+		(type SYMBOL)
+		(allowed-values Data_Warehouse OLTP Web_DB)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot connectivity_instructions
+;+		(comment "Describes how a DBA should connect to the database to undertake administration functions. For example, there may be multiple jump hosts to navigate or their may be no remote database connectivity so a local server connection is required.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_status
+;+		(comment "Status of the application.\n(Assigned to Application and DB_Instance database).\nBut also known on Application level, since this is often managed on Portfolio level.\nInstalled_Application_Status is different from application_status!\nDO NOT CONFUSE WITH lifecyclestatus!")
+		(type SYMBOL)
+		(allowed-values Target_Strategic Target_Tactical Decom_Plan_secured Decom_Plan_Not_secured Stopped Stopped_Read_only Status_to_be_determined)
+		(default Target_Tactical)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot home_directory
+;+		(comment "The directory in which the base database software is installed. For example, an Oracle instance on a Unix node, might be installed in /oracle/product/9.2.0/db_1")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cluster_package_name
+;+		(comment "The High Availability (eg Service Guard) package name that this database instance is attached to. Only packages that are assigned as IP Types to the underlying servers are selectable.\nThis links the Application Instance to the Cluster Package.\nThis should be implemented as a relation!")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values DBInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot service_provider
+;+		(comment "The Service Provider, to whom the CI is outsourced.\nMail Dan Bruzdzinski 13/06/201123:03 (ALU Retained Infra): \nRetained CIs: \nALCATEL-LUCENT-NSABU-RETAINED\nALCATEL-LUCENT-NSACO-RETAINED\nALCATEL-LUCENT-RETAINED\nmainly used for ComputerSystems and OVSD Applications and OVSD Databases.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Web_Instance
+	(is-a Techn_Prod_Instance)
+	(role concrete)
+	(single-slot managed_url
+;+		(comment "URL to the a specific Web Server functionality (link under which a function can be probed from the Internet).")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values WebInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass OS_Instance
+	(is-a Techn_Prod_Instance)
+	(role concrete)
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values OperatingSystemInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Coll_Instance
+	(is-a Techn_Prod_Instance)
+	(role concrete)
+	(single-slot instance_category
+;+		(comment "Category of the Product Instance.\nEach Application_Instance subclass has one specific value for the instance_category.\nThis is comparable with field application_category, except for application_category management_tool, which will be in instance_category standard_software. (bug 404 and 419). Also the Transition Model prefers to use the term 'CustomSoftwareInstance' for  ESL Solution Category Customer Software.\nTransition Model accepts both 'unknown' or TechnicalProductInstance in case the translation is not known.\nThe set of Perl script are using additional value 'ESLBusinessProductInstance' to indicate the ESL specific instance for an application instance to server dependency. This value is used to create the relation 'has depending solution' from ESL. It will not be used in the Product_Instance attribute on the productinstance template.")
+		(type SYMBOL)
+		(allowed-values CollaborationInstance)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass BusAppl2Server "Business Application to Server Dependency. \nThe Business Application to Server dependency is implemented as an instance on a server in ESL. This allows to modify instance attributes on ESL level. In order not to loose these values, the canonical model needs to have a place to store these values."
+	(is-a USER)
+	(role concrete)
+	(single-slot busappl2server_tag
+;+		(comment "Key in use in Transformation model to uniquely identify the object.\nIn Protege model, this will value will be stored in the application_instance_tag.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot has_Assignment_Info
+;+		(comment "Links the CI to Assignment related Information.\nThis links to the initial and escalation assignment group. \nESL specific on System level and on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Assignment)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot monitoring_solution
+;+		(comment "Used to show which automated database monitoring solution and its version is implemented for this database instance.\nESL Instance level attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hasBillingInfo
+;+		(comment "Link to the Billing info for the CBB project.\nDatabase instances require Billing info on Technical Instance level.\nApplications require Billing info on Business Application Instance level, but CBB / ESL specifications dictate to provide the info on ESL Instance level.")
+		(type INSTANCE)
+;+		(allowed-classes Billing)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rel_to_computersystem
+;+		(comment "Computer System Leg of the Relation.")
+		(type INSTANCE)
+;+		(allowed-classes ComputerSystem)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot appl_name_long
+;+		(comment "Long name for the application or application instance.\nThis is the commonly used name for the application or the application instance.\nIt should be required, but ESL Instances do not necessarily have instances names.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasContactRole
+;+		(comment "Link for specific roles.\nTechnical Contact Owner Role is mandatory for ComputerSystems, other roles are optional.\nContact Roles are optional for Application Class (used in AssetCenter)")
+		(type INSTANCE)
+;+		(allowed-classes ContactRole)
+		(create-accessor read-write))
+	(single-slot risk_acceptance
+;+		(comment "If the Vendor Support for this product has expired, then HP must follow the risk acceptance process with the customer so they are aware of potential problems.\nESL Instance specific attribute.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_description
+;+		(comment "Application Description, related to but not equal to Portfolio Application Description.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot hasNotes
+;+		(comment "Allows to add Notes to the ComputerSystem (ESL Usage).")
+		(type INSTANCE)
+;+		(allowed-classes Notes)
+		(create-accessor read-write))
+	(single-slot has_Availability
+;+		(comment "Links to the Availability Related Information for the CI.\nThis contains (Runtime_) Environment, metallic level, ...)")
+		(type INSTANCE)
+;+		(allowed-classes Availability)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot rel_from_bus_instance
+;+		(comment "Business Application Instance Leg of the Relation.")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot appl_name_acronym
+;+		(comment "Application Acronym. Short name that is used as unique application identifier.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot time_zone
+;+		(comment "CurrentTimeZone indicates the number of minutes the (Operating) System is offset from Greenwich Mean Time. Either the number is positive, negative or zero. ),\n\nIn Operating System context, this parameter is used to store time zone configuration for the operating system. \nIn Usage context, this parameter is used in combination with the service_coverage window. Service coverage specifies when the system needs to be covered, related to the specified time zone.\n\nNote that Operating System Context is what needs to be used. Usage context should only be used in very very specific situations.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Workgroups "Object to represent the workgroup information related to a CI."
+	(is-a USER)
+	(role concrete)
+	(single-slot workgroup_type
+;+		(comment "Type of the Workgroup")
+		(type SYMBOL)
+		(allowed-values change_management_workgroup primary_incident_resolution_group approver_groups change_implementer_workgroup change_supervisor_workgroup config_management_workgroup)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot workgroup_value
+;+		(comment "The workgroup value for this workgroup label.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Product_Class "A Product_Class object is a grouping for Technical Application products. It can be compared with an ESL Solution for Technical Products. \nThe object is required as a work-around for the Technical Product model in the ALU environment. The CMDBs A7, OVSD, ESL have only limited attributes that point to the Technical Product. Also the attributes are free-formatted, no data-cleansing or data normalisation has been done on the attributes. Transformation Application cannot consolidate Technical Products from different CMDBs, despite relations that describe which objects should be consolidated.\nThe Business Application Grouping is not required, since portfolio IDs allow the applications to be linked across CMDBs."
+	(is-a USER)
+	(role concrete)
+	(multislot has_technical_products
+;+		(comment "Consolidates the technical products.")
+		(type INSTANCE)
+;+		(allowed-classes TechnicalProduct)
+		(create-accessor read-write))
+	(single-slot product_class_name
+;+		(comment "Name of the Product Class. This is the ESL Solution Name for Technical Products.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Interface "The Business Application Instance to Business Application Instance Object. It represents communication between business applications or between a business application instance and the outside world."
+	(is-a USER)
+	(role concrete)
+	(single-slot interface_technology
+;+		(comment "Interface Technology")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_external_input
+;+		(comment "Interface External Input.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_external_output
+;+		(comment "Interface External Output")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot application_category
+;+		(comment "Category for the application.\nThis is the ESL Category.\nSource System Categorisation can be found in attribute_group and attribute_class.\nBusiness Services should not be delivered. It is available only in ESL, not from Assetcenter or OVSD.")
+		(type SYMBOL)
+		(allowed-values int)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sends_to
+;+		(comment "Interface Sends To Business Application Instance.")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_long
+;+		(comment "Long name for the application or application instance.\nThis is the commonly used name for the application or the application instance.\nSee naming convention for the interface (new_pf_name(from)-new_pf_name(to)-purpose)")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot appl_name_description
+;+		(comment "Application Description, related to but not equal to Portfolio Application Description.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_data
+;+		(comment "Interface specific data.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot receives_from
+;+		(comment "Interface receives from Business Application Instance")
+		(type INSTANCE)
+;+		(allowed-classes Bus_Appl_Instance)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ovsd_searchcode
+;+		(comment "OVSD SearchCode. This attribute is required for the External ID field for Retained Objects in uCMDB.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot interface_partners
+;+		(comment "Interface Specific partners")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot source_system_element_id
+;+		(comment "This is the unique identifier of the element in the source system.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

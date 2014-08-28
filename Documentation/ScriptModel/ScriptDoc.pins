@@ -1,0 +1,2875 @@
+; Wed Oct 10 09:49:29 CEST 2012
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([ScriptDoc_Class0] of  Artifact
+
+	(description "Each Service consists of a (predefined) set of Service Functions which are detailed through the Function Provider and the Monitoring Time Window.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by [ScriptDoc_Class50006])
+	(name "ServiceFunction"))
+
+([ScriptDoc_Class1] of  Artifact
+
+	(description "A computersystem is an entity with processing capability. Examples of computer systems are servers, routers, ...\nComputer systems can be implemented on a hardware box (unitary computer system), running as a virtual system or being implemented as a logical system.\n\nA Blade Enclosure is a specific type of ComputerSystem.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class50006]
+		[ScriptDoc_Class50007]
+		[ScriptDoc_Class130001])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class50001]
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class60003]
+		[ScriptDoc_Class60004]
+		[ScriptDoc_Class60005])
+	(name "ComputerSystem"))
+
+([ScriptDoc_Class10] of  Artifact
+
+	(description "Class allowing to add Notes to Objects")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(name "Notes"))
+
+([ScriptDoc_Class10000] of  Container
+
+	(description "Database to store the data from the Source Systems.")
+	(has_artifacts
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class10005]
+		[ScriptDoc_Class10006]
+		[ScriptDoc_Class10008]
+		[ScriptDoc_Class10010]
+		[ScriptDoc_Class20011]
+		[ScriptDoc_Class20012]
+		[ScriptDoc_Class20013]
+		[ScriptDoc_Class20014]
+		[ScriptDoc_Class20015]
+		[ScriptDoc_Class20016]
+		[ScriptDoc_Class20017]
+		[ScriptDoc_Class20018]
+		[ScriptDoc_Class20019]
+		[ScriptDoc_Class20020]
+		[ScriptDoc_Class20021]
+		[ScriptDoc_Class20022]
+		[ScriptDoc_Class20023]
+		[ScriptDoc_Class20024]
+		[ScriptDoc_Class20025]
+		[ScriptDoc_Class20026]
+		[ScriptDoc_Class20027]
+		[ScriptDoc_Class20029]
+		[ScriptDoc_Class20030]
+		[ScriptDoc_Class20031]
+		[ScriptDoc_Class20032]
+		[ScriptDoc_Class10009]
+		[ScriptDoc_Class60010]
+		[ScriptDoc_Class100001]
+		[ScriptDoc_Class120005]
+		[ScriptDoc_Class120001])
+	(name "alu_cmdb"))
+
+([ScriptDoc_Class100000] of  Script
+
+	(description "This script extracts the Interfaces information from OVSD.\nThis script will first create a application_renaming table. \nThen it will do the interface renaming and the link to SEND TO and RECEIVE FROM application instance.\nREVIEW: to split this up in 2 scripts - because application renaming need to be done again when all business applications are in the application file (this is after the ESL run).")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "interface_from_ovsd.pl")
+	(reads_from
+		[ScriptDoc_Class100001]
+		[ScriptDoc_Class120005])
+	(runs_after [ScriptDoc_Class120000])
+	(runs_before [ScriptDoc_Class60014])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class100002]
+		[ScriptDoc_Class120003]))
+
+([ScriptDoc_Class100001] of  Artifact
+
+	(description "Contains the OVSD Interface Information")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class100000])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_interfaces"))
+
+([ScriptDoc_Class100002] of  Artifact
+
+	(description "Contains the Attributes of the Interface Object")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class100003]
+		[ScriptDoc_Class110001])
+	(is_written_by [ScriptDoc_Class100000])
+	(name "Interface"))
+
+([ScriptDoc_Class100003] of  Script
+
+	(description "Create Instance information in Template Format.\n(NOTE: Proposed implementation, subject to change depending on Template Requirements).")
+	(name "create_instances.pl")
+	(reads_from [ScriptDoc_Class100002])
+	(runs_after [ScriptDoc_Class70001])
+	(runs_before [ScriptDoc_Class70005])
+	(script_type perl))
+
+([ScriptDoc_Class10001] of  Container
+
+	(description "Data extracts from OVSD.")
+	(has_artifacts
+		[ScriptDoc_Class20022]
+		[ScriptDoc_Class20023]
+		[ScriptDoc_Class20024]
+		[ScriptDoc_Class20025]
+		[ScriptDoc_Class20026]
+		[ScriptDoc_Class20027]
+		[ScriptDoc_Class20002]
+		[ScriptDoc_Class20006]
+		[ScriptDoc_Class20007]
+		[ScriptDoc_Class20008]
+		[ScriptDoc_Class20009]
+		[ScriptDoc_Class20010]
+		[ScriptDoc_Class30011]
+		[ScriptDoc_Class30012]
+		[ScriptDoc_Class30013]
+		[ScriptDoc_Class100001])
+	(name "ovsd"))
+
+([ScriptDoc_Class10002] of  Container
+
+	(description "Data extracts from Assetcenter.")
+	(has_artifacts
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class10005]
+		[ScriptDoc_Class10006]
+		[ScriptDoc_Class10008]
+		[ScriptDoc_Class20001]
+		[ScriptDoc_Class20004]
+		[ScriptDoc_Class20005])
+	(name "assetcenter"))
+
+([ScriptDoc_Class10003] of  Container
+
+	(description "Data extracts from ESL.")
+	(has_artifacts
+		[ScriptDoc_Class10010]
+		[ScriptDoc_Class20011]
+		[ScriptDoc_Class20012]
+		[ScriptDoc_Class20013]
+		[ScriptDoc_Class20014]
+		[ScriptDoc_Class20015]
+		[ScriptDoc_Class20016]
+		[ScriptDoc_Class20017]
+		[ScriptDoc_Class20018]
+		[ScriptDoc_Class20019]
+		[ScriptDoc_Class20020]
+		[ScriptDoc_Class20021])
+	(name "esl"))
+
+([ScriptDoc_Class10004] of  Artifact
+
+	(description "All relations from Assetcenter.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10002])
+	(is_read_from
+		[ScriptDoc_Class60002]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class130000]
+		[ScriptDoc_Class130001])
+	(is_written_by
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class20003])
+	(name "a7_all_relations"))
+
+([ScriptDoc_Class10005] of  Artifact
+
+	(description "All relations from Assetcenter, but all records that are not relevant are removed. This should be the table used for further processing.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10002])
+	(is_read_from
+		[ScriptDoc_Class60003]
+		[ScriptDoc_Class60004]
+		[ScriptDoc_Class60005])
+	(is_written_by [ScriptDoc_Class60002])
+	(name "a7_all_relations_work"))
+
+([ScriptDoc_Class10006] of  Artifact
+
+	(description "Assetcenter Server Extract from HP_ALU_SLM_2012_03_15_SRV_V2.xlsm.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10002])
+	(is_read_from
+		[ScriptDoc_Class30004]
+		[ScriptDoc_Class30005]
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class130000]
+		[ScriptDoc_Class130001])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "a7_servers"))
+
+([ScriptDoc_Class10008] of  Artifact
+
+	(description "Assetcenter Solutions extract from HP_ALU_SLM_2012_03_15_SOL_V2.xlsx")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10002])
+	(is_read_from
+		[ScriptDoc_Class70012]
+		[ScriptDoc_Class70013])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "a7_solutions"))
+
+([ScriptDoc_Class10009] of  Artifact
+
+	(is_part_of [ScriptDoc_Class10000])
+	(is_written_by [ScriptDoc_Class30021])
+	(name "esl_asset_info"))
+
+([ScriptDoc_Class10010] of  Artifact
+
+	(description "Admin related information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class50005])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_admin"))
+
+([ScriptDoc_Class10011] of  Artifact
+
+	(description "ESL Specific Computer System Fields")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class60000]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70009])
+	(is_written_by
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70021])
+	(name "CompSys_ESL"))
+
+([ScriptDoc_Class10012] of  Artifact
+
+	(description "Used to consolidate DiskSpace as seen by a ComputerSystem.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by
+		[ScriptDoc_Class50001]
+		[ScriptDoc_Class60001])
+	(name "Diskspace"))
+
+([ScriptDoc_Class10013] of  Artifact
+
+	(description "CPUs as implemented in the physical box. Do not mix up with Processors as seen by the Computer System.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30005])
+	(name "CPU"))
+
+([ScriptDoc_Class10014] of  Artifact
+
+	(description "IP Network attribute - value pairs that are connected to an IP connection.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(name "IP_attributes"))
+
+([ScriptDoc_Class10015] of  Artifact
+
+	(description "Consumption Based Billing specific fields.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70009])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70000])
+	(name "Billing"))
+
+([ScriptDoc_Class10016] of  Artifact
+
+	(description "Maintenance Contract Details.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class60001])
+	(name "Maintenance_Contract"))
+
+([ScriptDoc_Class10017] of  Artifact
+
+	(description "Consolidates the remote access information")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(name "Remote_Access_Info"))
+
+([ScriptDoc_Class10018] of  Artifact
+
+	(description "\"Used to mark for what the server is actually used for. Allows multiple selections, including a specification of the details per usage. E.g. if the Server is used as OVO Master, mark Monitoring, and OVO Master in the Details for Monitoring.\nSince mulitpe selection / detail pairs are possible, a separate class with link to Usage class is required.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by [ScriptDoc_Class50007])
+	(name "System_Usage"))
+
+([ScriptDoc_Class10019] of  Artifact
+
+	(description "\"Class to represent the Logical Processor, as it is seen by the Computer System.\nNote that the CPU class is used to represent the Physical CPUs as they make part of a Physical_Product.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(name "Processor"))
+
+([ScriptDoc_Class10020] of  Artifact
+
+	(description "Class to collect availability related information and attributes.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70009])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class70000])
+	(name "Availability"))
+
+([ScriptDoc_Class10021] of  Artifact
+
+	(description "Class to consolidate assignment related attributes. Assignment info includes the Incident and the Escalation Assignment group.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70009])
+	(is_written_by
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70020])
+	(name "Assignment"))
+
+([ScriptDoc_Class10022] of  Artifact
+
+	(description "\"An application is a product as can be acquired of the shelf, or a solution as documented in the solution portfolio file.\nAn application must have a number of installed instances to be relevant.\nThe Application Portfolio File has precendence over fields in other files.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40027]
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class60000]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70005]
+		[ScriptDoc_Class120000]
+		[ScriptDoc_Class140000])
+	(is_written_by
+		[ScriptDoc_Class40027]
+		[ScriptDoc_Class60008]
+		[ScriptDoc_Class60009]
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class70000]
+		[ScriptDoc_Class120000])
+	(name "Application"))
+
+([ScriptDoc_Class10023] of  Artifact
+
+	(description "\"A installed instance of a Technical Application. \nThis must be an instance directly running on a computersystem.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(name "Installed_Application"))
+
+([ScriptDoc_Class10024] of  Artifact
+
+	(description "Class to combine the Portfolio specific attributes. The Class has name Portfolio_obj, to see the difference portfolio_obj_id (internal to MySQL CIM database) and portfolio_id (known in ALU Solution Portfolio)")
+	(is_part_of [ScriptDoc_Class18])
+	(name "Portfolio_obj"))
+
+([ScriptDoc_Class10025] of  Artifact
+
+	(description "Operational attributes related to Installed Applications")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001])
+	(is_written_by [ScriptDoc_Class70018])
+	(name "Operations"))
+
+([ScriptDoc_Class10026] of  Artifact
+
+	(description "This class combines the cluster related attributes and relations.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class50001])
+	(name "Cluster"))
+
+([ScriptDoc_Class10027] of  Artifact
+
+	(description "Class that combines the Address attributes. An address can have a location ID, this is the approved code under which the address is known.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class20033]
+		[ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30020]
+		[ScriptDoc_Class30001]
+		[ScriptDoc_Class30004]
+		[ScriptDoc_Class70012])
+	(name "Address"))
+
+([ScriptDoc_Class10028] of  Artifact
+
+	(description "This class combines the attributes that are specific for a CI in a Virtual Environment.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class50001]
+		[ScriptDoc_Class60003]
+		[ScriptDoc_Class60004]
+		[ScriptDoc_Class60005])
+	(name "Virtual_CI"))
+
+([ScriptDoc_Class10029] of  Artifact
+
+	(description "This class consolidates the Location attributes. Typically a location is a datacenter. A location can be any address where CIs are stored.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class20033]
+		[ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30020]
+		[ScriptDoc_Class30001]
+		[ScriptDoc_Class30004]
+		[ScriptDoc_Class70012])
+	(name "Location"))
+
+([ScriptDoc_Class10030] of  Artifact
+
+	(description "\"Instance of an Application. \nFor Application Type 'TechnicalProduct', this is linked to an installed version of the application.\nFor Application Type 'BusinessProduct', this is linked directly to the Application, without the InstalledApplication.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class60015]
+		[ScriptDoc_Class60018]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class60000]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70005]
+		[ScriptDoc_Class70009]
+		[ScriptDoc_Class80000]
+		[ScriptDoc_Class150000])
+	(is_written_by
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class70000]
+		[ScriptDoc_Class80002])
+	(name "Application_Instance"))
+
+([ScriptDoc_Class10031] of  Artifact
+
+	(description "\"Business Application to Server Dependency. \nThe Business Application to Server dependency is implemented as an instance on a server in ESL. This allows to modify instance attributes on ESL level. In order not to loose these values, the canonical model needs to have a place to store these values.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(name "BusAppl2Server"))
+
+([ScriptDoc_Class10032] of  Artifact
+
+	(description "Object to represent the workgroup information related to a CI.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class150000])
+	(name "Workgroups"))
+
+([ScriptDoc_Class10033] of  Artifact
+
+	(description "\"A Product_Class object is a grouping for Technical Application products. It can be compared with an ESL Solution for Technical Products. \nThe object is required as a work-around for the Technical Product model in the ALU environment. The CMDBs A7, OVSD, ESL have only limited attributes that point to the Technical Product. Also the attributes are free-formatted, no data-cleansing or data normalisation has been done on the attributes. Transformation Application cannot consolidate Technical Products from different CMDBs, despite relations that describe which objects should be consolidated.\nThe Business Application Grouping is not required, since portfolio IDs allow the applications to be linked across CMDBs.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(name "Product_Class"))
+
+([ScriptDoc_Class11] of  Script
+
+	(calls
+		[ScriptDoc_Class13]
+		[ScriptDoc_Class14]
+		[ScriptDoc_Class15]
+		[ScriptDoc_Class16]
+		[ScriptDoc_Class120002]
+		[ScriptDoc_Class30015]
+		[ScriptDoc_Class20035]
+		[ScriptDoc_Class30016])
+	(description "Bat File that will call any other Script.\nThis is the one file that needs to be started to get all processing in the right sequence.")
+	(name "all_all.bat")
+	(script_type bat))
+
+([ScriptDoc_Class110000] of  Artifact
+
+	(description "Application Instance Relationships only for Business Application Interfaces.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class110001])
+	(name "cd_appInstRelationships"))
+
+([ScriptDoc_Class110001] of  Script
+
+	(description "This script will extract the Business Application Interface information.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "create_interface_rels.pl")
+	(reads_from
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class100002])
+	(runs_after [ScriptDoc_Class80000])
+	(runs_before [ScriptDoc_Class60021])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class110000]))
+
+([ScriptDoc_Class120000] of  Script
+
+	(description "Generate stable and unique portfolio IDs and acronym names for those business applications that don't have one.\nGet the unique portfolio IDs from tables pf and alu_acronym_mapping.\nThen get application records from tha application table with no portfolio ID.\nGenerate a unique portfolio ID and write the value in the application table.")
+	(is_called_by
+		[ScriptDoc_Class60006]
+		[ScriptDoc_Class60012]
+		[ScriptDoc_Class70011]
+		[ScriptDoc_Class70015])
+	(name "pf_generate.pl")
+	(reads_from
+		[ScriptDoc_Class20029]
+		[ScriptDoc_Class120005]
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class120001])
+	(runs_after
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class70000]
+		[ScriptDoc_Class60009]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70019])
+	(runs_before
+		[ScriptDoc_Class100000]
+		[ScriptDoc_Class60015]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class70020])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class120001]))
+
+([ScriptDoc_Class120001] of  Artifact
+
+	(description "Table to maintain the generated portfolio IDs across runs. It links an application_tag to a portfolio ID. If next time a portfolio ID is required for the application_tag, then same portfolio ID is used.\nThis table will also maintain the generated normalized acronym names (to be implemented).")
+	(is_part_of [ScriptDoc_Class10000])
+	(is_read_from [ScriptDoc_Class120000])
+	(is_written_by [ScriptDoc_Class120000])
+	(name "uuid_map"))
+
+([ScriptDoc_Class120002] of  Script
+
+	(description "Create Acronym Renaming master Data File for the Transition Application from the acronym mapping table in CIM.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "create_acronym_renaming.pl")
+	(reads_from [ScriptDoc_Class120003])
+	(runs_after [ScriptDoc_Class16])
+	(runs_before [ScriptDoc_Class30015])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class120004]))
+
+([ScriptDoc_Class120003] of  Artifact
+
+	(description "Application Acronym Mapping table.\nThis table has a double purpose.\nIt serves as the cim table for the master renaming file that is required for the Transition Model.\nAt the same time it allows to be exported in a format that is understood by the customer. This allows for the customer to modify the information (appl_name_normalized_acronym). The modified table can then be imported in the alu_cmdb database alu_acronym_mapping.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class120002]
+		[ScriptDoc_Class140000])
+	(is_written_by [ScriptDoc_Class100000])
+	(name "acronym_mapping"))
+
+([ScriptDoc_Class120004] of  Artifact
+
+	(description "The master renaming file contains the application id with the normalized acronym name. This is an output from the data extractg")
+	(is_part_of [ScriptDoc_Class20036])
+	(is_written_by [ScriptDoc_Class120002])
+	(name "master_application_renaming"))
+
+([ScriptDoc_Class120005] of  Artifact
+
+	(description "This is the customer provided normalized acronym names loaded into the alu_cmdb database. The normalized acronym names need to be provided in the excel alu_acronym_mapping (excel).")
+	(is_part_of [ScriptDoc_Class10000])
+	(is_read_from
+		[ScriptDoc_Class100000]
+		[ScriptDoc_Class120000]
+		[ScriptDoc_Class140000])
+	(name "alu_acronym_mapping"))
+
+([ScriptDoc_Class13] of  Script
+
+	(calls
+		[ScriptDoc_Class30017]
+		[ScriptDoc_Class30018]
+		[ScriptDoc_Class30019])
+	(description "Consolidation script for the hardware processing.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "hw_all.bat")
+	(runs_before [ScriptDoc_Class14])
+	(script_type bat))
+
+([ScriptDoc_Class130000] of  Script
+
+	(description "This script extracts and build the relations between CIs that are involved in a High-Availability Cluster architecture. The managed relations are:\n- Cluster to Cluster Node relations\n- Cluster to Cluster Package relations.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "cs_rels_from_a7_Clustering.pl")
+	(reads_from
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class10006])
+	(runs_after [ScriptDoc_Class60005])
+	(runs_before [ScriptDoc_Class130001])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class40003]))
+
+([ScriptDoc_Class130001] of  Script
+
+	(description "This script manages Aliases by:\n- creating a relation between the computersystem and the alias\n- removing the alias for the computersystem table.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "cs_rels_from_a7_Alias.pl")
+	(reads_from
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class10006]
+		[ScriptDoc_Class1])
+	(runs_after [ScriptDoc_Class130000])
+	(runs_before [ScriptDoc_Class40004])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class40003]))
+
+([ScriptDoc_Class14] of  Script
+
+	(calls
+		[ScriptDoc_Class40002]
+		[ScriptDoc_Class40000]
+		[ScriptDoc_Class50000])
+	(description "Consolidation script for the ComputerSystem processing.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "computersystem_all.bat")
+	(runs_after [ScriptDoc_Class13])
+	(runs_before [ScriptDoc_Class15])
+	(script_type bat))
+
+([ScriptDoc_Class140000] of  Script
+
+	(description "This script will create the alu_acronym_mapping spreadsheet that has the portfolio IDs and the acronym names that are used during data migration. The spreadsheet can be reviewed by ALU. ALU can provide feedback on acronym names. The spreadsheet will then be loaded in the alu_cmdb database, table alu_acronym_mapping.")
+	(name "create_acronym_map.pl")
+	(reads_from
+		[ScriptDoc_Class120003]
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class120005])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class140001]))
+
+([ScriptDoc_Class140001] of  Artifact
+
+	(description "The portfolio IDs and the acronym names that are used during data migration. The spreadsheet can be reviewed by ALU. ALU can provide feedback on acronym names. The spreadsheet will then be loaded in the alu_cmdb database, table alu_acronym_mapping.\nData Extract Application will suggest normalized acronym names via the table cim.acronym_mapping. This table is sent to the customer for review and corrections. Feedback from the customer is loaded into the table alu_acronym_mapping")
+	(is_written_by [ScriptDoc_Class140000])
+	(name "alu_acronym_mapping (excel)"))
+
+([ScriptDoc_Class15] of  Script
+
+	(calls
+		[ScriptDoc_Class60006]
+		[ScriptDoc_Class60012]
+		[ScriptDoc_Class70011]
+		[ScriptDoc_Class70015])
+	(description "Consolidation script for all the solutions (Applications and Technical Products) processing.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "solutions_all.bat")
+	(runs_after [ScriptDoc_Class14])
+	(runs_before [ScriptDoc_Class16])
+	(script_type bat))
+
+([ScriptDoc_Class150000] of  Script
+
+	(description "This script will extract the ApplicationInstance information. Originally it started as an extract for workgroups only, but now also the application type is added.")
+	(is_called_by [ScriptDoc_Class60021])
+	(name "create_workgroup.pl")
+	(reads_from
+		[ScriptDoc_Class10032]
+		[ScriptDoc_Class10030])
+	(runs_after [ScriptDoc_Class70009])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class70003]))
+
+([ScriptDoc_Class16] of  Script
+
+	(description "This script will generate the Person Master Data file.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "create_person.pl")
+	(reads_from [ScriptDoc_Class17])
+	(runs_after [ScriptDoc_Class15])
+	(runs_before [ScriptDoc_Class120002])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class19]))
+
+([ScriptDoc_Class17] of  Artifact
+
+	(description "Consolidates the Person Information.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class16]
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class70001])
+	(is_written_by
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70020])
+	(name "person"))
+
+([ScriptDoc_Class18] of  Container
+
+	(description "CIM Database is the flexible transition model database. It acts as a common database between the Source System (Assetcenter, OVSD, ESL) and the Template Files from the Transition Model. \nThe purpose is to be as close as possible to the Transition Model while allowing the flexibility to model the specifics of the Source system in the analysis phase.")
+	(has_artifacts
+		[ScriptDoc_Class17]
+		[ScriptDoc_Class0]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class2]
+		[ScriptDoc_Class3]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class6]
+		[ScriptDoc_Class5]
+		[ScriptDoc_Class7]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class9]
+		[ScriptDoc_Class10]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class10012]
+		[ScriptDoc_Class10013]
+		[ScriptDoc_Class10014]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10016]
+		[ScriptDoc_Class10017]
+		[ScriptDoc_Class10018]
+		[ScriptDoc_Class10019]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10023]
+		[ScriptDoc_Class10024]
+		[ScriptDoc_Class10025]
+		[ScriptDoc_Class10026]
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class10029]
+		[ScriptDoc_Class10028]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10031]
+		[ScriptDoc_Class10032]
+		[ScriptDoc_Class10033]
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class60019]
+		[ScriptDoc_Class60016]
+		[ScriptDoc_Class80001]
+		[ScriptDoc_Class100002]
+		[ScriptDoc_Class120003])
+	(name "cim"))
+
+([ScriptDoc_Class19] of  Artifact
+
+	(description "master_person_component csv file.")
+	(is_part_of [ScriptDoc_Class20036])
+	(is_written_by [ScriptDoc_Class16])
+	(name "master_person_component"))
+
+([ScriptDoc_Class2] of  Artifact
+
+	(description "Contains the Asset specific information.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30005])
+	(name "Asset"))
+
+([ScriptDoc_Class20] of  Container
+
+	(description "The collection of the Transition Model Input Files.")
+	(has_artifacts
+		[ScriptDoc_Class20036]
+		[ScriptDoc_Class30025]
+		[ScriptDoc_Class30031]
+		[ScriptDoc_Class40007]
+		[ScriptDoc_Class40030]
+		[ScriptDoc_Class40034]
+		[ScriptDoc_Class40036])
+	(is_part_of [ScriptDoc_Class40025])
+	(name "transition_model_input_files"))
+
+([ScriptDoc_Class20000] of  Script
+
+	(calls
+		[ScriptDoc_Class30023]
+		[ScriptDoc_Class30029])
+	(description "Create the Hardrware data files")
+	(is_called_by
+		[ScriptDoc_Class30018]
+		[ScriptDoc_Class30019]
+		[ScriptDoc_Class30017])
+	(name "create_hw.bat")
+	(runs_after
+		[ScriptDoc_Class30022]
+		[ScriptDoc_Class30003]
+		[ScriptDoc_Class30005])
+	(script_type bat))
+
+([ScriptDoc_Class20001] of  Artifact
+
+	(description "Assetcenter Server Extract published on Sharepoint")
+	(is_part_of [ScriptDoc_Class10002])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "HP_ALU_SLM_YYYY_MM_DD_SRV_V2.xlsx"))
+
+([ScriptDoc_Class20002] of  Container
+
+	(description "Excel with OVSD Server Extracts.")
+	(has_artifacts
+		[ScriptDoc_Class20006]
+		[ScriptDoc_Class20007])
+	(is_part_of [ScriptDoc_Class10001])
+	(name "Server Report on Month DD YYYY.xls"))
+
+([ScriptDoc_Class20003] of  Script
+
+	(description "Manual process to load Excel File into MySQL")
+	(is_called_by [ScriptDoc_Class50009])
+	(name "Load Excel to MySQL")
+	(reads_from
+		[ScriptDoc_Class20001]
+		[ScriptDoc_Class20004]
+		[ScriptDoc_Class20005]
+		[ScriptDoc_Class20006]
+		[ScriptDoc_Class20007]
+		[ScriptDoc_Class20010]
+		[ScriptDoc_Class30011]
+		[ScriptDoc_Class30012]
+		[ScriptDoc_Class30013])
+	(writes_to
+		[ScriptDoc_Class10006]
+		[ScriptDoc_Class10008]
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class20026]
+		[ScriptDoc_Class20027]
+		[ScriptDoc_Class20022]
+		[ScriptDoc_Class20023]
+		[ScriptDoc_Class20024]
+		[ScriptDoc_Class20025]
+		[ScriptDoc_Class100001]))
+
+([ScriptDoc_Class20004] of  Artifact
+
+	(description "Assetcenter Solution Extract as published on Sharepoint")
+	(is_part_of [ScriptDoc_Class10002])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "HP_ALU_SLM_YYYY_MM_DD_SOL_V2.xlsx"))
+
+([ScriptDoc_Class20005] of  Artifact
+
+	(description "All Relations Extract from Assetcenter")
+	(is_part_of [ScriptDoc_Class10002])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "YYYY_MM_DD_ALL_RELATIONSHIP.xlsx"))
+
+([ScriptDoc_Class20006] of  Artifact
+
+	(description "Worksheet in Server Report Excel.")
+	(is_part_of
+		[ScriptDoc_Class10001]
+		[ScriptDoc_Class20002])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "Server_Attributes"))
+
+([ScriptDoc_Class20007] of  Artifact
+
+	(description "Server to CI Relations worksheet in Server report from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class10001]
+		[ScriptDoc_Class20002])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "Server_CI_Relations"))
+
+([ScriptDoc_Class20008] of  Container
+
+	(description "Database report in excel format from OVSD as published on Sharepoint.")
+	(has_artifacts
+		[ScriptDoc_Class30012]
+		[ScriptDoc_Class30013])
+	(is_part_of [ScriptDoc_Class10001])
+	(name "Database CI Report on Month DD YYYY.xls"))
+
+([ScriptDoc_Class20009] of  Container
+
+	(description "Excel with the Application related information from OVSD.")
+	(has_artifacts
+		[ScriptDoc_Class20010]
+		[ScriptDoc_Class30011])
+	(is_part_of [ScriptDoc_Class10001])
+	(name "Application Report on Month DD YYYY.xls"))
+
+([ScriptDoc_Class20010] of  Artifact
+
+	(description "Worksheet with application attributes from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class20009]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "APPLICATION_ATTRIBUTES"))
+
+([ScriptDoc_Class20011] of  Artifact
+
+	(description "Availability related information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class50004])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_availability"))
+
+([ScriptDoc_Class20012] of  Artifact
+
+	(description "Function related information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class50006])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_function"))
+
+([ScriptDoc_Class20013] of  Artifact
+
+	(description "Console related info from ESL. This information is not used for now.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_techn_cons"))
+
+([ScriptDoc_Class20014] of  Artifact
+
+	(description "General information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(name "esl_techn_gen"))
+
+([ScriptDoc_Class20015] of  Artifact
+
+	(description "IP Related information from ESL. This data is not used for now.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_techn_ip"))
+
+([ScriptDoc_Class20016] of  Artifact
+
+	(description "Usage Information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class50007])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_usage"))
+
+([ScriptDoc_Class20017] of  Artifact
+
+	(description "Hardware extract information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class30021])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_hardware_extract"))
+
+([ScriptDoc_Class20018] of  Artifact
+
+	(description "Solution and ESL Instance information, full set of data.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class70016])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_instance"))
+
+([ScriptDoc_Class20019] of  Artifact
+
+	(description "Solution and ESL Instance information, stripped to have only the relevant information.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class70021])
+	(is_written_by [ScriptDoc_Class70016])
+	(name "esl_instance_work"))
+
+([ScriptDoc_Class20020] of  Artifact
+
+	(description "Location information from ESL.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from [ScriptDoc_Class30020])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_locations"))
+
+([ScriptDoc_Class20021] of  Artifact
+
+	(description "Parent - Child relations from ESL, related to clusters, virtual systems, ... Do not confuse this with Solution - ESL Instance - System relationships that are avaialble in esl_instance_work.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10003])
+	(is_read_from
+		[ScriptDoc_Class30022]
+		[ScriptDoc_Class50008])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_relations"))
+
+([ScriptDoc_Class20022] of  Artifact
+
+	(description "Application information from OVSD data extract Application Report on March 13th 2012.xls, worksheet \"APPLICATION_ATTRIBUTES\"")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class60013])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_applications"))
+
+([ScriptDoc_Class20023] of  Artifact
+
+	(description "Application Relations from OVSD extract Application Report on March 13th 2012.xls worksheet \"APPLICATION_CI_RELATIONS\"")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60017])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_apps_rels"))
+
+([ScriptDoc_Class20024] of  Artifact
+
+	(description "Database System extracts from OVSD extract \"Database CI Report on March 13th 2012.xls\" worksheet \"DB_CI_Attributes\"")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class60014])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_db"))
+
+([ScriptDoc_Class20025] of  Artifact
+
+	(description "Database Relations from OVSD extract \"Database CI Report on March 13th 2012.xls\" worksheet \"DB_CI_Relationships\"")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class60017])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_db_rels"))
+
+([ScriptDoc_Class20026] of  Artifact
+
+	(description "Server Extract from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from
+		[ScriptDoc_Class30001]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class60017])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_servers"))
+
+([ScriptDoc_Class20027] of  Artifact
+
+	(description "Server Relations extract from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class10001])
+	(is_read_from
+		[ScriptDoc_Class30003]
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class60017]
+		[ScriptDoc_Class70000])
+	(is_written_by [ScriptDoc_Class20003])
+	(name "ovsd_server_rels"))
+
+([ScriptDoc_Class20028] of  Container
+
+	(description "Extract from the Portfolio File")
+	(has_artifacts
+		[ScriptDoc_Class20030]
+		[ScriptDoc_Class20031]
+		[ScriptDoc_Class20032]
+		[ScriptDoc_Class60011])
+	(name "Portfolio Extract"))
+
+([ScriptDoc_Class20029] of  Artifact
+
+	(description "Consolidated view on the Portfolio Data.")
+	(is_part_of [ScriptDoc_Class10000])
+	(is_read_from
+		[ScriptDoc_Class60008]
+		[ScriptDoc_Class120000])
+	(is_written_by [ScriptDoc_Class60007])
+	(name "pf"))
+
+([ScriptDoc_Class20030] of  Artifact
+
+	(description "pf_business_mgd extract")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class20028])
+	(is_read_from [ScriptDoc_Class60007])
+	(name "pf_business_mgd"))
+
+([ScriptDoc_Class20031] of  Artifact
+
+	(description "pf_is_it_mgd extract")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class20028])
+	(is_read_from [ScriptDoc_Class60007])
+	(name "pf_is_it_mgd"))
+
+([ScriptDoc_Class20032] of  Artifact
+
+	(description "pf_it_other extract.")
+	(is_part_of
+		[ScriptDoc_Class10000]
+		[ScriptDoc_Class20028])
+	(is_read_from [ScriptDoc_Class60007])
+	(name "pf_it_other"))
+
+([ScriptDoc_Class20033] of  Script
+
+	(description "This script will extract the Master Location Data.\nMaster Location data is the set of ESL Location data, therefore this script runs immediately after collecting full Location and Address information from ESL. Also the address table is cleared somewhere along the all_all.bat process but it is still not known where, so as long as the issue is not found then don't move the create_location.pl script to the end of the all_all.bat file (with the create_person.pl file, where it logically belongs).")
+	(is_called_by [ScriptDoc_Class30017])
+	(name "create_locations.pl")
+	(reads_from
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class10029])
+	(runs_after [ScriptDoc_Class30020])
+	(runs_before [ScriptDoc_Class30021])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class20034]))
+
+([ScriptDoc_Class20034] of  Artifact
+
+	(description "Master Datacenter Component Data, Datacenter sheet.")
+	(is_part_of [ScriptDoc_Class20036])
+	(is_written_by [ScriptDoc_Class20033])
+	(name "master_Datacenter_component"))
+
+([ScriptDoc_Class20035] of  Script
+
+	(description "This script will rename the file to cut off time stamps of the file.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "rename_files.pl")
+	(runs_after [ScriptDoc_Class30015])
+	(runs_before [ScriptDoc_Class30016])
+	(script_type perl))
+
+([ScriptDoc_Class20036] of  Container
+
+	(description "Excel with master data templates.")
+	(has_artifacts
+		[ScriptDoc_Class20034]
+		[ScriptDoc_Class19]
+		[ScriptDoc_Class90000]
+		[ScriptDoc_Class120004])
+	(is_part_of [ScriptDoc_Class20])
+	(name "reference_interface_template.xlsx"))
+
+([ScriptDoc_Class3] of  Artifact
+
+	(description "Physical Box as it is known by the Manufacturer of the Box.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class30022]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30003]
+		[ScriptDoc_Class30005])
+	(name "Physical_Product"))
+
+([ScriptDoc_Class30000] of  Script
+
+	(description "The script will extract the Computersystem Information from OVSD.")
+	(is_called_by [ScriptDoc_Class40002])
+	(name "computersystem_from_ovsd.pl")
+	(reads_from [ScriptDoc_Class20026])
+	(runs_before [ScriptDoc_Class40001])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class9]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10026]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class10016]
+		[ScriptDoc_Class6]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class30001] of  Script
+
+	(description "Extract Location information from OVSD.")
+	(is_called_by [ScriptDoc_Class30018])
+	(name "locations_from_ovsd.pl")
+	(reads_from [ScriptDoc_Class20026])
+	(runs_before [ScriptDoc_Class30002])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class10029]))
+
+([ScriptDoc_Class30002] of  Script
+
+	(description "This script will extract the Hardware information from OVSD dump.")
+	(is_called_by [ScriptDoc_Class30018])
+	(name "hw_from_ovsd.pl")
+	(reads_from [ScriptDoc_Class20026])
+	(runs_after [ScriptDoc_Class30001])
+	(runs_before [ScriptDoc_Class30003])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class2]
+		[ScriptDoc_Class10013]
+		[ScriptDoc_Class3]
+		[ScriptDoc_Class5]))
+
+([ScriptDoc_Class30003] of  Script
+
+	(description "This script will attempt to find the hardware type (Box, Blade Enclosure, Blade Server) from ovsd_relations.")
+	(is_called_by [ScriptDoc_Class30018])
+	(name "hw_type_from_ovsd.pl")
+	(reads_from [ScriptDoc_Class20027])
+	(runs_after [ScriptDoc_Class30002])
+	(runs_before [ScriptDoc_Class20000])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class3]))
+
+([ScriptDoc_Class30004] of  Script
+
+	(description "Extract Location information from A7.")
+	(is_called_by [ScriptDoc_Class30019])
+	(name "locations_from_a7.pl")
+	(reads_from [ScriptDoc_Class10006])
+	(runs_before [ScriptDoc_Class30005])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class10029]))
+
+([ScriptDoc_Class30005] of  Script
+
+	(description "This script will extract the Hardware information from Assetcenter.")
+	(is_called_by [ScriptDoc_Class30019])
+	(name "hw_from_a7.pl")
+	(reads_from [ScriptDoc_Class10006])
+	(runs_after [ScriptDoc_Class30004])
+	(runs_before [ScriptDoc_Class20000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class2]
+		[ScriptDoc_Class10013]
+		[ScriptDoc_Class3]
+		[ScriptDoc_Class5]))
+
+([ScriptDoc_Class30011] of  Artifact
+
+	(description "Application to CI Relations information worksheet from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class20009]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "APPLICATION_CI_RELATIONS"))
+
+([ScriptDoc_Class30012] of  Artifact
+
+	(description "Database CI Reports worksheet from OVSD")
+	(is_part_of
+		[ScriptDoc_Class20008]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "DB_CI_REPORTS"))
+
+([ScriptDoc_Class30013] of  Artifact
+
+	(description "Database to CI Relations worksheet from OVSD.")
+	(is_part_of
+		[ScriptDoc_Class20008]
+		[ScriptDoc_Class10001])
+	(is_read_from [ScriptDoc_Class20003])
+	(name "DB_CI_RELATIONS"))
+
+([ScriptDoc_Class30014] of  Script
+
+	(description "Script to split up the ESL Instance information per Source where the information can relate to. Sources are the ESL Sub-businesses. Every System is associated with a subbusiness that relates to one of the known sources of information: CMO Martinique, ALU EMEA, ALU AMS, ALU APJ.")
+	(name "esl_instance2source.bat")
+	(script_type bat))
+
+([ScriptDoc_Class30015] of  Script
+
+	(description "This script will verify the number of lines in Data File Extracts. First read the header line, and the number of lines in the header line. Then read number of lines as specified in header. Then read next line. This needs to be the trailer line. If not, raise an error.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "verify_line_count.pl")
+	(runs_after [ScriptDoc_Class120002])
+	(runs_before [ScriptDoc_Class20035])
+	(script_type perl))
+
+([ScriptDoc_Class30016] of  Script
+
+	(description "Now Copy ESL Product Component Files to each ESL Sub business.")
+	(is_called_by [ScriptDoc_Class11])
+	(name "copy_esl_product.bat")
+	(runs_after [ScriptDoc_Class20035])
+	(script_type bat))
+
+([ScriptDoc_Class30017] of  Script
+
+	(calls
+		[ScriptDoc_Class30020]
+		[ScriptDoc_Class20033]
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class30022]
+		[ScriptDoc_Class20000])
+	(description "Process Hardware from ESL to Template files.")
+	(is_called_by [ScriptDoc_Class13])
+	(name "hw_from_esl.bat")
+	(runs_before [ScriptDoc_Class30018])
+	(script_type bat))
+
+([ScriptDoc_Class30018] of  Script
+
+	(calls
+		[ScriptDoc_Class30001]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30003]
+		[ScriptDoc_Class20000])
+	(description "Process OVSD Hardware information from alu_cmdb to template files.")
+	(is_called_by [ScriptDoc_Class13])
+	(name "hw_from_ovsd.bat")
+	(runs_after [ScriptDoc_Class30017])
+	(runs_before [ScriptDoc_Class30019])
+	(script_type bat))
+
+([ScriptDoc_Class30019] of  Script
+
+	(calls
+		[ScriptDoc_Class30004]
+		[ScriptDoc_Class30005]
+		[ScriptDoc_Class20000])
+	(description "Process all Hardware for Assetcenter from alu_cmdb to output files.")
+	(is_called_by [ScriptDoc_Class13])
+	(name "hw_from_a7.bat")
+	(runs_after [ScriptDoc_Class30018])
+	(script_type bat))
+
+([ScriptDoc_Class30020] of  Script
+
+	(description "This script will extract location information from ESL. This will be done in some steps.\n\n•Empty Location tables detailedlocation, location and address.\n\n•Extract distinct location / address information from ESL Location table. Add data into location and address tables.\n\n•Extract detailed location information per system. Remember source_system_element_id, since Location information can be used for hardware boxes, computersystems and applications.\n\n•Do not clean location records that are not referenced from the source system. This can be done from the Extract script.")
+	(is_called_by [ScriptDoc_Class30017])
+	(name "locations_from_esl.pl")
+	(reads_from [ScriptDoc_Class20020])
+	(runs_before
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class20033])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class10029]))
+
+([ScriptDoc_Class30021] of  Script
+
+	(description "This script will extract the Hardware information from ESL dump.")
+	(is_called_by [ScriptDoc_Class30017])
+	(name "hw_from_esl.pl")
+	(reads_from [ScriptDoc_Class20017])
+	(runs_after
+		[ScriptDoc_Class30020]
+		[ScriptDoc_Class20033])
+	(runs_before [ScriptDoc_Class30022])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10009]
+		[ScriptDoc_Class2]
+		[ScriptDoc_Class10013]
+		[ScriptDoc_Class3]
+		[ScriptDoc_Class5]))
+
+([ScriptDoc_Class30022] of  Script
+
+	(description "This script will extract the Hardware Type information from ESL Relation Dump.\n\nThe ESL Parent Relation Type has two types that can help to determine the Hardware Type (Box, Blade Enclosure, Blade Server). The Relation Type \"Blade Server\" is used in only 7 cases, investigation learned that it does not contain thrustworthy information. The Relation Type \"Blade Enclosure\" in a Parent Relation Type points from a Blade Server to a Parent System that is the Blade Enclosure.")
+	(is_called_by [ScriptDoc_Class30017])
+	(name "hw_type_from_esl.pl")
+	(reads_from
+		[ScriptDoc_Class20021]
+		[ScriptDoc_Class5])
+	(runs_after [ScriptDoc_Class30021])
+	(runs_before [ScriptDoc_Class20000])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class3]))
+
+([ScriptDoc_Class30023] of  Script
+
+	(description "This script will extract hardware information for the hardware template.")
+	(is_called_by [ScriptDoc_Class20000])
+	(name "create_hw.pl")
+	(reads_from
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class2]
+		[ScriptDoc_Class10013]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class10029]
+		[ScriptDoc_Class3]
+		[ScriptDoc_Class5])
+	(runs_before [ScriptDoc_Class30029])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class30024]
+		[ScriptDoc_Class30026]
+		[ScriptDoc_Class30027]
+		[ScriptDoc_Class30028]))
+
+([ScriptDoc_Class30024] of  Artifact
+
+	(description "Hardware Component Input file for Transition Model.")
+	(is_part_of [ScriptDoc_Class30025])
+	(is_written_by [ScriptDoc_Class30023])
+	(name "Hardware_Component"))
+
+([ScriptDoc_Class30025] of  Container
+
+	(description "Template file for the Hardware Component.")
+	(has_artifacts
+		[ScriptDoc_Class30024]
+		[ScriptDoc_Class30026]
+		[ScriptDoc_Class30027]
+		[ScriptDoc_Class30028])
+	(is_part_of [ScriptDoc_Class20])
+	(name "hardware_interface_template.xlsx"))
+
+([ScriptDoc_Class30026] of  Artifact
+
+	(description "Location List input template for the Transition Model.")
+	(is_part_of [ScriptDoc_Class30025])
+	(is_written_by [ScriptDoc_Class30023])
+	(name "Hardware_LocationList"))
+
+([ScriptDoc_Class30027] of  Artifact
+
+	(description "All Locations input files for the Transition Model.")
+	(is_part_of [ScriptDoc_Class30025])
+	(is_written_by [ScriptDoc_Class30023])
+	(name "Hardware_AllLocations"))
+
+([ScriptDoc_Class30028] of  Artifact
+
+	(description "Processor List input file for the Transition Model.")
+	(is_part_of [ScriptDoc_Class30025])
+	(is_written_by [ScriptDoc_Class30023])
+	(name "Hardware_ProcessorList"))
+
+([ScriptDoc_Class30029] of  Script
+
+	(description "This script will extract hardware relations data for the hardware relations template.")
+	(is_called_by [ScriptDoc_Class20000])
+	(name "create_hw_rels.pl")
+	(reads_from [ScriptDoc_Class5])
+	(runs_after [ScriptDoc_Class30023])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class30030]))
+
+([ScriptDoc_Class30030] of  Artifact
+
+	(description "Blade in Enclosure Relations as input for Transition Model.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class30029])
+	(name "cd_bladeInEnclosure"))
+
+([ScriptDoc_Class30031] of  Container
+
+	(description "Template file for the Component Dependencies.")
+	(has_artifacts
+		[ScriptDoc_Class30030]
+		[ScriptDoc_Class40017]
+		[ScriptDoc_Class40020]
+		[ScriptDoc_Class40021]
+		[ScriptDoc_Class40022]
+		[ScriptDoc_Class40023]
+		[ScriptDoc_Class40024]
+		[ScriptDoc_Class40038]
+		[ScriptDoc_Class40039]
+		[ScriptDoc_Class40040]
+		[ScriptDoc_Class70006]
+		[ScriptDoc_Class70007]
+		[ScriptDoc_Class70008]
+		[ScriptDoc_Class70010]
+		[ScriptDoc_Class110000])
+	(is_part_of [ScriptDoc_Class20])
+	(name "componentdependency_interface_template.xlsx"))
+
+([ScriptDoc_Class4] of  Artifact
+
+	(description "This class consolidates the specific details where a CI is stored within a Location.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class30023])
+	(is_written_by
+		[ScriptDoc_Class30020]
+		[ScriptDoc_Class30001]
+		[ScriptDoc_Class30004]
+		[ScriptDoc_Class70012])
+	(name "DetailedLocation"))
+
+([ScriptDoc_Class40000] of  Script
+
+	(calls
+		[ScriptDoc_Class50001]
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class50006]
+		[ScriptDoc_Class50007]
+		[ScriptDoc_Class50008]
+		[ScriptDoc_Class40004]
+		[ScriptDoc_Class40026])
+	(is_called_by [ScriptDoc_Class14])
+	(name "computersystem_from_esl.bat")
+	(runs_before [ScriptDoc_Class40002])
+	(script_type bat))
+
+([ScriptDoc_Class40001] of  Script
+
+	(description "This script will extract ComputerSystem to ComputerSystem Relations from OVSD. This includes the Cluster Type, Virtualiation Role, Cluster Nodes, Cluster Packages, Server to Server Connections, Farms, Virttual Guests.")
+	(is_called_by [ScriptDoc_Class40002])
+	(name "cs_rels_from_ovsd_servers.pl")
+	(reads_from
+		[ScriptDoc_Class20027]
+		[ScriptDoc_Class1])
+	(runs_after [ScriptDoc_Class30000])
+	(runs_before [ScriptDoc_Class40004])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10026]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class40002] of  Script
+
+	(calls
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class40004]
+		[ScriptDoc_Class40026])
+	(description "Overall script to convert the ComputerSystems from OVSD to Template Files.")
+	(is_called_by [ScriptDoc_Class14])
+	(name "computersystem_from_ovsd.bat")
+	(runs_after [ScriptDoc_Class40000])
+	(runs_before [ScriptDoc_Class50000])
+	(script_type bat))
+
+([ScriptDoc_Class40003] of  Artifact
+
+	(description "Relations Table. Main source (but not the only source) for the Component Dependency (_cd_) Files.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40018]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class70005]
+		[ScriptDoc_Class70009]
+		[ScriptDoc_Class110001])
+	(is_written_by
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class50008]
+		[ScriptDoc_Class60003]
+		[ScriptDoc_Class60004]
+		[ScriptDoc_Class60005]
+		[ScriptDoc_Class60017]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class130000]
+		[ScriptDoc_Class130001])
+	(name "Relations"))
+
+([ScriptDoc_Class40004] of  Script
+
+	(calls
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40018])
+	(description "This script consolidates the scripts to create the ComputerSystem Template Files from the CIM Database.")
+	(is_called_by
+		[ScriptDoc_Class40000]
+		[ScriptDoc_Class40002]
+		[ScriptDoc_Class50000])
+	(name "create_computersystem.bat")
+	(runs_after
+		[ScriptDoc_Class40001]
+		[ScriptDoc_Class50008]
+		[ScriptDoc_Class130001])
+	(runs_before [ScriptDoc_Class40026])
+	(script_type bat))
+
+([ScriptDoc_Class40005] of  Script
+
+	(description "This script will extract computersystem information for the computersystem template.")
+	(is_called_by [ScriptDoc_Class40004])
+	(name "create_computersystem.pl")
+	(reads_from
+		[ScriptDoc_Class9]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10026]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class10012]
+		[ScriptDoc_Class10014]
+		[ScriptDoc_Class7]
+		[ScriptDoc_Class10]
+		[ScriptDoc_Class10019]
+		[ScriptDoc_Class10017]
+		[ScriptDoc_Class0]
+		[ScriptDoc_Class10018]
+		[ScriptDoc_Class10028]
+		[ScriptDoc_Class17]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class6])
+	(runs_before [ScriptDoc_Class40018])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40006]
+		[ScriptDoc_Class40008]
+		[ScriptDoc_Class40009]
+		[ScriptDoc_Class40010]
+		[ScriptDoc_Class40011]
+		[ScriptDoc_Class40012]
+		[ScriptDoc_Class40013]
+		[ScriptDoc_Class40014]
+		[ScriptDoc_Class40015]
+		[ScriptDoc_Class40016]
+		[ScriptDoc_Class40017]))
+
+([ScriptDoc_Class40006] of  Artifact
+
+	(description "ComputerSystem_Component output data from the Templates.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_Component"))
+
+([ScriptDoc_Class40007] of  Container
+
+	(description "ComputerSystem Template Workbook")
+	(has_artifacts
+		[ScriptDoc_Class40006]
+		[ScriptDoc_Class40008]
+		[ScriptDoc_Class40009]
+		[ScriptDoc_Class40010]
+		[ScriptDoc_Class40011]
+		[ScriptDoc_Class40012]
+		[ScriptDoc_Class40013]
+		[ScriptDoc_Class40014]
+		[ScriptDoc_Class40015]
+		[ScriptDoc_Class40016])
+	(is_part_of [ScriptDoc_Class20])
+	(name "ComputerSystem_interface_template.xlsx"))
+
+([ScriptDoc_Class40008] of  Artifact
+
+	(description "This used to be the place to store IP Related information for System Identification. No longer part of the ComputerSystem Interface Template, but still created in the script.\nNew way to represent IP Information and Remote Access information has been implemented in Transition Model, but not yet agreed with Data Delivery. CBB priority did not allow to investigate this further.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_SystemIdentification"))
+
+([ScriptDoc_Class40009] of  Artifact
+
+	(description "Relates to the System Identification. New way to represent IP Information and Remote Access information has been implemented in Transition Model, but not yet agreed with Data Delivery. CBB priority did not allow to investigate this further.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_SystemConfiguration"))
+
+([ScriptDoc_Class40010] of  Artifact
+
+	(description "ServiceLevelList information for the ComputerSystem. Not fully implemented due to changes in ESL Model (8.1, 8.2, 9.0) and due to CBB priorities.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_ServiceLevelList"))
+
+([ScriptDoc_Class40011] of  Artifact
+
+	(description "ServiceFunctionList for the ComputerSystem. Not fully implemented due to changes in ESL Model (8.1, 8.2, 9.0) and due to CBB priorities.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_ServiceFunctionList"))
+
+([ScriptDoc_Class40012] of  Artifact
+
+	(description "SystemUsageList information for the ComputerSystem. Not fully implemented due to changes in ESL Model (8.1, 8.2, 9.0) and due to CBB priorities.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_SystemUsageList"))
+
+([ScriptDoc_Class40013] of  Artifact
+
+	(description "NoteList information from the ComputerSystem Template. Need review in Transition Model and Data Extract.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_NoteList"))
+
+([ScriptDoc_Class40014] of  Artifact
+
+	(description "AssignedContactList information for the ComputerSystem. Here gets the Person Related information related to Technical Owner, ...")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_AssignedContactList"))
+
+([ScriptDoc_Class40015] of  Artifact
+
+	(description "RemoteAccess Information for the ComputerSystem. Disagreement between Transition Model representation and data delivery. Requires more work.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_RemoteAccessList"))
+
+([ScriptDoc_Class40016] of  Artifact
+
+	(description "ESL Specific Information for the ComputerSystem.")
+	(is_part_of [ScriptDoc_Class40007])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "ComputerSystem_ESL"))
+
+([ScriptDoc_Class40017] of  Artifact
+
+	(description "Link between the Physical Server and the Hardware.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40005])
+	(name "cd_physicalSrvrOnHardware"))
+
+([ScriptDoc_Class40018] of  Script
+
+	(is_called_by [ScriptDoc_Class40004])
+	(name "create_computersystem_rels.pl")
+	(reads_from [ScriptDoc_Class40003])
+	(runs_after [ScriptDoc_Class40005])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40020]
+		[ScriptDoc_Class40021]
+		[ScriptDoc_Class40022]
+		[ScriptDoc_Class40023]
+		[ScriptDoc_Class40024]))
+
+([ScriptDoc_Class40020] of  Artifact
+
+	(description "ClusterComposition Output File")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40018])
+	(name "cd_clusterComposition"))
+
+([ScriptDoc_Class40021] of  Artifact
+
+	(description "ClusterPackage Composition from the output files.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40018])
+	(name "cd_clusterPackageComposition"))
+
+([ScriptDoc_Class40022] of  Artifact
+
+	(description "Farm Composition Information from the Templates.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40018])
+	(name "cd_farmComposition"))
+
+([ScriptDoc_Class40023] of  Artifact
+
+	(description "Farm Manager information.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40018])
+	(name "cd_farmManager"))
+
+([ScriptDoc_Class40024] of  Artifact
+
+	(description "Virtual Server On ComputerSystem Information")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class40018])
+	(name "cd_virtualSrvrOnCS"))
+
+([ScriptDoc_Class40025] of  Container
+
+	(description "Output Directory for the *.csv data files in template format.")
+	(has_artifacts [ScriptDoc_Class20])
+	(name "d:/temp/alu_cmdb"))
+
+([ScriptDoc_Class40026] of  Script
+
+	(calls
+		[ScriptDoc_Class40027]
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class40028])
+	(description "Create OS Product from Computersystem")
+	(is_called_by
+		[ScriptDoc_Class40000]
+		[ScriptDoc_Class40002]
+		[ScriptDoc_Class50000])
+	(name "create_os_product.bat")
+	(runs_after [ScriptDoc_Class40004])
+	(script_type bat))
+
+([ScriptDoc_Class40027] of  Script
+
+	(is_called_by [ScriptDoc_Class40026])
+	(name "create_os_product.pl")
+	(reads_from
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class6])
+	(runs_before [ScriptDoc_Class40028])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class6]))
+
+([ScriptDoc_Class40028] of  Script
+
+	(description "This script will extract Product information for the Product template. There is a split-up in output between Applications and Technical Products. Also the script can handle 'all' products and Operating Systems, depending on an input variable.")
+	(is_called_by
+		[ScriptDoc_Class40026]
+		[ScriptDoc_Class60021])
+	(name "create_product.pl")
+	(reads_from
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class17]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10022])
+	(runs_after [ScriptDoc_Class40027])
+	(runs_before
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class60000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40029]
+		[ScriptDoc_Class40031]))
+
+([ScriptDoc_Class40029] of  Artifact
+
+	(description "Product Component Output Files. Different files will be generated in this template: _Application_ and _TechnicalProduct_. Both versions can also come with an _os version.")
+	(is_part_of [ScriptDoc_Class40030])
+	(is_written_by [ScriptDoc_Class40028])
+	(name "Product_Component"))
+
+([ScriptDoc_Class40030] of  Container
+
+	(has_artifacts
+		[ScriptDoc_Class40029]
+		[ScriptDoc_Class40031])
+	(is_part_of [ScriptDoc_Class20])
+	(name "product_interface_template.xlsx"))
+
+([ScriptDoc_Class40031] of  Artifact
+
+	(is_part_of [ScriptDoc_Class40030])
+	(is_written_by [ScriptDoc_Class40028])
+	(name "Product_AssignedContactList"))
+
+([ScriptDoc_Class40032] of  Script
+
+	(description "This script will extract OS instance product information for the instance product template.")
+	(is_called_by [ScriptDoc_Class40026])
+	(name "create_os_product_instance.pl")
+	(reads_from
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class10025]
+		[ScriptDoc_Class10022])
+	(runs_after [ScriptDoc_Class40028])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40033]
+		[ScriptDoc_Class40041]
+		[ScriptDoc_Class40042]
+		[ScriptDoc_Class40035]
+		[ScriptDoc_Class40038]
+		[ScriptDoc_Class40039]
+		[ScriptDoc_Class40040]))
+
+([ScriptDoc_Class40033] of  Artifact
+
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001])
+	(name "ProductInstance_Component"))
+
+([ScriptDoc_Class40034] of  Container
+
+	(has_artifacts
+		[ScriptDoc_Class40033]
+		[ScriptDoc_Class40041]
+		[ScriptDoc_Class40042]
+		[ScriptDoc_Class70002]
+		[ScriptDoc_Class70003]
+		[ScriptDoc_Class70004])
+	(is_part_of [ScriptDoc_Class20])
+	(name "productinstance_interface_template.xlsx"))
+
+([ScriptDoc_Class40035] of  Artifact
+
+	(is_part_of [ScriptDoc_Class40036])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class60000])
+	(name "InstalledProduct_Component"))
+
+([ScriptDoc_Class40036] of  Container
+
+	(has_artifacts [ScriptDoc_Class40035])
+	(is_part_of [ScriptDoc_Class20])
+	(name "installedproduct_interface_template.xlsx"))
+
+([ScriptDoc_Class40038] of  Artifact
+
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70005])
+	(name "cd_PrdInstalledOnCS"))
+
+([ScriptDoc_Class40039] of  Artifact
+
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70005])
+	(name "cd_prdInstOfInstalledPrd"))
+
+([ScriptDoc_Class40040] of  Artifact
+
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70005])
+	(name "cd_PrdInstalledPrd"))
+
+([ScriptDoc_Class40041] of  Artifact
+
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001])
+	(name "ProductInstance_AssignedContactList"))
+
+([ScriptDoc_Class40042] of  Artifact
+
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by
+		[ScriptDoc_Class40032]
+		[ScriptDoc_Class70001])
+	(name "ProductInstance_ServiceLevelList"))
+
+([ScriptDoc_Class5] of  Artifact
+
+	(description "\"A PhysicalBox is the (collection of) hardware on which a ComputerSystem can be implemented. \nIn CMDB context, physical boxes that are part of configurations are considered. Lifetime of physical box for the company starts with ordering the box, until disposal. The full lifetime is managed in Asset Management process. Lifetime in CMDB is from configuring the box till rea\"A PhysicalBox is the (collection of) hardware on which a ComputerSystem can be implemented. \nIn CMDB context, physical boxes that are part of configurations are considered. Lifetime of physical box for the company starts with ordering the box, until disposal. The full lifetime is managed in Asset Management process. Lifetime in CMDB is from configuring the box till ready for disposal.\"\ndy for disposal.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class30022]
+		[ScriptDoc_Class30023]
+		[ScriptDoc_Class30029])
+	(is_written_by
+		[ScriptDoc_Class30021]
+		[ScriptDoc_Class30002]
+		[ScriptDoc_Class30005])
+	(name "PhysicalBox"))
+
+([ScriptDoc_Class50000] of  Script
+
+	(calls
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class60002]
+		[ScriptDoc_Class60003]
+		[ScriptDoc_Class60004]
+		[ScriptDoc_Class60005]
+		[ScriptDoc_Class130000]
+		[ScriptDoc_Class130001]
+		[ScriptDoc_Class40004]
+		[ScriptDoc_Class40026])
+	(is_called_by [ScriptDoc_Class14])
+	(name "computersystem_from_a7.bat")
+	(runs_after [ScriptDoc_Class40002])
+	(script_type bat))
+
+([ScriptDoc_Class50001] of  Script
+
+	(description "This script will extract the ComputerSystem Technical General Information from ESL. This script needs to run first for ESL ComputerSystem.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_techn_gen_from_esl.pl")
+	(reads_from [ScriptDoc_Class50002])
+	(runs_before [ScriptDoc_Class50004])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10026]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class10012]
+		[ScriptDoc_Class6]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class50002] of  Artifact
+
+	(description "Common ComputerSystem information from ESL.")
+	(is_read_from [ScriptDoc_Class50001])
+	(is_written_by [ScriptDoc_Class50003])
+	(name "esl_cs_techn_gen"))
+
+([ScriptDoc_Class50003] of  Script
+
+	(description "Manual Procedure to load the CSV files into MySQL")
+	(is_called_by [ScriptDoc_Class50009])
+	(name "Load CSV to MySQL")
+	(writes_to
+		[ScriptDoc_Class10010]
+		[ScriptDoc_Class20011]
+		[ScriptDoc_Class20012]
+		[ScriptDoc_Class20013]
+		[ScriptDoc_Class50002]
+		[ScriptDoc_Class20015]
+		[ScriptDoc_Class20016]
+		[ScriptDoc_Class20017]
+		[ScriptDoc_Class20018]
+		[ScriptDoc_Class20020]
+		[ScriptDoc_Class20021]))
+
+([ScriptDoc_Class50004] of  Script
+
+	(description "This script will extract the ComputerSystem Availability Information from ESL.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_availabiliity_from_esl.pl")
+	(reads_from
+		[ScriptDoc_Class20011]
+		[ScriptDoc_Class1])
+	(runs_after [ScriptDoc_Class50001])
+	(runs_before [ScriptDoc_Class50005])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class50005] of  Script
+
+	(description "This script will extract the ComputerSystem Technical Admin Information from ESL.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_admin_from_esl.pl")
+	(reads_from
+		[ScriptDoc_Class10010]
+		[ScriptDoc_Class1])
+	(runs_after [ScriptDoc_Class50004])
+	(runs_before [ScriptDoc_Class50006])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class9]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class1]))
+
+([ScriptDoc_Class50006] of  Script
+
+	(description "This script will extract the ComputerSystem Usage Information from ESL.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_function_from_esl.pl")
+	(reads_from
+		[ScriptDoc_Class20012]
+		[ScriptDoc_Class1])
+	(runs_after [ScriptDoc_Class50005])
+	(runs_before [ScriptDoc_Class50007])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class0]))
+
+([ScriptDoc_Class50007] of  Script
+
+	(description "This script will extract the ComputerSystem Usage Information from ESL.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_usage_from_esl.pl")
+	(reads_from
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class20016])
+	(runs_after [ScriptDoc_Class50006])
+	(runs_before [ScriptDoc_Class50008])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10018]))
+
+([ScriptDoc_Class50008] of  Script
+
+	(description "This script will extract the Relations from ESL. Note that System to System Relations can go across Sub-business boundaries, so there should be one relations file only.\nCluster Node Primary and Cluster Node Alternate relations are the first ones to extract.")
+	(is_called_by [ScriptDoc_Class40000])
+	(name "cs_rels_from_esl.pl")
+	(reads_from [ScriptDoc_Class20021])
+	(runs_after [ScriptDoc_Class50007])
+	(runs_before [ScriptDoc_Class40004])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class40003]))
+
+([ScriptDoc_Class50009] of  Script
+
+	(calls
+		[ScriptDoc_Class50003]
+		[ScriptDoc_Class20003])
+	(description "Manual Data Load of CMO data into MySQL alu_cmdb Database.")
+	(name "Manual Data Load"))
+
+([ScriptDoc_Class6] of  Artifact
+
+	(description "\"An OperatingSystem is software/firmware that makes a ComputerSystem's hardware usable, and implements and/or manages the resources, file systems, processes, user interfaces, services, ... available on the ComputerSystem.\nInvestigate to model the Operating System as an Installed Application linked to the Application.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40027])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class40027]
+		[ScriptDoc_Class50001]
+		[ScriptDoc_Class60001])
+	(name "OperatingSystem"))
+
+([ScriptDoc_Class60000] of  Script
+
+	(description "This script will extract installed product information for the installed product template.")
+	(is_called_by [ScriptDoc_Class60021])
+	(name "create_product_installed.pl")
+	(reads_from
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030])
+	(runs_after [ScriptDoc_Class40028])
+	(runs_before [ScriptDoc_Class70001])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class40035]))
+
+([ScriptDoc_Class60001] of  Script
+
+	(description "This script will extract the ComputerSystem information from Assetcenter.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "computersystem_from_a7.pl")
+	(reads_from [ScriptDoc_Class10006])
+	(runs_before [ScriptDoc_Class60002])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class9]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class10012]
+		[ScriptDoc_Class10016]
+		[ScriptDoc_Class6]))
+
+([ScriptDoc_Class60002] of  Script
+
+	(description "This script will remove from the relations file all CI Classes that are not in scope for data migration. \nAlso only relations with \"Reason (*° Distant CI)\" NULL are kept. All other relations are about no longer used CIs, so should not be taken into account.\nData will be published in a new relations file a7_all_relations_work.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "a7_all_relations.pl")
+	(reads_from [ScriptDoc_Class10004])
+	(runs_after [ScriptDoc_Class60001])
+	(runs_before [ScriptDoc_Class60003])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10005]))
+
+([ScriptDoc_Class60003] of  Script
+
+	(description "This script extracts the ComputerSystem virtual server information from Assetcenter. It uses the Asset Centre relations extract to build the relations between the Server For Virtual Guests (ESX Servers) and Farms (Virtual Clusters). The results are loaded int the CIM database.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "cs_rels_from_a7_virtual_SFVG_to_Farm.pl")
+	(reads_from [ScriptDoc_Class10005])
+	(runs_after [ScriptDoc_Class60002])
+	(runs_before [ScriptDoc_Class60004])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class60004] of  Script
+
+	(description "This script extracts the ComputerSystem virtual server information from Assetcenter. It uses the Asset Centre relations extract to build the relations between the Virtual Guests (Virtual machines) and Farms (Virtual Clusters). The results are loaded int the CIM database.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "cs_rels_from_a7_virtual_VG_to_Farm.pl")
+	(reads_from [ScriptDoc_Class10005])
+	(runs_after [ScriptDoc_Class60003])
+	(runs_before [ScriptDoc_Class60005])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class60005] of  Script
+
+	(description "This script extracts the ComputerSystem virtual server information from Assetcenter. It uses the Asset Centre relations extract to build the relations between the Virtual Guests (Virtual machines) and Server For Virtual Guest. The results are loaded into the CIM database.")
+	(is_called_by [ScriptDoc_Class50000])
+	(name "cs_rels_from_a7_virtual_VG_to_SFVG.pl")
+	(reads_from [ScriptDoc_Class10005])
+	(runs_after [ScriptDoc_Class60004])
+	(runs_before [ScriptDoc_Class130000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class1]
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class10028]))
+
+([ScriptDoc_Class60006] of  Script
+
+	(calls
+		[ScriptDoc_Class60007]
+		[ScriptDoc_Class60008]
+		[ScriptDoc_Class60009]
+		[ScriptDoc_Class120000])
+	(description "Consolidate Portfolio File handling.")
+	(is_called_by [ScriptDoc_Class15])
+	(name "pf_handling.bat")
+	(runs_before [ScriptDoc_Class60012])
+	(script_type bat))
+
+([ScriptDoc_Class60007] of  Script
+
+	(description "This script will consolidate the 3 portfolio Tables into a single pf table.")
+	(is_called_by [ScriptDoc_Class60006])
+	(name "pf_handling.pl")
+	(reads_from
+		[ScriptDoc_Class20030]
+		[ScriptDoc_Class20031]
+		[ScriptDoc_Class20032])
+	(runs_before [ScriptDoc_Class60008])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class20029]))
+
+([ScriptDoc_Class60008] of  Script
+
+	(description "This script will extract unique Product information from Portfolio File. It should run as the first script for CMO Product extract.")
+	(is_called_by [ScriptDoc_Class60006])
+	(name "products_from_pf.pl")
+	(reads_from [ScriptDoc_Class20029])
+	(runs_after [ScriptDoc_Class60007])
+	(runs_before [ScriptDoc_Class60009])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10022]))
+
+([ScriptDoc_Class60009] of  Script
+
+	(description "This script will extract the Security fields (Class and Category) from the Archer extract and add them to the Application table.")
+	(is_called_by [ScriptDoc_Class60006])
+	(name "pf_security.pl")
+	(reads_from [ScriptDoc_Class60010])
+	(runs_after [ScriptDoc_Class60008])
+	(runs_before [ScriptDoc_Class120000])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10022]))
+
+([ScriptDoc_Class60010] of  Artifact
+
+	(description "Portfolio Security Information.")
+	(is_part_of
+		[ScriptDoc_Class60011]
+		[ScriptDoc_Class10000])
+	(is_read_from [ScriptDoc_Class60009])
+	(name "alu_pf_security"))
+
+([ScriptDoc_Class60011] of  Container
+
+	(description "Archer Security Information. Excel workbook provided by Ken Hughes containing security class and category.")
+	(has_artifacts [ScriptDoc_Class60010])
+	(is_part_of [ScriptDoc_Class20028])
+	(name "Archer Security Information"))
+
+([ScriptDoc_Class60012] of  Script
+
+	(calls
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class100000]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class70000]
+		[ScriptDoc_Class60015]
+		[ScriptDoc_Class60017]
+		[ScriptDoc_Class60018]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class80000]
+		[ScriptDoc_Class110001]
+		[ScriptDoc_Class60021]
+		[ScriptDoc_Class120000])
+	(description "Consolidate Solution processing for OVSD.")
+	(is_called_by [ScriptDoc_Class15])
+	(name "solutions_from_ovsd.bat")
+	(runs_after [ScriptDoc_Class60006])
+	(runs_before [ScriptDoc_Class70011])
+	(script_type bat))
+
+([ScriptDoc_Class60013] of  Script
+
+	(description "This script will extract the Solutions Attribute information from OVSD.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "solutions_from_ovsd.pl")
+	(reads_from
+		[ScriptDoc_Class20022]
+		[ScriptDoc_Class20023])
+	(runs_before [ScriptDoc_Class120000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class60014] of  Script
+
+	(description "This script will extract the Database Solutions Attribute information from OVSD.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "db_solutions_from_ovsd.pl")
+	(reads_from
+		[ScriptDoc_Class20024]
+		[ScriptDoc_Class20025]
+		[ScriptDoc_Class10022])
+	(runs_after [ScriptDoc_Class100000])
+	(runs_before [ScriptDoc_Class70000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class60015] of  Script
+
+	(description "This script will keep the application instance file with OVSD instances. This is required to keep track of the OVSD Application Instance names for links with Assetcenter.\nThis must be done before the explode_instances.pl script.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "copy_app_inst.pl")
+	(reads_from [ScriptDoc_Class10030])
+	(runs_after [ScriptDoc_Class120000])
+	(runs_before [ScriptDoc_Class60017])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class60016]))
+
+([ScriptDoc_Class60016] of  Artifact
+
+	(description "Application_Instance copy with OVSD data. This allows to find OVSD Application Instance links when analyzing Assetcenter data.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class70014])
+	(is_written_by [ScriptDoc_Class60015])
+	(name "ovsd_application_instance"))
+
+([ScriptDoc_Class60017] of  Script
+
+	(description "This script will extract the Solution Relations Information from OVSD.\nApproach is to work in steps:\nFirst get the ComputerSystem to Solution Relations.\nThen get the Solution to Solution Relations.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "ovsd_solution_relations.pl")
+	(reads_from
+		[ScriptDoc_Class20026]
+		[ScriptDoc_Class20023]
+		[ScriptDoc_Class20025]
+		[ScriptDoc_Class20027])
+	(runs_after [ScriptDoc_Class60015])
+	(runs_before [ScriptDoc_Class60018])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class40003]))
+
+([ScriptDoc_Class60018] of  Script
+
+	(description "This script will collect the link between Source Systems and Portfolio Application. \nESL Business Application is a copy from A7 and OVSD Application Instance. The ESL Business Application has the link to the Source System. \nProcessing at Source System layer understood the link between A7 / OVSD Business Application Instance and Portfolio Application. ESL needs to read this link to create full structure.\nThe script needs to run after full OVSD solution data collection and after full Assetcenter solution Data collection and before ESL solution data collection.")
+	(is_called_by
+		[ScriptDoc_Class60012]
+		[ScriptDoc_Class70011])
+	(name "remember_source_application.pl")
+	(reads_from [ScriptDoc_Class10030])
+	(runs_after
+		[ScriptDoc_Class60017]
+		[ScriptDoc_Class70014])
+	(runs_before [ScriptDoc_Class60020])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class60019]))
+
+([ScriptDoc_Class60019] of  Artifact
+
+	(description "Maintains Application unique information from the Source systems")
+	(is_part_of [ScriptDoc_Class18])
+	(is_written_by [ScriptDoc_Class60018])
+	(name "application_relation"))
+
+([ScriptDoc_Class60020] of  Script
+
+	(description "This script will explode Instances in the application_instance table and in the relations table. The Data Migration model expects Applications (Depends On) or Technical Products (Installed On). Since a Technical Product must be installed on a Computersystem, the instance name must be unique. However Source Systems do not necessarily make this split-up. One Technical Product Instance can have links to multiple ComputerSystems. This script will walk through application_instance and relations tables to make sure that each technical product instance is unique per computersystem.\nFirst flush the relations table, to remove duplicate records.\nThen in relations table, find \"Computersystem - has installed\" relations. For each record, create a new record with fqdn attached to the application_instance_tag.\nThen create a new record in the application_instance table. This record is a copy of the record, with only a modification on the application_instance_tag field. Set the new record indicator.\nThen update the 'depends on' relations in the relation table. For each occurence of the application_instance_tag, create a record with the new application_instance_tag.\nAs a result, each application_instance_tag from a TechnicalProductInstance is modified. Remove from the relations table the application_instance_tags that were not modified.\nAnd finally remove the TechnicalApplicationInstance tags from application_instance table that have not been modified.")
+	(is_called_by
+		[ScriptDoc_Class60012]
+		[ScriptDoc_Class70011])
+	(name "explode_instances.pl")
+	(reads_from
+		[ScriptDoc_Class40003]
+		[ScriptDoc_Class10030])
+	(runs_after [ScriptDoc_Class60018])
+	(runs_before
+		[ScriptDoc_Class60021]
+		[ScriptDoc_Class80000]
+		[ScriptDoc_Class80002])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class40003]))
+
+([ScriptDoc_Class60021] of  Script
+
+	(calls
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class60000]
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class70005]
+		[ScriptDoc_Class70009]
+		[ScriptDoc_Class150000])
+	(description "Consolidates the Create Solutions processing.")
+	(is_called_by
+		[ScriptDoc_Class60012]
+		[ScriptDoc_Class70011]
+		[ScriptDoc_Class70015])
+	(name "create_solutions.bat")
+	(runs_after
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class70021]
+		[ScriptDoc_Class80002]
+		[ScriptDoc_Class110001])
+	(script_type bat))
+
+([ScriptDoc_Class7] of  Artifact
+
+	(description "Consolidates IP Connectivity Information for the ComputerSystem")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(name "IP_Connectivity"))
+
+([ScriptDoc_Class70000] of  Script
+
+	(description "This script will process the Category 'webMethods Adapter'. The CIs are available only in the TO- section of the ovsd_server_rels table. Each distinct CI needs to be converted into a business application and an ALU owned HP managed business application instance. The script ovsd_solution_relations.pl script need to read and process the server relations.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "sw_wma_from_ovsd.pl")
+	(reads_from [ScriptDoc_Class20027])
+	(runs_after [ScriptDoc_Class60014])
+	(runs_before [ScriptDoc_Class120000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class70001] of  Script
+
+	(description "This script will extract instance product information for the instance product template.")
+	(is_called_by [ScriptDoc_Class60021])
+	(name "create_product_instance.pl")
+	(reads_from
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class10025]
+		[ScriptDoc_Class17])
+	(runs_after [ScriptDoc_Class60000])
+	(runs_before [ScriptDoc_Class100003])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40041]
+		[ScriptDoc_Class40033]
+		[ScriptDoc_Class40042]
+		[ScriptDoc_Class70002]
+		[ScriptDoc_Class70003]
+		[ScriptDoc_Class70004]))
+
+([ScriptDoc_Class70002] of  Artifact
+
+	(description "DBInstance additional attributes for the application instance.")
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by [ScriptDoc_Class70001])
+	(name "ProductInstance_DBInstance"))
+
+([ScriptDoc_Class70003] of  Artifact
+
+	(description "AppInstance specific attributes for the Application Instance.")
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by
+		[ScriptDoc_Class70001]
+		[ScriptDoc_Class150000])
+	(name "ProductInstance_AppInstance"))
+
+([ScriptDoc_Class70004] of  Artifact
+
+	(description "WebInstance specific attributes for the Application Instance.")
+	(is_part_of [ScriptDoc_Class40034])
+	(is_written_by [ScriptDoc_Class70001])
+	(name "ProductInstance_WebInstance"))
+
+([ScriptDoc_Class70005] of  Script
+
+	(description "This script will extract relations data for Product Files.")
+	(is_called_by [ScriptDoc_Class60021])
+	(name "create_product_rels.pl")
+	(reads_from
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class40003])
+	(runs_after [ScriptDoc_Class100003])
+	(runs_before [ScriptDoc_Class70009])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class40038]
+		[ScriptDoc_Class40040]
+		[ScriptDoc_Class40039]
+		[ScriptDoc_Class70006]
+		[ScriptDoc_Class70007]
+		[ScriptDoc_Class70008]))
+
+([ScriptDoc_Class70006] of  Artifact
+
+	(description "Application Composition type Relationship")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class70005])
+	(name "cd_appComposition"))
+
+([ScriptDoc_Class70007] of  Artifact
+
+	(description "Application Instance Composition")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class70005])
+	(name "cd_appInstComposition"))
+
+([ScriptDoc_Class70008] of  Artifact
+
+	(description "Technical Product Instance to Technical Product Instance Relationships. Shows the dependency between technical products.")
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class70005])
+	(name "cd_techPrdInstRelationships"))
+
+([ScriptDoc_Class70009] of  Script
+
+	(description "This script will create the Business Product Instance Relationship file. \nA Business Product Instance is a 'Dependency' relationship for most systems, including Assetcenter, OVSD and uCMDB. \nIn ESL, the dependency is implemented as an ESL Instance. The attributes that go with the dependency need to be specified in the interface template.")
+	(is_called_by [ScriptDoc_Class60021])
+	(name "create_bpi_rels.pl")
+	(reads_from
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class40003])
+	(runs_after [ScriptDoc_Class70005])
+	(runs_before [ScriptDoc_Class150000])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class70010]))
+
+([ScriptDoc_Class70010] of  Artifact
+
+	(is_part_of [ScriptDoc_Class30031])
+	(is_written_by [ScriptDoc_Class70009])
+	(name "cd_appInstDependsUponCS"))
+
+([ScriptDoc_Class70011] of  Script
+
+	(calls
+		[ScriptDoc_Class70012]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class60018]
+		[ScriptDoc_Class60020]
+		[ScriptDoc_Class80002]
+		[ScriptDoc_Class60021]
+		[ScriptDoc_Class120000])
+	(description "Consolidates Assetcenter solution handling.")
+	(is_called_by [ScriptDoc_Class15])
+	(name "solutions_from_a7.bat")
+	(runs_after [ScriptDoc_Class60012])
+	(runs_before [ScriptDoc_Class70015])
+	(script_type bat))
+
+([ScriptDoc_Class70012] of  Script
+
+	(description "This script will extract location information from A7 Solutions. This will be done in some steps.")
+	(is_called_by [ScriptDoc_Class70011])
+	(name "locations_from_a7_sols.pl")
+	(reads_from [ScriptDoc_Class10008])
+	(runs_before [ScriptDoc_Class70013])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10027]
+		[ScriptDoc_Class4]
+		[ScriptDoc_Class10029]))
+
+([ScriptDoc_Class70013] of  Script
+
+	(description "This script will extract the Solutions Attribute information from Assetcenter.")
+	(is_called_by [ScriptDoc_Class70011])
+	(name "solutions_from_a7.pl")
+	(reads_from [ScriptDoc_Class10008])
+	(runs_after [ScriptDoc_Class70012])
+	(runs_before
+		[ScriptDoc_Class70014]
+		[ScriptDoc_Class120000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class10015]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class70014] of  Script
+
+	(description "This script will extract the Solution Relations Information from A7.\nApproach is to work in three steps:\nFirst get Solution to Solution Relations. Read Impact Direction to understand relation. If impact direction not available, use alphabetical relation. Get Relation Type to verify if it is known.\nThen get Server to Solution Relation. This is always Installed On or Depends On, depending on the Relation Type.\nThen get Solution to Server Relation. This should be same handling as previous one. Review if information is available already, or if it is new information.")
+	(is_called_by [ScriptDoc_Class70011])
+	(name "a7_solution_relations.pl")
+	(reads_from
+		[ScriptDoc_Class10004]
+		[ScriptDoc_Class10006]
+		[ScriptDoc_Class60016])
+	(runs_after
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class120000])
+	(runs_before [ScriptDoc_Class60018])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class40003]))
+
+([ScriptDoc_Class70015] of  Script
+
+	(calls
+		[ScriptDoc_Class70016]
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class70021]
+		[ScriptDoc_Class60021]
+		[ScriptDoc_Class120000])
+	(description "Consolidates the ESL Solution processing.")
+	(is_called_by [ScriptDoc_Class15])
+	(name "solutions_from_esl.bat")
+	(runs_after [ScriptDoc_Class70011])
+	(script_type bat))
+
+([ScriptDoc_Class70016] of  Script
+
+	(description "This script will create the esl_instance_work table from the esl_instance table.\nRemove all records that do not have a Solution ID.\nRename fields, split up between Solution and Instance Attributes (ESL didn't do it that properly).")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "esl_instance_handling.pl")
+	(reads_from [ScriptDoc_Class20018])
+	(runs_before [ScriptDoc_Class70017])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class20019]))
+
+([ScriptDoc_Class70017] of  Script
+
+	(description "This script will extract unique Technical Product information from ESL Solutions set of data. OS Solutions cards are not extracted from ESL, only OS Class and OS Version attributes are used (in another script) to understand the OS information from ESL. ESL Solution Category 'Business Service' is also not extracted from ESL as there is no way to handle these.\nTechnical Products are all other categories: collaboration, database, management tool, standard software, webcomponent.\nThis script will extract Technical Products from ESL and add them to the Application table.")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "products_from_esl.pl")
+	(reads_from [ScriptDoc_Class20019])
+	(runs_after [ScriptDoc_Class70016])
+	(runs_before [ScriptDoc_Class70018])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10011]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class17]))
+
+([ScriptDoc_Class70018] of  Script
+
+	(description "This script will extract the Instance Attribute information from ESL for the Technical Products.")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "instances_from_esl.pl")
+	(reads_from [ScriptDoc_Class20019])
+	(runs_after [ScriptDoc_Class70017])
+	(runs_before [ScriptDoc_Class70019])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class10025]
+		[ScriptDoc_Class40003]))
+
+([ScriptDoc_Class70019] of  Script
+
+	(description "This script will extract the Business Application Instance Attribute information from ESL for the Business Applications. These attributes need to go to ESL Solution fields.")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "bus_apps_instances_from_esl.pl")
+	(reads_from [ScriptDoc_Class20019])
+	(runs_after [ScriptDoc_Class70018])
+	(runs_before
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class120000])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10022]
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class8]))
+
+([ScriptDoc_Class70020] of  Script
+
+	(description "This script will extract the Business Application to Server dependency relation from ESL.")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "bus_apps_srv_from_esl.pl")
+	(reads_from [ScriptDoc_Class20019])
+	(runs_after
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class120000])
+	(runs_before [ScriptDoc_Class70021])
+	(script_type perl)
+	(writes_to
+		[ScriptDoc_Class10030]
+		[ScriptDoc_Class10021]
+		[ScriptDoc_Class10020]
+		[ScriptDoc_Class8]
+		[ScriptDoc_Class17]
+		[ScriptDoc_Class40003]))
+
+([ScriptDoc_Class70021] of  Script
+
+	(description "This script will allow to list the instances per source for ESL.")
+	(is_called_by [ScriptDoc_Class70015])
+	(name "instance_per_source_esl.pl")
+	(reads_from [ScriptDoc_Class20019])
+	(runs_after [ScriptDoc_Class70020])
+	(runs_before [ScriptDoc_Class60021])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10011]))
+
+([ScriptDoc_Class8] of  Artifact
+
+	(description "\"Class to consolidate Contact information.\nTry to avoid this class. Use the specific attribute, define the attribute as an instance relation e.g.\"")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from
+		[ScriptDoc_Class40005]
+		[ScriptDoc_Class40028]
+		[ScriptDoc_Class70001])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class50004]
+		[ScriptDoc_Class60001]
+		[ScriptDoc_Class60013]
+		[ScriptDoc_Class60014]
+		[ScriptDoc_Class70013]
+		[ScriptDoc_Class70017]
+		[ScriptDoc_Class70018]
+		[ScriptDoc_Class70019]
+		[ScriptDoc_Class70020]
+		[ScriptDoc_Class70000])
+	(name "ContactRole"))
+
+([ScriptDoc_Class80000] of  Script
+
+	(description "This script will keep the exploded application instance file with OVSD instances. This is required to remove the duplicates from the Assetcenter application_instance table.")
+	(is_called_by [ScriptDoc_Class60012])
+	(name "copy_expl_app_inst.pl")
+	(reads_from [ScriptDoc_Class10030])
+	(runs_after [ScriptDoc_Class60020])
+	(runs_before [ScriptDoc_Class110001])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class80001]))
+
+([ScriptDoc_Class80001] of  Artifact
+
+	(description "Exploded Application Instances from OVSD, used to remove duplicates from Assetcenter processing.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class80002])
+	(is_written_by [ScriptDoc_Class80000])
+	(name "ovsd_expl_application_instance"))
+
+([ScriptDoc_Class80002] of  Script
+
+	(description "This script will remove the duplicate application instances from assetcenter processing. The transition model doesn't accept duplicate objects so data extract needs to implement this work-around.\nFor now there is no guideline on relations, so duplicate relations will be send for processing (Source for Transformation vs Source for Reference can be mixed in a relationship, therefore relationships can come from different sources and duplicates can be accepted).")
+	(is_called_by [ScriptDoc_Class70011])
+	(name "remove_dupl_instances.pl")
+	(reads_from [ScriptDoc_Class80001])
+	(runs_after [ScriptDoc_Class60020])
+	(runs_before [ScriptDoc_Class60021])
+	(script_type perl)
+	(writes_to [ScriptDoc_Class10030]))
+
+([ScriptDoc_Class9] of  Artifact
+
+	(description "Class to represent different types of Admin-style information, that does not fit into any other class.")
+	(is_part_of [ScriptDoc_Class18])
+	(is_read_from [ScriptDoc_Class40005])
+	(is_written_by
+		[ScriptDoc_Class30000]
+		[ScriptDoc_Class50005]
+		[ScriptDoc_Class60001])
+	(name "Admin"))
+
+([ScriptDoc_Class90000] of  Artifact
+
+	(description "Mapping file from Source Datacenters to Master Datacenters.\nThis file is created manually, starting from the CI Sync documentation (Dict_Location tab in CI Sync documentation e.g. 'AC to ESL - Server - Tools Team - V19.xls', see Mike Padfield).")
+	(is_part_of [ScriptDoc_Class20036])
+	(name "master_SourceDCMapping"))

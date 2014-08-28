@@ -1,0 +1,2 @@
+select concat("select max(length(`",column_name,"`)) from ",table_schema,".",table_name,";") 
+from information_schema.columns where table_name = "citypdef";

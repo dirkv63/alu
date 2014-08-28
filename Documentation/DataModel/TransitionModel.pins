@@ -1,0 +1,658 @@
+; Thu Aug 09 14:15:38 CEST 2012
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([transitionmodel_Class0] of  ComputerSystem
+
+	(fqdn "fr70wstst002.zeu.alcatel-lucent.com")
+	(has_Admin_Info [transitionmodel_Class3])
+	(hasContactRole
+		[transitionmodel_Class10016]
+		[transitionmodel_Class10017]
+		[transitionmodel_Class10019]
+		[transitionmodel_Class10018])
+	(hasDiskspace [transitionmodel_Class20008])
+	(hasESLValues [transitionmodel_Class2])
+	(hasIPConnectivity
+		[transitionmodel_Class20018]
+		[transitionmodel_Class20023]
+		[transitionmodel_Class20027]
+		[transitionmodel_Class20025])
+	(hasOperatingSystem [transitionmodel_Class10000])
+	(hasProcessor [transitionmodel_Class20002])
+	(hasServiceFunction
+		[transitionmodel_Class10008]
+		[transitionmodel_Class10009]
+		[transitionmodel_Class10010]
+		[transitionmodel_Class10011])
+	(installedOnPhysicalBox [transitionmodel_Class20000]))
+
+([transitionmodel_Class10000] of  OperatingSystem
+
+	(os_installationdate "15 APR 2011")
+	(os_language "English")
+	(os_name "SunOS/Solaris")
+	(os_patchlevel "9/10")
+	(os_type "Solaris 10")
+	(time_zone "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna")
+	(version "SunOS 5.10"))
+
+([transitionmodel_Class100001] of  Billing
+
+	(billing_resourceunit_code "28 - Low Complexity: Bronze"))
+
+([transitionmodel_Class100002] of  Installed_Application
+
+	(installed_on [transitionmodel_Class100009])
+	(source_system "OVSD")
+	(source_system_element_id "45321"))
+
+([transitionmodel_Class100004] of  Availability
+
+	(runtime_environment Production))
+
+([transitionmodel_Class100005] of  Notes
+
+	(note_type "Notes")
+	(note_value "sybase"))
+
+([transitionmodel_Class100008] of  Billing
+)
+
+([transitionmodel_Class100009] of  ComputerSystem
+
+	(fqdn "usilwes.ndc.lucent.com")
+	(has_Admin_Info [transitionmodel_Class100010])
+	(has_Availability [transitionmodel_Class100011])
+	(has_installed_applications [transitionmodel_Class100002])
+	(hasBillingInfo [transitionmodel_Class100012])
+	(hasIPConnectivity
+		[transitionmodel_Class100014]
+		[transitionmodel_Class100017]
+		[transitionmodel_Class100019]
+		[transitionmodel_Class100021])
+	(hasOperatingSystem [transitionmodel_Class100023])
+	(hasProcessor [transitionmodel_Class100013])
+	(hasServiceFunction [transitionmodel_Class100024])
+	(hasSystemUsage [transitionmodel_Class100025])
+	(installedOnPhysicalBox [transitionmodel_Class100026])
+	(isvirtual FALSE)
+	(source_system "OVSD")
+	(source_system_element_id "53464"))
+
+([transitionmodel_Class100010] of  Admin
+
+	(application_type_group R%26D_and_BU)
+	(lifecyclestatus in_production)
+	(management_region "NAR")
+	(nsa FALSE))
+
+([transitionmodel_Class100011] of  Availability
+
+	(minimum_availability "*SA0001-SU1800")
+	(runtime_environment Production))
+
+([transitionmodel_Class100012] of  Billing
+
+	(billing_change_category "01 Baseline")
+	(billing_change_date "2/24/2011")
+	(billing_change_request_id "ams_apac_022411_cmdbudates")
+	(billing_resourceunit_code "4 - Unix: Type D - Low Complexity/Service Level"))
+
+([transitionmodel_Class100013] of  Processor
+
+	(hyperthreading_enabled FALSE))
+
+([transitionmodel_Class100014] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class100015])
+	(ip_type Alias))
+
+([transitionmodel_Class100015] of  IP_attributes
+
+	(network_id_type IP_Name)
+	(network_id_value "usilwes"))
+
+([transitionmodel_Class100017] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class100018])
+	(ip_type Primary_IP))
+
+([transitionmodel_Class100018] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.3.66.213"))
+
+([transitionmodel_Class100019] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class100020])
+	(ip_type Alternate_IP))
+
+([transitionmodel_Class100020] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "133.3.66.212"))
+
+([transitionmodel_Class100021] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class100022])
+	(ip_type Alternate_IP))
+
+([transitionmodel_Class100022] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "133.3.66.214"))
+
+([transitionmodel_Class100023] of  OperatingSystem
+
+	(os_name "SunOS 5.9")
+	(os_type "SUNOS")
+	(version "5.9"))
+
+([transitionmodel_Class100024] of  ServiceFunction
+
+	(servicename Server_Management)
+	(serviceprovider "HP-TRANSFERRED-FROM-ALU"))
+
+([transitionmodel_Class100025] of  System_Usage
+
+	(system_usage_code "Application")
+	(system_usage_details "Application (WES), DBMS"))
+
+([transitionmodel_Class100026] of  PhysicalBox
+
+	(has_Physical_Product [transitionmodel_Class100027])
+	(tag "usilwes.ndc.lucent.com"))
+
+([transitionmodel_Class100027] of  Physical_Product
+
+	(hasCPUs [transitionmodel_Class100028])
+	(manufacturer "SUN")
+	(mem_capacity "8 GB")
+	(model "Sun Fire V245")
+	(serialnumber "0748FML0DK"))
+
+([transitionmodel_Class100028] of  CPU
+
+	(clockspeed "1504")
+	(cpu_type "UltraSparc IIIi")
+	(number_of_cpus "2"))
+
+([transitionmodel_Class10008] of  ServiceFunction
+
+	(servicefunction incident_mgmt_1st_level)
+	(serviceprovider "GOC PH UX CC ALU"))
+
+([transitionmodel_Class10009] of  ServiceFunction
+
+	(servicefunction incident_mgmt_2nd_level)
+	(serviceprovider "GOC PH UX CC ALU"))
+
+([transitionmodel_Class10010] of  ServiceFunction
+
+	(servicefunction incident_mgmt_3rd_level)
+	(serviceprovider "GOC PH UX DTS ALU"))
+
+([transitionmodel_Class10011] of  ServiceFunction
+
+	(servicefunction service_level_mgmt)
+	(serviceprovider "ALU Midrange Solaris-Red-Hat FR"))
+
+([transitionmodel_Class10012] of  Person
+
+	(firstname "Michael J")
+	(lastname "Maravillo"))
+
+([transitionmodel_Class10013] of  Person
+
+	(firstname "Zsolt")
+	(lastname "Habony"))
+
+([transitionmodel_Class10014] of  Person
+
+	(firstname "Marlon M")
+	(lastname "Guao"))
+
+([transitionmodel_Class10015] of  Person
+
+	(firstname "Timothy")
+	(lastname "Collie"))
+
+([transitionmodel_Class10016] of  ContactRole
+
+	(contact_type Downtime_Contact)
+	(hasAsPerson [transitionmodel_Class10012])
+	(preferred_contact_method eMail))
+
+([transitionmodel_Class10017] of  ContactRole
+
+	(contact_type Technical_Lead)
+	(hasAsPerson [transitionmodel_Class10013])
+	(preferred_contact_method eMail))
+
+([transitionmodel_Class10018] of  ContactRole
+
+	(contact_type Technical_Owner)
+	(hasAsPerson [transitionmodel_Class10014])
+	(preferred_contact_method eMail))
+
+([transitionmodel_Class10019] of  ContactRole
+
+	(contact_type Technical_Lead_Backup)
+	(hasAsPerson [transitionmodel_Class10015]))
+
+([transitionmodel_Class10020] of  DetailedLocation
+)
+
+([transitionmodel_Class10022] of  Physical_Product
+
+	(hasCPUs [transitionmodel_Class20013])
+	(manufacturer "Sun")
+	(mem_capacity "98080")
+	(model "T5140")
+	(serialnumber "2243004916"))
+
+([transitionmodel_Class2] of  CompSys_ESL
+
+	(esl_category HP+IT)
+	(esl_id "ESL")
+	(esl_system_type server))
+
+([transitionmodel_Class20000] of  PhysicalBox
+
+	(has_Physical_Product [transitionmodel_Class10022])
+	(on_Location [transitionmodel_Class10020])
+	(tag "fr70wstst002.zeu.alcatel-lucent.com"))
+
+([transitionmodel_Class20002] of  Processor
+
+	(enabled_cores "128"))
+
+([transitionmodel_Class20008] of  Diskspace
+
+	(available_diskspace "1809")
+	(used_diskspace "2"))
+
+([transitionmodel_Class20013] of  CPU
+
+	(cores_per_cpu "16")
+	(number_of_cpus "2"))
+
+([transitionmodel_Class20018] of  IP_Connectivity
+
+	(hasIPCharacteristics
+		[transitionmodel_Class20019]
+		[transitionmodel_Class20020]
+		[transitionmodel_Class20021]
+		[transitionmodel_Class20022])
+	(ip_type Primary_IP))
+
+([transitionmodel_Class20019] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.152.12"))
+
+([transitionmodel_Class20020] of  IP_attributes
+
+	(network_id_type Subnet_Mask)
+	(network_id_value "255.255.255.0"))
+
+([transitionmodel_Class20021] of  IP_attributes
+
+	(network_id_type MAC_Address)
+	(network_id_value "002128B189F4"))
+
+([transitionmodel_Class20022] of  IP_attributes
+
+	(network_id_type Adapter_ID)
+	(network_id_value "nxge0:1"))
+
+([transitionmodel_Class20023] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class20024])
+	(ip_type Gateway))
+
+([transitionmodel_Class20024] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.152.1"))
+
+([transitionmodel_Class20025] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class20026])
+	(ip_type NTP_Server))
+
+([transitionmodel_Class20026] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.25.123"))
+
+([transitionmodel_Class20027] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class20028])
+	(ip_type DNS_Server))
+
+([transitionmodel_Class20028] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.25.53"))
+
+([transitionmodel_Class3] of  Admin
+
+	(security_level stringent))
+
+([transitionmodel_Class30000] of  PhysicalBox
+
+	(has_Physical_Product [transitionmodel_Class30001])
+	(tag "las40332.fr.alcatel-lucent.com"))
+
+([transitionmodel_Class30001] of  Physical_Product
+
+	(hasCPUs [transitionmodel_Class50001])
+	(manufacturer "Sun")
+	(mem_capacity "512")
+	(model "Ultra 5")
+	(serialnumber "TW83062153"))
+
+([transitionmodel_Class30002] of  ComputerSystem
+
+	(fqdn "las40332.fr.alcatel-lucent.com")
+	(has_Admin_Info [transitionmodel_Class40004])
+	(hasBillingInfo [transitionmodel_Class40011])
+	(hasDiskspace [transitionmodel_Class50003])
+	(hasESLValues [transitionmodel_Class40001])
+	(hasIPConnectivity [transitionmodel_Class40002])
+	(hasMaintenanceContract [transitionmodel_Class50009])
+	(hasOperatingSystem [transitionmodel_Class40000])
+	(installedOnPhysicalBox [transitionmodel_Class30000]))
+
+([transitionmodel_Class40000] of  OperatingSystem
+
+	(os_patchlevel "Generic_106541-42")
+	(os_type "SunOS")
+	(version "5.7"))
+
+([transitionmodel_Class40001] of  CompSys_ESL
+
+	(esl_category Trade))
+
+([transitionmodel_Class40002] of  IP_Connectivity
+
+	(hasIPCharacteristics [transitionmodel_Class40003])
+	(ip_type Primary_IP))
+
+([transitionmodel_Class40003] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.117.130.96"))
+
+([transitionmodel_Class40004] of  Admin
+
+	(customer_notes "FR-CIT:ALCATEL CIT")
+	(lifecyclestatus in_production))
+
+([transitionmodel_Class40011] of  Billing
+
+	(billing_change_category "01 Baseline")
+	(billing_change_date "2/27/2011")
+	(billing_change_request_id "201102034459")
+	(billing_resourceunit_code "3 - UNIX: Type C - Medium Complexity/Service Level"))
+
+([transitionmodel_Class50000] of  ComputerSystem
+
+	(fqdn "fr70wc004cc0.zeu.alcatel-lucent.com")
+	(has_Admin_Info [transitionmodel_Class60007])
+	(hasContactRole
+		[transitionmodel_Class60011]
+		[transitionmodel_Class60013]
+		[transitionmodel_Class60015]
+		[transitionmodel_Class60018]
+		[transitionmodel_Class60017]
+		[transitionmodel_Class60020])
+	(hasESLValues [transitionmodel_Class60002])
+	(hasIPConnectivity
+		[transitionmodel_Class60022]
+		[transitionmodel_Class60027]
+		[transitionmodel_Class60031]
+		[transitionmodel_Class60035])
+	(hasOperatingSystem [transitionmodel_Class70001])
+	(hasRemoteConnectivity
+		[transitionmodel_Class60045]
+		[transitionmodel_Class60049])
+	(installedOnPhysicalBox [transitionmodel_Class60001]))
+
+([transitionmodel_Class50001] of  CPU
+
+	(clockspeed "440")
+	(cpu_type "UltraSPARC IIi")
+	(number_of_cpus "1"))
+
+([transitionmodel_Class50003] of  Diskspace
+
+	(available_diskspace "27"))
+
+([transitionmodel_Class50009] of  Maintenance_Contract
+
+	(contract_elements "S4 (10H/5D - INTERV < 4H - STD)")
+	(maint_contract_details "Mt-7012428/005/DAF/AES/21W05")
+	(maint_contract_name "SUN"))
+
+([transitionmodel_Class60001] of  PhysicalBox
+
+	(has_Physical_Product [transitionmodel_Class60003])
+	(hasOrder [transitionmodel_Class60053])
+	(on_Location [transitionmodel_Class60004])
+	(tag "fr70wc004cc0.zeu.alcatel-lucent.com"))
+
+([transitionmodel_Class60002] of  CompSys_ESL
+
+	(esl_category Trade)
+	(esl_id "fr70wc004cc0.zeu.alcatel-lucent.com")
+	(esl_system_type cabinet))
+
+([transitionmodel_Class60003] of  Physical_Product
+
+	(model "EnclosureC7000")
+	(partnumber "507019-B21")
+	(serialnumber "GB8023XT2H"))
+
+([transitionmodel_Class60004] of  DetailedLocation
+)
+
+([transitionmodel_Class60007] of  Admin
+
+	(lifecyclestatus in_production)
+	(management_region "EMEA")
+	(security_level baseline)
+	(time_zone "(GMT+01:00) Brussels, Copenhagen, Madrid, Paris"))
+
+([transitionmodel_Class60011] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Downtime_Contact)
+	(hasAsPerson [transitionmodel_Class60012])
+	(preferred_contact_method Phone))
+
+([transitionmodel_Class60012] of  Person
+
+	(firstname "Piotr")
+	(lastname "Sobalkowski"))
+
+([transitionmodel_Class60013] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Technical_Owner)
+	(hasAsPerson [transitionmodel_Class60014])
+	(preferred_contact_method eMail))
+
+([transitionmodel_Class60014] of  Person
+
+	(firstname "Jeremy")
+	(lastname "Williams"))
+
+([transitionmodel_Class60015] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Technical_Owner)
+	(hasAsPerson [transitionmodel_Class60012])
+	(preferred_contact_method Phone))
+
+([transitionmodel_Class60017] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Technical_Owner_Backup)
+	(hasAsPerson [transitionmodel_Class60014])
+	(preferred_contact_method Phone))
+
+([transitionmodel_Class60018] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Technical_Owner_Backup)
+	(hasAsPerson [transitionmodel_Class60019])
+	(preferred_contact_method Phone))
+
+([transitionmodel_Class60019] of  Person
+
+	(firstname "Giorell")
+	(lastname "Magno"))
+
+([transitionmodel_Class60020] of  ContactRole
+
+	(contact_for_patch FALSE)
+	(contact_type Technical_Owner_Backup)
+	(hasAsPerson [transitionmodel_Class60021])
+	(preferred_contact_method Phone))
+
+([transitionmodel_Class60021] of  Person
+
+	(firstname "Michel")
+	(lastname "Dawidowicz"))
+
+([transitionmodel_Class60022] of  IP_Connectivity
+
+	(hasIPCharacteristics
+		[transitionmodel_Class60023]
+		[transitionmodel_Class60024]
+		[transitionmodel_Class60025]
+		[transitionmodel_Class60026])
+	(ip_type Device_WWN))
+
+([transitionmodel_Class60023] of  IP_attributes
+
+	(network_id_type IP_Name)
+	(network_id_value "FR70WIEDG130"))
+
+([transitionmodel_Class60024] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.190.147"))
+
+([transitionmodel_Class60025] of  IP_attributes
+
+	(network_id_type Port)
+	(network_id_value "10:00:00:05:1E:6F:E8:05"))
+
+([transitionmodel_Class60026] of  IP_attributes
+
+	(network_id_type Notes)
+	(network_id_value "FC1 Admin\n10:00:00:05:1E:6F:E8:05"))
+
+([transitionmodel_Class60027] of  IP_Connectivity
+
+	(hasIPCharacteristics
+		[transitionmodel_Class60028]
+		[transitionmodel_Class60029]
+		[transitionmodel_Class60030])
+	(ip_type Device_WWN))
+
+([transitionmodel_Class60028] of  IP_attributes
+
+	(network_id_type IP_Name)
+	(network_id_value "FR70WIEDG14E"))
+
+([transitionmodel_Class60029] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.190.148"))
+
+([transitionmodel_Class60030] of  IP_attributes
+
+	(network_id_type Notes)
+	(network_id_value "FC2 Admin\n10:00:00:05:33:04:68:03"))
+
+([transitionmodel_Class60031] of  IP_Connectivity
+
+	(hasIPCharacteristics
+		[transitionmodel_Class60032]
+		[transitionmodel_Class60033])
+	(ip_type Virtual_Connect_IP))
+
+([transitionmodel_Class60032] of  IP_attributes
+
+	(network_id_type IP_Name)
+	(network_id_value "FR70WC004CC0-VC1"))
+
+([transitionmodel_Class60033] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.190.25"))
+
+([transitionmodel_Class60034] of  IP_attributes
+)
+
+([transitionmodel_Class60035] of  IP_Connectivity
+
+	(hasIPCharacteristics
+		[transitionmodel_Class60036]
+		[transitionmodel_Class60037])
+	(ip_type Virtual_Connect_IP))
+
+([transitionmodel_Class60036] of  IP_attributes
+
+	(network_id_type IP_Name)
+	(network_id_value "FR70WC004CC0-VC2"))
+
+([transitionmodel_Class60037] of  IP_attributes
+
+	(network_id_type IP_Address)
+	(network_id_value "135.7.190.26"))
+
+([transitionmodel_Class60045] of  Remote_Access_Info
+
+	(remote_console_ip "135.7.190.23")
+	(remote_console_name "FR70WC004CC0-OA1")
+	(remote_console_type "Onboard Administrator"))
+
+([transitionmodel_Class60049] of  Remote_Access_Info
+
+	(remote_console_ip "135.7.190.24")
+	(remote_console_name "FR70WC004CC0-OA2")
+	(remote_console_type "Onboard Administrator"))
+
+([transitionmodel_Class60053] of  Asset
+
+	(ordernumber "81Z119065004"))
+
+([transitionmodel_Class70000] of  Installed_Application
+
+	(source_system "OVSD")
+	(source_system_element_id "26437"))
+
+([transitionmodel_Class70001] of  OperatingSystem
+
+	(os_name "Unknown")
+	(os_type "Other"))
+
+([transitionmodel_Class80000] of  Availability
+
+	(runtime_environment Production))
+
+([transitionmodel_Class80002] of  Portfolio_obj
+
+	(book_close_impact FALSE)
+	(business_area Services_Management)
+	(business_stakeholder_name "Daniel Leroux")
+	(business_stakeholder_organization "Operation-Services Supply Chain")
+	(pf_critical_application FALSE)
+	(portfolio_id "26437"))

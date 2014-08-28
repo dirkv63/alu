@@ -1,0 +1,3772 @@
+; Thu Aug 09 14:15:38 CEST 2012
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([ANNOTATED_INSTANCE_WIDGET] of  Widget
+
+	(name ":ANNOTATED-INSTANCE"))
+
+([ANNOTATION_TEXT_WIDGET] of  Widget
+
+	(height 100)
+	(is_hidden FALSE)
+	(name ":ANNOTATION-TEXT")
+	(widget_class_name "edu.stanford.smi.protege.widget.YellowStickyWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([BROWSER_SLOT_NAMES] of  Property_List
+
+	(properties
+		[TransitionModel_ProjectKB_Class7]
+		[TransitionModel_ProjectKB_Class8]
+		[TransitionModel_ProjectKB_Class9]
+		[TransitionModel_ProjectKB_Class10]
+		[TransitionModel_ProjectKB_Class11]
+		[TransitionModel_ProjectKB_Class12]
+		[TransitionModel_ProjectKB_Class13]
+		[TransitionModel_ProjectKB_Class14]
+		[TransitionModel_ProjectKB_Class15]
+		[TransitionModel_ProjectKB_Class16]
+		[TransitionModel_ProjectKB_Class17]
+		[TransitionModel_ProjectKB_Class18]
+		[TransitionModel_ProjectKB_Class19]
+		[TransitionModel_ProjectKB_Class20]
+		[TransitionModel_ProjectKB_Class21]
+		[TransitionModel_ProjectKB_Class22]
+		[TransitionModel_ProjectKB_Class23]
+		[TransitionModel_ProjectKB_Class24]
+		[TransitionModel_ProjectKB_Class25]
+		[TransitionModel_ProjectKB_Class26]
+		[TransitionModel_ProjectKB_Class27]
+		[TransitionModel_ProjectKB_Class28]
+		[TransitionModel_ProjectKB_Class29]
+		[TransitionModel_ProjectKB_Class30]))
+
+([CLSES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
+
+([CREATION_TIMESTAMP_WIDGET] of  Widget
+
+	(name ":CREATION-TIMESTAMP"))
+
+([CREATOR_WIDGET] of  Widget
+
+	(name ":CREATOR"))
+
+([FORMS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
+
+([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":INSTANCE-ANNOTATION")
+	(property_list [INSTANCE_ANNOTATION_PROPERTY_LIST])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([INSTANCE_ANNOTATION_PROPERTY_LIST] of  Property_List
+
+	(properties
+		[ANNOTATED_INSTANCE_WIDGET]
+		[CREATOR_WIDGET]
+		[CREATION_TIMESTAMP_WIDGET]
+		[ANNOTATION_TEXT_WIDGET]))
+
+([INSTANCES_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
+
+([KB_041044_Class0] of  String
+
+	(name "factory_class_name")
+	(string_value "edu.stanford.smi.protege.storage.clips.ClipsKnowledgeBaseFactory"))
+
+([KB_041044_Class1] of  Map
+
+	(entries
+		[TransitionModel_ProjectKB_Class31]
+		[TransitionModel_ProjectKB_Class32]
+		[TransitionModel_ProjectKB_Class33]
+		[TransitionModel_ProjectKB_Class34]))
+
+([KB_041044_Class100] of  Property_List
+)
+
+([KB_041044_Class101] of  Property_List
+)
+
+([KB_041044_Class102] of  Property_List
+)
+
+([KB_041044_Class103] of  Property_List
+)
+
+([KB_041044_Class104] of  Property_List
+
+	(properties [transitionmodel_ProjectKB_Class107]))
+
+([KB_041044_Class105] of  String
+
+	(name "classes_file_name")
+	(string_value "TransitionModel.pont"))
+
+([KB_041044_Class106] of  String
+
+	(name "instances_file_name")
+	(string_value "TransitionModel.pins"))
+
+([KB_041044_Class83] of  Property_List
+
+	(properties
+		[KB_041044_Class84]
+		[KB_041044_Class85]))
+
+([KB_041044_Class84] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([KB_041044_Class85] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([KB_041044_Class86] of  Property_List
+)
+
+([KB_041044_Class87] of  Property_List
+)
+
+([KB_041044_Class88] of  Property_List
+
+	(properties
+		[KB_041044_Class89]
+		[KB_041044_Class90]))
+
+([KB_041044_Class89] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move up"))
+
+([KB_041044_Class90] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Move down"))
+
+([KB_041044_Class91] of  Property_List
+)
+
+([KB_041044_Class92] of  Property_List
+
+	(name "layout properties"))
+
+([KB_041044_Class93] of  Property_List
+)
+
+([KB_041044_Class94] of  Property_List
+)
+
+([KB_041044_Class95] of  Property_List
+)
+
+([KB_041044_Class96] of  Property_List
+)
+
+([KB_041044_Class97] of  Property_List
+)
+
+([KB_041044_Class98] of  Property_List
+)
+
+([KB_041044_Class99] of  Property_List
+)
+
+([KB_091573_Class4] of  Map
+)
+
+([LAYOUT_PROPERTIES] of  Property_List
+
+	(name "layout properties")
+	(properties [VERTICAL_STRETCHER]))
+
+([option_instance] of  Options
+
+	(confirm_on_remove FALSE)
+	(display_abstract_class_icon TRUE)
+	(display_hidden_classes TRUE)
+	(display_multi_parent_class_icon TRUE)
+	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
+	(undo_enabled TRUE)
+	(update_modification_slots FALSE))
+
+([PAL_DESCRIPTION_WIDGET] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Description")
+	(name ":PAL-DESCRIPTION")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
+	(width 250)
+	(x 275)
+	(y 0))
+
+([PAL_FORM_WIDGET] of  Widget
+
+	(height 476)
+	(is_hidden FALSE)
+	(name ":PAL-CONSTRAINT")
+	(property_list [PAL_PROPERTY_LIST])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(width 603)
+	(x 0)
+	(y 0))
+
+([PAL_NAME_WIDGET] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":PAL-NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 275)
+	(x 0)
+	(y 0))
+
+([PAL_PROPERTY_LIST] of  Property_List
+
+	(properties
+		[PAL_NAME_WIDGET]
+		[PAL_RANGE_WIDGET]
+		[PAL_DESCRIPTION_WIDGET]
+		[PAL_STATEMENT_WIDGET]))
+
+([PAL_RANGE_WIDGET] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(label "Range")
+	(name ":PAL-RANGE")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalRangeWidget")
+	(width 250)
+	(x 275)
+	(y 180))
+
+([PAL_STATEMENT_WIDGET] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(label "Statement")
+	(name ":PAL-STATEMENT")
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.constraint.PalConstraintWidget")
+	(width 275)
+	(x 0)
+	(y 60))
+
+([PROJECT] of  Project
+
+	(browser_slot_names [BROWSER_SLOT_NAMES])
+	(customized_instance_widgets
+		[transitionmodel_ProjectKB_Class20005]
+		[transitionmodel_ProjectKB_Class10005]
+		[STANDARD_FACET_FORM_WIDGET]
+		[PAL_FORM_WIDGET]
+		[transitionmodel_ProjectKB_Class30100]
+		[STANDARD_CLASS_FORM_WIDGET]
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
+		[transitionmodel_ProjectKB_Class20204]
+		[transitionmodel_ProjectKB_Class30109]
+		[transitionmodel_ProjectKB_Class10049]
+		[STANDARD_SLOT_FORM_WIDGET]
+		[transitionmodel_ProjectKB_Class30005]
+		[transitionmodel_ProjectKB_Class20068]
+		[transitionmodel_ProjectKB_Class20317])
+	(default_cls_metaclass ":STANDARD-CLASS")
+	(default_facet_metaclass ":STANDARD-FACET")
+	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
+	(default_slot_metaclass ":STANDARD-SLOT")
+	(journaling_enabled FALSE)
+	(next_frame_number 0)
+	(options [option_instance])
+	(property_map [KB_041044_Class1])
+	(sources [SOURCES])
+	(tabs
+		[CLSES_TAB]
+		[SLOTS_TAB]
+		[FORMS_TAB]
+		[INSTANCES_TAB]
+		[transitionmodel_ProjectKB_Class75]
+		[transitionmodel_ProjectKB_Class73]
+		[transitionmodel_ProjectKB_Class63]
+		[transitionmodel_ProjectKB_Class45]
+		[transitionmodel_ProjectKB_Class41]
+		[transitionmodel_ProjectKB_Class65]
+		[transitionmodel_ProjectKB_Class25]
+		[transitionmodel_ProjectKB_Class9]
+		[transitionmodel_ProjectKB_Class69]
+		[transitionmodel_ProjectKB_Class17]
+		[transitionmodel_ProjectKB_Class15]
+		[transitionmodel_ProjectKB_Class1]
+		[transitionmodel_ProjectKB_Class49]
+		[transitionmodel_ProjectKB_Class71]
+		[transitionmodel_ProjectKB_Class33]
+		[transitionmodel_ProjectKB_Class27]
+		[transitionmodel_ProjectKB_Class23]
+		[transitionmodel_ProjectKB_Class61]
+		[transitionmodel_ProjectKB_Class19]
+		[transitionmodel_ProjectKB_Class79]
+		[transitionmodel_ProjectKB_Class7]
+		[QUERIES_TAB]
+		[transitionmodel_ProjectKB_Class59]
+		[transitionmodel_ProjectKB_Class43]
+		[transitionmodel_ProjectKB_Class37]
+		[transitionmodel_ProjectKB_Class51]
+		[transitionmodel_ProjectKB_Class57]
+		[transitionmodel_ProjectKB_Class47]
+		[transitionmodel_ProjectKB_Class77]
+		[transitionmodel_ProjectKB_Class55]
+		[transitionmodel_ProjectKB_Class11]
+		[transitionmodel_ProjectKB_Class31]
+		[transitionmodel_ProjectKB_Class35]
+		[transitionmodel_ProjectKB_Class39]
+		[transitionmodel_ProjectKB_Class3]
+		[transitionmodel_ProjectKB_Class5]
+		[transitionmodel_ProjectKB_Class29]
+		[transitionmodel_ProjectKB_Class53]
+		[transitionmodel_ProjectKB_Class67]
+		[transitionmodel_ProjectKB_Class13]
+		[transitionmodel_ProjectKB_Class21]))
+
+([QUERIES_TAB] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [KB_041044_Class104])
+	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
+
+([SLOTS_TAB] of  Widget
+
+	(is_hidden FALSE)
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
+
+([SOURCES] of  Property_List
+
+	(properties
+		[KB_041044_Class0]
+		[KB_041044_Class105]
+		[KB_041044_Class106]))
+
+([STANDARD_CLASS_CONSTRAINTS_WIDGET] of  Widget
+
+	(height 120)
+	(label "Constraints")
+	(name ":SLOT-CONSTRAINTS")
+	(property_list [KB_041044_Class83])
+	(widget_class_name "edu.stanford.smi.protege.widget.ConstraintsWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([STANDARD_CLASS_DIRECT_INSTANCES_WIDGET] of  Widget
+
+	(name ":DIRECT-INSTANCES"))
+
+([STANDARD_CLASS_DIRECT_SUBCLASSES_WIDGET] of  Widget
+
+	(name ":DIRECT-SUBCLASSES"))
+
+([STANDARD_CLASS_DIRECT_SUPERCLASSES_WIDGET] of  Widget
+
+	(name ":DIRECT-SUPERCLASSES"))
+
+([STANDARD_CLASS_DIRECT_TYPE_WIDGET] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([STANDARD_CLASS_DOCUMENTATION_WIDGET] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [KB_041044_Class86])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([STANDARD_CLASS_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-CLASS")
+	(property_list [STANDARD_CLASS_WIDGETS])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_CLASS_NAME_WIDGET] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [KB_041044_Class87])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([STANDARD_CLASS_ROLE_WIDGET] of  Widget
+
+	(height 60)
+	(label "Role")
+	(name ":ROLE")
+	(property_list [KB_041044_Class91])
+	(widget_class_name "edu.stanford.smi.protege.widget.RoleWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([STANDARD_CLASS_TEMPLATE_SLOTS_WIDGET] of  Widget
+
+	(height 150)
+	(label "Template Slots")
+	(name ":DIRECT-TEMPLATE-SLOTS")
+	(property_list [KB_041044_Class88])
+	(widget_class_name "edu.stanford.smi.protege.widget.TemplateSlotsWidget")
+	(width 600)
+	(x 0)
+	(y 120))
+
+([STANDARD_CLASS_WIDGETS] of  Property_List
+
+	(name "class widget properties")
+	(properties
+		[STANDARD_CLASS_CONSTRAINTS_WIDGET]
+		[STANDARD_CLASS_DIRECT_INSTANCES_WIDGET]
+		[STANDARD_CLASS_DIRECT_SUBCLASSES_WIDGET]
+		[STANDARD_CLASS_DIRECT_SUPERCLASSES_WIDGET]
+		[STANDARD_CLASS_DOCUMENTATION_WIDGET]
+		[STANDARD_CLASS_NAME_WIDGET]
+		[STANDARD_CLASS_ROLE_WIDGET]
+		[STANDARD_CLASS_DIRECT_TYPE_WIDGET]
+		[STANDARD_CLASS_TEMPLATE_SLOTS_WIDGET]
+		[LAYOUT_PROPERTIES]))
+
+([STANDARD_FACET_ASSOCIATED_SLOT_WIDGET] of  Widget
+
+	(height 60)
+	(label "Associated Slot")
+	(name ":ASSOCIATED-SLOT")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([STANDARD_FACET_DOCUMENTATION_WIDGET] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([STANDARD_FACET_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-FACET")
+	(property_list [STANDARD_FACET_WIDGETS])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_FACET_NAME_WIDGET] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([STANDARD_FACET_WIDGETS] of  Property_List
+
+	(name "facet widget properties")
+	(properties
+		[STANDARD_FACET_NAME_WIDGET]
+		[STANDARD_FACET_DOCUMENTATION_WIDGET]
+		[STANDARD_FACET_ASSOCIATED_SLOT_WIDGET]))
+
+([STANDARD_SLOT_ASSOCIATED_FACET_WIDGET] of  Widget
+
+	(name ":ASSOCIATED-FACET"))
+
+([STANDARD_SLOT_CONSTRAINTS_WIDGET] of  Widget
+
+	(name ":SLOT-CONSTRAINTS"))
+
+([STANDARD_SLOT_DEFAULT_VALUE_WIDGET] of  Widget
+
+	(height 90)
+	(label "Default")
+	(name ":SLOT-DEFAULTS")
+	(property_list [KB_041044_Class95])
+	(widget_class_name "edu.stanford.smi.protege.widget.DefaultValuesWidget")
+	(width 200)
+	(x 400)
+	(y 90))
+
+([STANDARD_SLOT_DIRECT_DOMAIN_WIDGET] of  Widget
+
+	(height 95)
+	(label "Domain")
+	(name ":DIRECT-DOMAIN")
+	(property_list [KB_041044_Class93])
+	(widget_class_name "edu.stanford.smi.protege.widget.DirectDomainWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([STANDARD_SLOT_DIRECT_TYPE_WIDGET] of  Widget
+
+	(name ":DIRECT-TYPE"))
+
+([STANDARD_SLOT_DOCUMENTATION_WIDGET] of  Widget
+
+	(height 120)
+	(label "Documentation")
+	(name ":DOCUMENTATION")
+	(property_list [KB_041044_Class96])
+	(widget_class_name "edu.stanford.smi.protege.widget.DocumentationWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([STANDARD_SLOT_FORM_WIDGET] of  Widget
+
+	(name ":STANDARD-SLOT")
+	(property_list [STANDARD_SLOT_WIDGETS])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([STANDARD_SLOT_INVERSE_WIDGET] of  Widget
+
+	(height 60)
+	(label "Inverse Slot")
+	(name ":SLOT-INVERSE")
+	(property_list [KB_041044_Class102])
+	(widget_class_name "edu.stanford.smi.protege.widget.InverseSlotWidget")
+	(width 200)
+	(x 200)
+	(y 215))
+
+([STANDARD_SLOT_MAXIMUM_CARDINALITY_WIDGET] of  Widget
+
+	(height 35)
+	(name ":SLOT-MAXIMUM-CARDINALITY")
+	(property_list [KB_041044_Class101])
+	(widget_class_name "edu.stanford.smi.protege.widget.MaximumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([STANDARD_SLOT_MAXIMUM_VALUE_WIDGET] of  Widget
+
+	(height 60)
+	(label "Maximum")
+	(name ":SLOT-NUMERIC-MAXIMUM")
+	(property_list [KB_041044_Class97])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMaximumWidget")
+	(width 100)
+	(x 100)
+	(y 215))
+
+([STANDARD_SLOT_MINIMUM_CARDINALITY_WIDGET] of  Widget
+
+	(height 60)
+	(label "Cardinality")
+	(name ":SLOT-MINIMUM-CARDINALITY")
+	(property_list [KB_041044_Class100])
+	(widget_class_name "edu.stanford.smi.protege.widget.MinimumCardinalityWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([STANDARD_SLOT_MINIMUM_VALUE_WIDGET] of  Widget
+
+	(height 60)
+	(label "Minimum")
+	(name ":SLOT-NUMERIC-MINIMUM")
+	(property_list [KB_041044_Class98])
+	(widget_class_name "edu.stanford.smi.protege.widget.NumericMinimumWidget")
+	(width 100)
+	(x 0)
+	(y 215))
+
+([STANDARD_SLOT_NAME_WIDGET] of  Widget
+
+	(height 60)
+	(label "Name")
+	(name ":NAME")
+	(property_list [KB_041044_Class99])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceNameWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([STANDARD_SLOT_SUBSLOTS_WIDGET] of  Widget
+
+	(name ":DIRECT-SUBSLOTS"))
+
+([STANDARD_SLOT_SUPERSLOTS_WIDGET] of  Widget
+
+	(name ":DIRECT-SUPERSLOTS"))
+
+([STANDARD_SLOT_TYPE_WIDGET] of  Widget
+
+	(height 155)
+	(label "Value Type")
+	(name ":SLOT-VALUE-TYPE")
+	(property_list [KB_041044_Class103])
+	(widget_class_name "edu.stanford.smi.protege.widget.ValueTypeWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([STANDARD_SLOT_VALUES_WIDGET] of  Widget
+
+	(height 90)
+	(label "Template Values")
+	(name ":SLOT-VALUES")
+	(property_list [KB_041044_Class94])
+	(widget_class_name "edu.stanford.smi.protege.widget.SlotValuesWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([STANDARD_SLOT_WIDGETS] of  Property_List
+
+	(name "slot widget properties")
+	(properties
+		[STANDARD_SLOT_MINIMUM_CARDINALITY_WIDGET]
+		[STANDARD_SLOT_MAXIMUM_CARDINALITY_WIDGET]
+		[STANDARD_SLOT_CONSTRAINTS_WIDGET]
+		[STANDARD_SLOT_DIRECT_TYPE_WIDGET]
+		[STANDARD_SLOT_DIRECT_DOMAIN_WIDGET]
+		[STANDARD_SLOT_VALUES_WIDGET]
+		[STANDARD_SLOT_SUPERSLOTS_WIDGET]
+		[STANDARD_SLOT_SUBSLOTS_WIDGET]
+		[STANDARD_SLOT_DEFAULT_VALUE_WIDGET]
+		[STANDARD_SLOT_DOCUMENTATION_WIDGET]
+		[STANDARD_SLOT_MAXIMUM_VALUE_WIDGET]
+		[STANDARD_SLOT_MINIMUM_VALUE_WIDGET]
+		[STANDARD_SLOT_ASSOCIATED_FACET_WIDGET]
+		[STANDARD_SLOT_NAME_WIDGET]
+		[STANDARD_SLOT_INVERSE_WIDGET]
+		[STANDARD_SLOT_TYPE_WIDGET]
+		[KB_041044_Class92]))
+
+([transitionmodel_ProjectKB_Class1] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class2])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([TransitionModel_ProjectKB_Class10] of  String
+
+	(name "Availability")
+	(string_value "runtime_environment"))
+
+([transitionmodel_ProjectKB_Class10] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10005] of  Widget
+
+	(is_hidden FALSE)
+	(name "CompSys_ESL")
+	(property_list [transitionmodel_ProjectKB_Class10006])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class10006] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class10007]
+		[transitionmodel_ProjectKB_Class10008]
+		[transitionmodel_ProjectKB_Class10010]
+		[transitionmodel_ProjectKB_Class10012]
+		[transitionmodel_ProjectKB_Class10014]
+		[transitionmodel_ProjectKB_Class10018]))
+
+([transitionmodel_ProjectKB_Class10007] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class10008] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "esl_category")
+	(property_list [transitionmodel_ProjectKB_Class10009])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class10009] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10010] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "esl_id")
+	(property_list [transitionmodel_ProjectKB_Class10011])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class10011] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10012] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "esl_system_type")
+	(property_list [transitionmodel_ProjectKB_Class10013])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class10013] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10014] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system_element_id")
+	(property_list [transitionmodel_ProjectKB_Class10015])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class10015] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10016] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "owner")
+	(property_list [transitionmodel_ProjectKB_Class10017])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 70))
+
+([transitionmodel_ProjectKB_Class10017] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100172] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system")
+	(property_list [transitionmodel_ProjectKB_Class100173])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 420))
+
+([transitionmodel_ProjectKB_Class100173] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100174] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "nsa")
+	(property_list [transitionmodel_ProjectKB_Class100175])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 0)
+	(y 720))
+
+([transitionmodel_ProjectKB_Class100175] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10018] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "esl_subbusiness")
+	(property_list [transitionmodel_ProjectKB_Class10019])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class10019] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100202] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "servicefunction")
+	(property_list [transitionmodel_ProjectKB_Class100203])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 0)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class100203] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100211] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "on_Location")
+	(property_list [transitionmodel_ProjectKB_Class100212])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 370))
+
+([transitionmodel_ProjectKB_Class100212] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class100213]
+		[transitionmodel_ProjectKB_Class100214]))
+
+([transitionmodel_ProjectKB_Class100213] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class100214] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class100215] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "physicalbox_source")
+	(property_list [transitionmodel_ProjectKB_Class100216])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 190))
+
+([transitionmodel_ProjectKB_Class100216] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100217] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system")
+	(property_list [transitionmodel_ProjectKB_Class100218])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 250))
+
+([transitionmodel_ProjectKB_Class100218] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class100219] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Physical_Product")
+	(property_list [transitionmodel_ProjectKB_Class100220])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 310))
+
+([transitionmodel_ProjectKB_Class100220] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class100221]
+		[transitionmodel_ProjectKB_Class100222]))
+
+([transitionmodel_ProjectKB_Class100221] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class100222] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class10045] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "ServiceFunction")
+	(name "hasServiceFunction")
+	(property_list [transitionmodel_ProjectKB_Class10046])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class10046] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class10047]
+		[transitionmodel_ProjectKB_Class10048]
+		[transitionmodel_ProjectKB_Class10058]
+		[transitionmodel_ProjectKB_Class10059]
+		[transitionmodel_ProjectKB_Class10060]
+		[transitionmodel_ProjectKB_Class10061]
+		[transitionmodel_ProjectKB_Class10062]
+		[transitionmodel_ProjectKB_Class10063]
+		[transitionmodel_ProjectKB_Class10064]
+		[transitionmodel_ProjectKB_Class10065]
+		[transitionmodel_ProjectKB_Class10066]
+		[transitionmodel_ProjectKB_Class10067]
+		[transitionmodel_ProjectKB_Class10068]
+		[transitionmodel_ProjectKB_Class10069]))
+
+([transitionmodel_ProjectKB_Class10047] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class10048] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class10049] of  Widget
+
+	(is_hidden FALSE)
+	(name "ServiceFunction")
+	(property_list [transitionmodel_ProjectKB_Class10050])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class10050] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class10051]
+		[transitionmodel_ProjectKB_Class10052]
+		[transitionmodel_ProjectKB_Class10056]
+		[transitionmodel_ProjectKB_Class100202]))
+
+([transitionmodel_ProjectKB_Class10051] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class10052] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "servicename")
+	(property_list [transitionmodel_ProjectKB_Class10053])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class10053] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10056] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "serviceprovider")
+	(property_list [transitionmodel_ProjectKB_Class10057])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class10057] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class10058] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class10059] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class10060] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class10061] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class10062] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class10063] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class10064] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class10065] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class10066] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class10067] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class10068] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class10069] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class107] of  String
+
+	(name "SearchTab_Query"))
+
+([TransitionModel_ProjectKB_Class11] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([transitionmodel_ProjectKB_Class11] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class12])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([TransitionModel_ProjectKB_Class12] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([transitionmodel_ProjectKB_Class12] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class13] of  String
+
+	(name "IP_Connectivity")
+	(string_value "ip_type"))
+
+([transitionmodel_ProjectKB_Class13] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class14])
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
+([TransitionModel_ProjectKB_Class14] of  String
+
+	(name "ContactRole")
+	(string_value "contact_type{-}hasAsPerson{-}preferred_contact_method"))
+
+([transitionmodel_ProjectKB_Class14] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class15] of  String
+
+	(name "OperatingSystem")
+	(string_value "os_type{+}os_name{+}version"))
+
+([transitionmodel_ProjectKB_Class15] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class16])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([TransitionModel_ProjectKB_Class16] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([transitionmodel_ProjectKB_Class16] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class17] of  String
+
+	(name "CPU")
+	(string_value "{CPUs}"))
+
+([transitionmodel_ProjectKB_Class17] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class18])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([TransitionModel_ProjectKB_Class18] of  String
+
+	(name "Portfolio_obj")
+	(string_value "portfolio_id"))
+
+([transitionmodel_ProjectKB_Class18] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class19] of  String
+
+	(name "IP_attributes")
+	(string_value "network_id_type{%3A+}network_id_value"))
+
+([transitionmodel_ProjectKB_Class19] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class20])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([transitionmodel_ProjectKB_Class2] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class20] of  String
+
+	(name "Physical_Product")
+	(string_value "{Physical+Product}"))
+
+([transitionmodel_ProjectKB_Class20005] of  Widget
+
+	(is_hidden FALSE)
+	(name "PhysicalBox")
+	(property_list [transitionmodel_ProjectKB_Class20006])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class20006] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20007]
+		[transitionmodel_ProjectKB_Class20010]
+		[transitionmodel_ProjectKB_Class20024]
+		[transitionmodel_ProjectKB_Class20030]
+		[transitionmodel_ProjectKB_Class10016]
+		[transitionmodel_ProjectKB_Class70038]
+		[transitionmodel_ProjectKB_Class100211]
+		[transitionmodel_ProjectKB_Class100215]
+		[transitionmodel_ProjectKB_Class100217]
+		[transitionmodel_ProjectKB_Class100219]))
+
+([transitionmodel_ProjectKB_Class20007] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class20010] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "lifecyclestatus")
+	(property_list [transitionmodel_ProjectKB_Class20011])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 420)
+	(y 70))
+
+([transitionmodel_ProjectKB_Class20011] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20024] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "Order")
+	(name "hasOrder")
+	(property_list [transitionmodel_ProjectKB_Class20025])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 220)
+	(y 70))
+
+([transitionmodel_ProjectKB_Class20025] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20026]
+		[transitionmodel_ProjectKB_Class20027]
+		[transitionmodel_ProjectKB_Class20056]
+		[transitionmodel_ProjectKB_Class20057]
+		[transitionmodel_ProjectKB_Class20058]
+		[transitionmodel_ProjectKB_Class20059]
+		[transitionmodel_ProjectKB_Class20060]
+		[transitionmodel_ProjectKB_Class20061]
+		[transitionmodel_ProjectKB_Class20062]
+		[transitionmodel_ProjectKB_Class20063]
+		[transitionmodel_ProjectKB_Class20064]
+		[transitionmodel_ProjectKB_Class20065]
+		[transitionmodel_ProjectKB_Class20066]
+		[transitionmodel_ProjectKB_Class20067]))
+
+([transitionmodel_ProjectKB_Class20026] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20027] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20030] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "tag")
+	(property_list [transitionmodel_ProjectKB_Class20031])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class20031] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20056] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20057] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20058] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20059] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20060] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20061] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20062] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20063] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20064] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20065] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20066] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20067] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20068] of  Widget
+
+	(is_hidden FALSE)
+	(name "ComputerSystem")
+	(property_list [transitionmodel_ProjectKB_Class20069])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class20069] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20070]
+		[transitionmodel_ProjectKB_Class20075]
+		[transitionmodel_ProjectKB_Class20077]
+		[transitionmodel_ProjectKB_Class20087]
+		[transitionmodel_ProjectKB_Class20095]
+		[transitionmodel_ProjectKB_Class20099]
+		[transitionmodel_ProjectKB_Class20105]
+		[transitionmodel_ProjectKB_Class20330]
+		[transitionmodel_ProjectKB_Class10045]
+		[transitionmodel_ProjectKB_Class30033]
+		[transitionmodel_ProjectKB_Class30096]
+		[transitionmodel_ProjectKB_Class40072]
+		[transitionmodel_ProjectKB_Class60069]
+		[transitionmodel_ProjectKB_Class60046]
+		[transitionmodel_ProjectKB_Class40005]
+		[transitionmodel_ProjectKB_Class50009]
+		[transitionmodel_ProjectKB_Class50013]
+		[transitionmodel_ProjectKB_Class60017]
+		[transitionmodel_ProjectKB_Class60030]
+		[transitionmodel_ProjectKB_Class60032]
+		[transitionmodel_ProjectKB_Class60034]
+		[transitionmodel_ProjectKB_Class80164]
+		[transitionmodel_ProjectKB_Class80166]
+		[transitionmodel_ProjectKB_Class80170]
+		[transitionmodel_ProjectKB_Class100172]))
+
+([transitionmodel_ProjectKB_Class20070] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class20075] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "fqdn")
+	(property_list [transitionmodel_ProjectKB_Class20076])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class20076] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20077] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Notes")
+	(name "hasNotes")
+	(property_list [transitionmodel_ProjectKB_Class20078])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class20078] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20079]
+		[transitionmodel_ProjectKB_Class20080]
+		[transitionmodel_ProjectKB_Class20171]
+		[transitionmodel_ProjectKB_Class20172]
+		[transitionmodel_ProjectKB_Class20173]
+		[transitionmodel_ProjectKB_Class20174]
+		[transitionmodel_ProjectKB_Class20175]
+		[transitionmodel_ProjectKB_Class20176]
+		[transitionmodel_ProjectKB_Class20177]
+		[transitionmodel_ProjectKB_Class20178]
+		[transitionmodel_ProjectKB_Class20179]
+		[transitionmodel_ProjectKB_Class20180]
+		[transitionmodel_ProjectKB_Class20181]
+		[transitionmodel_ProjectKB_Class20182]))
+
+([transitionmodel_ProjectKB_Class20079] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20080] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20087] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "ContactRole")
+	(name "hasContactRole")
+	(property_list [transitionmodel_ProjectKB_Class20088])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class20088] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20089]
+		[transitionmodel_ProjectKB_Class20090]
+		[transitionmodel_ProjectKB_Class20159]
+		[transitionmodel_ProjectKB_Class20160]
+		[transitionmodel_ProjectKB_Class20161]
+		[transitionmodel_ProjectKB_Class20162]
+		[transitionmodel_ProjectKB_Class20163]
+		[transitionmodel_ProjectKB_Class20164]
+		[transitionmodel_ProjectKB_Class20165]
+		[transitionmodel_ProjectKB_Class20166]
+		[transitionmodel_ProjectKB_Class20167]
+		[transitionmodel_ProjectKB_Class20168]
+		[transitionmodel_ProjectKB_Class20169]
+		[transitionmodel_ProjectKB_Class20170]))
+
+([transitionmodel_ProjectKB_Class20089] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20090] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20095] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "OperatingSystem")
+	(name "hasOperatingSystem")
+	(property_list [transitionmodel_ProjectKB_Class20096])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class20096] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20097]
+		[transitionmodel_ProjectKB_Class20098]
+		[transitionmodel_ProjectKB_Class20123]
+		[transitionmodel_ProjectKB_Class20124]
+		[transitionmodel_ProjectKB_Class20125]
+		[transitionmodel_ProjectKB_Class20126]
+		[transitionmodel_ProjectKB_Class20127]
+		[transitionmodel_ProjectKB_Class20128]
+		[transitionmodel_ProjectKB_Class20129]
+		[transitionmodel_ProjectKB_Class20130]
+		[transitionmodel_ProjectKB_Class20131]
+		[transitionmodel_ProjectKB_Class20132]
+		[transitionmodel_ProjectKB_Class20133]
+		[transitionmodel_ProjectKB_Class20134]))
+
+([transitionmodel_ProjectKB_Class20097] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20098] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20099] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "PhysicalBox")
+	(name "installedOnPhysicalBox")
+	(property_list [transitionmodel_ProjectKB_Class20100])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class20100] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20101]
+		[transitionmodel_ProjectKB_Class20102]
+		[transitionmodel_ProjectKB_Class20135]
+		[transitionmodel_ProjectKB_Class20136]
+		[transitionmodel_ProjectKB_Class20137]
+		[transitionmodel_ProjectKB_Class20138]
+		[transitionmodel_ProjectKB_Class20139]
+		[transitionmodel_ProjectKB_Class20140]
+		[transitionmodel_ProjectKB_Class20141]
+		[transitionmodel_ProjectKB_Class20142]
+		[transitionmodel_ProjectKB_Class20143]
+		[transitionmodel_ProjectKB_Class20144]
+		[transitionmodel_ProjectKB_Class20145]
+		[transitionmodel_ProjectKB_Class20146]))
+
+([transitionmodel_ProjectKB_Class20101] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20102] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20105] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Processor")
+	(name "hasProcessor")
+	(property_list [transitionmodel_ProjectKB_Class20106])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class20106] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20107]
+		[transitionmodel_ProjectKB_Class20108]
+		[transitionmodel_ProjectKB_Class20183]
+		[transitionmodel_ProjectKB_Class20184]
+		[transitionmodel_ProjectKB_Class20185]
+		[transitionmodel_ProjectKB_Class20186]
+		[transitionmodel_ProjectKB_Class20187]
+		[transitionmodel_ProjectKB_Class20188]
+		[transitionmodel_ProjectKB_Class20189]
+		[transitionmodel_ProjectKB_Class20190]
+		[transitionmodel_ProjectKB_Class20191]
+		[transitionmodel_ProjectKB_Class20192]
+		[transitionmodel_ProjectKB_Class20193]
+		[transitionmodel_ProjectKB_Class20194]))
+
+([transitionmodel_ProjectKB_Class20107] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20108] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20123] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20124] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20125] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20126] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20127] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20128] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20129] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20130] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20131] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20132] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20133] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20134] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20135] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20136] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20137] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20138] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20139] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20140] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20141] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20142] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20143] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20144] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20145] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20146] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20159] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20160] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20161] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20162] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20163] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20164] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20165] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20166] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20167] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20168] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20169] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20170] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20171] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20172] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20173] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20174] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20175] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20176] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20177] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20178] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20179] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20180] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20181] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20182] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20183] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20184] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20185] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20186] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20187] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20188] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20189] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20190] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20191] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20192] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20193] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20194] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class20204] of  Widget
+
+	(is_hidden FALSE)
+	(name "ContactRole")
+	(property_list [transitionmodel_ProjectKB_Class20205])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class20205] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20206]
+		[transitionmodel_ProjectKB_Class20207]
+		[transitionmodel_ProjectKB_Class20209]
+		[transitionmodel_ProjectKB_Class70096]
+		[transitionmodel_ProjectKB_Class70100]))
+
+([transitionmodel_ProjectKB_Class20206] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class20207] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "contact_type")
+	(property_list [transitionmodel_ProjectKB_Class20208])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 250)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class20208] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20209] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "preferred_contact_method")
+	(property_list [transitionmodel_ProjectKB_Class20210])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 150)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class20210] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20317] of  Widget
+
+	(is_hidden FALSE)
+	(name "Admin")
+	(property_list [transitionmodel_ProjectKB_Class20318])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class20318] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20319]
+		[transitionmodel_ProjectKB_Class20322]
+		[transitionmodel_ProjectKB_Class30009]
+		[transitionmodel_ProjectKB_Class30017]
+		[transitionmodel_ProjectKB_Class40046]
+		[transitionmodel_ProjectKB_Class40016]
+		[transitionmodel_ProjectKB_Class50035]
+		[transitionmodel_ProjectKB_Class70094]
+		[transitionmodel_ProjectKB_Class70069]
+		[transitionmodel_ProjectKB_Class100174]))
+
+([transitionmodel_ProjectKB_Class20319] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class20322] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "security_level")
+	(property_list [transitionmodel_ProjectKB_Class20323])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 210)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class20323] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class20330] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "ESL Specific")
+	(name "hasESLValues")
+	(property_list [transitionmodel_ProjectKB_Class20331])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class20331] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class20332]
+		[transitionmodel_ProjectKB_Class20333]
+		[transitionmodel_ProjectKB_Class20336]
+		[transitionmodel_ProjectKB_Class20337]
+		[transitionmodel_ProjectKB_Class20338]
+		[transitionmodel_ProjectKB_Class20339]
+		[transitionmodel_ProjectKB_Class20340]
+		[transitionmodel_ProjectKB_Class20341]
+		[transitionmodel_ProjectKB_Class20342]
+		[transitionmodel_ProjectKB_Class20343]
+		[transitionmodel_ProjectKB_Class20344]
+		[transitionmodel_ProjectKB_Class20345]
+		[transitionmodel_ProjectKB_Class20346]
+		[transitionmodel_ProjectKB_Class20347]))
+
+([transitionmodel_ProjectKB_Class20332] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20333] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20336] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class20337] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class20338] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class20339] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class20340] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20341] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class20342] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20343] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class20344] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20345] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class20346] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class20347] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class21] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class22])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.WordNetTab"))
+
+([TransitionModel_ProjectKB_Class21] of  String
+
+	(name "Remote_Access_Info")
+	(string_value "remote_console_type{+}remote_console_name"))
+
+([transitionmodel_ProjectKB_Class22] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class22] of  String
+
+	(name "ServiceFunction")
+	(string_value "servicefunction"))
+
+([transitionmodel_ProjectKB_Class23] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class24])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([TransitionModel_ProjectKB_Class23] of  String
+
+	(name "Billing")
+	(string_value "billing_resourceunit_code"))
+
+([transitionmodel_ProjectKB_Class24] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class24] of  String
+
+	(name "Diskspace")
+	(string_value "{Diskspace}"))
+
+([transitionmodel_ProjectKB_Class25] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class26])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([TransitionModel_ProjectKB_Class25] of  String
+
+	(name "Installed_Application")
+	(string_value "has_application_id{+-+}has_Availability"))
+
+([transitionmodel_ProjectKB_Class26] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class26] of  String
+
+	(name "Person")
+	(string_value "firstname{+}lastname"))
+
+([transitionmodel_ProjectKB_Class27] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class28])
+	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([TransitionModel_ProjectKB_Class27] of  String
+
+	(name "Application")
+	(string_value "has_application_id{+-+}has_Portfolio_Data"))
+
+([transitionmodel_ProjectKB_Class28] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class28] of  String
+
+	(name "ComputerSystem")
+	(string_value "fqdn"))
+
+([transitionmodel_ProjectKB_Class29] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class30])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([TransitionModel_ProjectKB_Class29] of  String
+
+	(name "Processor")
+	(string_value "{Processor}"))
+
+([transitionmodel_ProjectKB_Class3] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class4])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([transitionmodel_ProjectKB_Class30] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class30] of  String
+
+	(name "Admin")
+	(string_value "{Service+Attributes}"))
+
+([transitionmodel_ProjectKB_Class30005] of  Widget
+
+	(is_hidden FALSE)
+	(name "Installed_Application")
+	(property_list [transitionmodel_ProjectKB_Class30006])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class30006] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class40007]
+		[transitionmodel_ProjectKB_Class40008]
+		[transitionmodel_ProjectKB_Class40010]
+		[transitionmodel_ProjectKB_Class40014]
+		[transitionmodel_ProjectKB_Class50016]
+		[transitionmodel_ProjectKB_Class50018]
+		[transitionmodel_ProjectKB_Class50020]
+		[transitionmodel_ProjectKB_Class50024]
+		[transitionmodel_ProjectKB_Class50028]
+		[transitionmodel_ProjectKB_Class50030]
+		[transitionmodel_ProjectKB_Class50032]
+		[transitionmodel_ProjectKB_Class50034]
+		[transitionmodel_ProjectKB_Class60038]
+		[transitionmodel_ProjectKB_Class60042]
+		[transitionmodel_ProjectKB_Class60044]
+		[transitionmodel_ProjectKB_Class70048]
+		[transitionmodel_ProjectKB_Class70050]
+		[transitionmodel_ProjectKB_Class70052]
+		[transitionmodel_ProjectKB_Class70054]
+		[transitionmodel_ProjectKB_Class70056]
+		[transitionmodel_ProjectKB_Class70058]
+		[transitionmodel_ProjectKB_Class70060]
+		[transitionmodel_ProjectKB_Class70062]
+		[transitionmodel_ProjectKB_Class70066]
+		[transitionmodel_ProjectKB_Class70068]
+		[transitionmodel_ProjectKB_Class80072]
+		[transitionmodel_ProjectKB_Class80074]
+		[transitionmodel_ProjectKB_Class80076]
+		[transitionmodel_ProjectKB_Class80078]
+		[transitionmodel_ProjectKB_Class80080]
+		[transitionmodel_ProjectKB_Class80082]
+		[transitionmodel_ProjectKB_Class80084]
+		[transitionmodel_ProjectKB_Class80088]
+		[transitionmodel_ProjectKB_Class80148]
+		[transitionmodel_ProjectKB_Class80154]
+		[transitionmodel_ProjectKB_Class80158]))
+
+([transitionmodel_ProjectKB_Class30009] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "management_region")
+	(property_list [transitionmodel_ProjectKB_Class30010])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 10)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class30010] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class30017] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "sox_system")
+	(property_list [transitionmodel_ProjectKB_Class30018])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 210)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class30018] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class30033] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(label "HasDiskspace")
+	(name "hasDiskspace")
+	(property_list [transitionmodel_ProjectKB_Class30034])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class30034] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class30035]
+		[transitionmodel_ProjectKB_Class30036]
+		[transitionmodel_ProjectKB_Class30037]
+		[transitionmodel_ProjectKB_Class30038]
+		[transitionmodel_ProjectKB_Class30039]
+		[transitionmodel_ProjectKB_Class30040]
+		[transitionmodel_ProjectKB_Class30041]
+		[transitionmodel_ProjectKB_Class30042]
+		[transitionmodel_ProjectKB_Class30043]
+		[transitionmodel_ProjectKB_Class30044]
+		[transitionmodel_ProjectKB_Class30045]
+		[transitionmodel_ProjectKB_Class30046]
+		[transitionmodel_ProjectKB_Class30047]
+		[transitionmodel_ProjectKB_Class30048]))
+
+([transitionmodel_ProjectKB_Class30035] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class30036] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class30037] of  String
+
+	(name "tooltip_text"))
+
+([transitionmodel_ProjectKB_Class30038] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-View Instance"))
+
+([transitionmodel_ProjectKB_Class30039] of  String
+
+	(name "ButtonDescription-View Instance"))
+
+([transitionmodel_ProjectKB_Class30040] of  String
+
+	(name "ButtonDescription-View References to Value"))
+
+([transitionmodel_ProjectKB_Class30041] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Create Instance"))
+
+([transitionmodel_ProjectKB_Class30042] of  String
+
+	(name "ButtonDescription-Create Instance"))
+
+([transitionmodel_ProjectKB_Class30043] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Add Instance"))
+
+([transitionmodel_ProjectKB_Class30044] of  String
+
+	(name "ButtonDescription-Add Instance"))
+
+([transitionmodel_ProjectKB_Class30045] of  Boolean
+
+	(boolean_value TRUE)
+	(name "ButtonDisplayed-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class30046] of  String
+
+	(name "ButtonDescription-Remove Instance"))
+
+([transitionmodel_ProjectKB_Class30047] of  String
+
+	(name "ButtonDescription-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class30048] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([transitionmodel_ProjectKB_Class30096] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasIPConnectivity")
+	(property_list [transitionmodel_ProjectKB_Class30097])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class30097] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class30098]
+		[transitionmodel_ProjectKB_Class30099]))
+
+([transitionmodel_ProjectKB_Class30098] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class30099] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class30100] of  Widget
+
+	(is_hidden FALSE)
+	(name "IP_Connectivity")
+	(property_list [transitionmodel_ProjectKB_Class30101])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class30101] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class30102]
+		[transitionmodel_ProjectKB_Class30103]
+		[transitionmodel_ProjectKB_Class30107]))
+
+([transitionmodel_ProjectKB_Class30102] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class30103] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasIPCharacteristics")
+	(property_list [transitionmodel_ProjectKB_Class30104])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class30104] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class30105]
+		[transitionmodel_ProjectKB_Class30106]))
+
+([transitionmodel_ProjectKB_Class30105] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class30106] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class30107] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "ip_type")
+	(property_list [transitionmodel_ProjectKB_Class30108])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class30108] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class30109] of  Widget
+
+	(is_hidden FALSE)
+	(name "IP_attributes")
+	(property_list [transitionmodel_ProjectKB_Class30110])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([transitionmodel_ProjectKB_Class30110] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class30111]
+		[transitionmodel_ProjectKB_Class30112]
+		[transitionmodel_ProjectKB_Class30114]))
+
+([transitionmodel_ProjectKB_Class30111] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class30112] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "network_id_type")
+	(property_list [transitionmodel_ProjectKB_Class30113])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 0)
+	(y 10))
+
+([transitionmodel_ProjectKB_Class30113] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class30114] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "network_id_value")
+	(property_list [transitionmodel_ProjectKB_Class30115])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextAreaWidget")
+	(width 200)
+	(x 0)
+	(y 70))
+
+([transitionmodel_ProjectKB_Class30115] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class31] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class32])
+	(widget_class_name "org.protege.owl.mm.ssm.ui.MappingMasterTab"))
+
+([TransitionModel_ProjectKB_Class31] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([transitionmodel_ProjectKB_Class32] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class32] of  Map_Entry
+
+	(key "collab.hide.archived")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([transitionmodel_ProjectKB_Class33] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class34])
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+
+([TransitionModel_ProjectKB_Class33] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([transitionmodel_ProjectKB_Class34] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class34] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([transitionmodel_ProjectKB_Class35] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class36])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([transitionmodel_ProjectKB_Class36] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class37] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class38])
+	(widget_class_name "edu.stanford.smi.RemoteKBTab.UMLSTab"))
+
+([transitionmodel_ProjectKB_Class38] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class39] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class40])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([transitionmodel_ProjectKB_Class4] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40005] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Assignment_Info")
+	(property_list [transitionmodel_ProjectKB_Class40006])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class40006] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class50007]
+		[transitionmodel_ProjectKB_Class50008]))
+
+([transitionmodel_ProjectKB_Class40007] of  Property_List
+
+	(name "layout properties"))
+
+([transitionmodel_ProjectKB_Class40008] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "managed_url")
+	(property_list [transitionmodel_ProjectKB_Class40009])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class40009] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40010] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Assignment_Info")
+	(property_list [transitionmodel_ProjectKB_Class40011])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class40011] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class40012]
+		[transitionmodel_ProjectKB_Class40013]))
+
+([transitionmodel_ProjectKB_Class40012] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class40013] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class40014] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "application_status")
+	(property_list [transitionmodel_ProjectKB_Class40015])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 300)
+	(y 300))
+
+([transitionmodel_ProjectKB_Class40015] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40016] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "customer_notes")
+	(property_list [transitionmodel_ProjectKB_Class40017])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 10)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class40017] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40046] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "lifecyclestatus")
+	(property_list [transitionmodel_ProjectKB_Class40047])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 210)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class40047] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class40072] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "hasBillingInfo")
+	(property_list [transitionmodel_ProjectKB_Class40073])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class40073] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class40074]
+		[transitionmodel_ProjectKB_Class40075]))
+
+([transitionmodel_ProjectKB_Class40074] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class40075] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class41] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class42])
+	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
+
+([transitionmodel_ProjectKB_Class42] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class43] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class44])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([transitionmodel_ProjectKB_Class44] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class45] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class46])
+	(widget_class_name "org.algernon.kb.okbc.protege.plugins.AlgernonTab"))
+
+([transitionmodel_ProjectKB_Class46] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class47] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class48])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([transitionmodel_ProjectKB_Class48] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class49] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class50])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([transitionmodel_ProjectKB_Class5] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class6])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([TransitionModel_ProjectKB_Class5] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [TransitionModel_ProjectKB_Class6])
+	(widget_class_name "org.protege.owl.mm.protege3.MappingMasterTab"))
+
+([transitionmodel_ProjectKB_Class50] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50007] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class50008] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class50009] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Admin_Info")
+	(property_list [transitionmodel_ProjectKB_Class50010])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class50010] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class50011]
+		[transitionmodel_ProjectKB_Class50012]))
+
+([transitionmodel_ProjectKB_Class50011] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class50012] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class50013] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Availability")
+	(property_list [transitionmodel_ProjectKB_Class50014])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 540))
+
+([transitionmodel_ProjectKB_Class50014] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class50015]
+		[transitionmodel_ProjectKB_Class60016]))
+
+([transitionmodel_ProjectKB_Class50015] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class50016] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "id")
+	(property_list [transitionmodel_ProjectKB_Class50017])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 300))
+
+([transitionmodel_ProjectKB_Class50017] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50018] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "db_type")
+	(property_list [transitionmodel_ProjectKB_Class50019])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 200)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class50019] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50020] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "on_Location")
+	(property_list [transitionmodel_ProjectKB_Class50021])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 300))
+
+([transitionmodel_ProjectKB_Class50021] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class50022]
+		[transitionmodel_ProjectKB_Class50023]))
+
+([transitionmodel_ProjectKB_Class50022] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class50023] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class50024] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasContactRole")
+	(property_list [transitionmodel_ProjectKB_Class50025])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class50025] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class50026]
+		[transitionmodel_ProjectKB_Class50027]))
+
+([transitionmodel_ProjectKB_Class50026] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class50027] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class50028] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "risk_acceptance")
+	(property_list [transitionmodel_ProjectKB_Class50029])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class50029] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50030] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "listener_ports")
+	(property_list [transitionmodel_ProjectKB_Class50031])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 420))
+
+([transitionmodel_ProjectKB_Class50031] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50032] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "cluster_package_name")
+	(property_list [transitionmodel_ProjectKB_Class50033])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class50033] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class50034] of  Widget
+
+	(height 180)
+	(is_hidden FALSE)
+	(name "hasNotes")
+	(property_list [transitionmodel_ProjectKB_Class60035])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class50035] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "application_type_group")
+	(property_list [transitionmodel_ProjectKB_Class50036])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 210)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class50036] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class51] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class52])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([transitionmodel_ProjectKB_Class52] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class53] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class54])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([transitionmodel_ProjectKB_Class54] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class55] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class56])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([transitionmodel_ProjectKB_Class56] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class57] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class58])
+	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
+
+([transitionmodel_ProjectKB_Class58] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class59] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class60])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([transitionmodel_ProjectKB_Class6] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class6] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60016] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class60017] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system_element_id")
+	(property_list [transitionmodel_ProjectKB_Class60018])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class60018] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60030] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "isvirtual")
+	(property_list [transitionmodel_ProjectKB_Class60031])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 400)
+	(y 540))
+
+([transitionmodel_ProjectKB_Class60031] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60032] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "cs_type")
+	(property_list [transitionmodel_ProjectKB_Class60033])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 200)
+	(x 200)
+	(y 600))
+
+([transitionmodel_ProjectKB_Class60033] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60034] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasSystemUsage")
+	(property_list [transitionmodel_ProjectKB_Class70035])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class60035] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class60036]
+		[transitionmodel_ProjectKB_Class60037]))
+
+([transitionmodel_ProjectKB_Class60036] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class60037] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class60038] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Availability")
+	(property_list [transitionmodel_ProjectKB_Class60039])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class60039] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class60040]
+		[transitionmodel_ProjectKB_Class60041]))
+
+([transitionmodel_ProjectKB_Class60040] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class60041] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class60042] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "time_zone")
+	(property_list [transitionmodel_ProjectKB_Class60043])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class60043] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class60044] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "is_implementation_of")
+	(property_list [transitionmodel_ProjectKB_Class60045])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class60045] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class70046]
+		[transitionmodel_ProjectKB_Class70047]))
+
+([transitionmodel_ProjectKB_Class60046] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasRemoteConnectivity")
+	(property_list [transitionmodel_ProjectKB_Class60047])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class60047] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class60048]
+		[transitionmodel_ProjectKB_Class60049]))
+
+([transitionmodel_ProjectKB_Class60048] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class60049] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class60069] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "hasMaintenanceContract")
+	(property_list [transitionmodel_ProjectKB_Class60070])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class60070] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class60071]
+		[transitionmodel_ProjectKB_Class60072]))
+
+([transitionmodel_ProjectKB_Class60071] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class60072] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class61] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class62])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
+
+([transitionmodel_ProjectKB_Class62] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class63] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class64])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([transitionmodel_ProjectKB_Class64] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class65] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class66])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([transitionmodel_ProjectKB_Class66] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class67] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class68])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([transitionmodel_ProjectKB_Class68] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class69] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class70])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([transitionmodel_ProjectKB_Class7] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class8])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([TransitionModel_ProjectKB_Class7] of  String
+
+	(name "PhysicalBox")
+	(string_value "tag"))
+
+([transitionmodel_ProjectKB_Class70] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70035] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class70036]
+		[transitionmodel_ProjectKB_Class70037]))
+
+([transitionmodel_ProjectKB_Class70036] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class70037] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class70038] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system_element_id")
+	(property_list [transitionmodel_ProjectKB_Class70039])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 130))
+
+([transitionmodel_ProjectKB_Class70039] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70046] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class70047] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class70048] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "ci_responsible")
+	(property_list [transitionmodel_ProjectKB_Class70049])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([transitionmodel_ProjectKB_Class70049] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70050] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system_element_id")
+	(property_list [transitionmodel_ProjectKB_Class70051])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class70051] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70052] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "connectivity_instructions")
+	(property_list [transitionmodel_ProjectKB_Class70053])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class70053] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70054] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "lifecyclestatus")
+	(property_list [transitionmodel_ProjectKB_Class70055])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 200)
+	(y 420))
+
+([transitionmodel_ProjectKB_Class70055] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70056] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "support_code")
+	(property_list [transitionmodel_ProjectKB_Class70057])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 200)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class70057] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70058] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "home_directory")
+	(property_list [transitionmodel_ProjectKB_Class70059])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 240))
+
+([transitionmodel_ProjectKB_Class70059] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70060] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "monitoring_solution")
+	(property_list [transitionmodel_ProjectKB_Class70061])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 540))
+
+([transitionmodel_ProjectKB_Class70061] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70062] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_Operations")
+	(property_list [transitionmodel_ProjectKB_Class70063])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class70063] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class70064]
+		[transitionmodel_ProjectKB_Class70065]))
+
+([transitionmodel_ProjectKB_Class70064] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class70065] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class70066] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "application_region")
+	(property_list [transitionmodel_ProjectKB_Class70067])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 200)
+	(y 300))
+
+([transitionmodel_ProjectKB_Class70067] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70068] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "hasBillingInfo")
+	(property_list [transitionmodel_ProjectKB_Class80069])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 400)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class70069] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "service_provider")
+	(property_list [transitionmodel_ProjectKB_Class70070])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 660))
+
+([transitionmodel_ProjectKB_Class70070] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70094] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "time_zone")
+	(property_list [transitionmodel_ProjectKB_Class70095])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 10)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class70095] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class70096] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "hasAsPerson")
+	(property_list [transitionmodel_ProjectKB_Class70097])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 250)
+	(x 0)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class70097] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class70098]
+		[transitionmodel_ProjectKB_Class70099]))
+
+([transitionmodel_ProjectKB_Class70098] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class70099] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class70100] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "contact_for_patch")
+	(property_list [transitionmodel_ProjectKB_Class70101])
+	(widget_class_name "edu.stanford.smi.protege.widget.CheckBoxWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class70101] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class71] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class72])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([transitionmodel_ProjectKB_Class72] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class73] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [transitionmodel_ProjectKB_Class74])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([transitionmodel_ProjectKB_Class74] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class75] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [transitionmodel_ProjectKB_Class76])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([transitionmodel_ProjectKB_Class76] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class77] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class78])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([transitionmodel_ProjectKB_Class78] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class79] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class80])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([transitionmodel_ProjectKB_Class8] of  Property_List
+)
+
+([TransitionModel_ProjectKB_Class8] of  String
+
+	(name "CompSys_ESL")
+	(string_value "esl_id"))
+
+([transitionmodel_ProjectKB_Class80] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80069] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80070]
+		[transitionmodel_ProjectKB_Class80071]))
+
+([transitionmodel_ProjectKB_Class80070] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80071] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80072] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "sox_system")
+	(property_list [transitionmodel_ProjectKB_Class80073])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 300)
+	(y 420))
+
+([transitionmodel_ProjectKB_Class80073] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80074] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "source_system")
+	(property_list [transitionmodel_ProjectKB_Class80075])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 120))
+
+([transitionmodel_ProjectKB_Class80075] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80076] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "inst_appl_notes")
+	(property_list [transitionmodel_ProjectKB_Class80077])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class80077] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80078] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "service_provider")
+	(property_list [transitionmodel_ProjectKB_Class80079])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 60))
+
+([transitionmodel_ProjectKB_Class80079] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80080] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "doc_ref_url")
+	(property_list [transitionmodel_ProjectKB_Class80081])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([transitionmodel_ProjectKB_Class80081] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80082] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "portfolio_id_long")
+	(property_list [transitionmodel_ProjectKB_Class80083])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 200)
+	(y 720))
+
+([transitionmodel_ProjectKB_Class80083] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80084] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "has_application_id")
+	(property_list [transitionmodel_ProjectKB_Class80085])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 200)
+	(y 540))
+
+([transitionmodel_ProjectKB_Class80085] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80086]
+		[transitionmodel_ProjectKB_Class80087]))
+
+([transitionmodel_ProjectKB_Class80086] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80087] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80088] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "installed_application_status")
+	(property_list [transitionmodel_ProjectKB_Class80089])
+	(widget_class_name "edu.stanford.smi.protege.widget.ComboBoxWidget")
+	(width 100)
+	(x 300)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class80089] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80148] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "inst_appl_component_of")
+	(property_list [transitionmodel_ProjectKB_Class80149])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 600))
+
+([transitionmodel_ProjectKB_Class80149] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80150]
+		[transitionmodel_ProjectKB_Class80151]))
+
+([transitionmodel_ProjectKB_Class80150] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80151] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80154] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "running_on")
+	(property_list [transitionmodel_ProjectKB_Class80155])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
+	(width 200)
+	(x 0)
+	(y 720))
+
+([transitionmodel_ProjectKB_Class80155] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80156]
+		[transitionmodel_ProjectKB_Class80157]))
+
+([transitionmodel_ProjectKB_Class80156] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80157] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80158] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "inst_appl_depends_on")
+	(property_list [transitionmodel_ProjectKB_Class80159])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 600))
+
+([transitionmodel_ProjectKB_Class80159] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80160]
+		[transitionmodel_ProjectKB_Class80161]))
+
+([transitionmodel_ProjectKB_Class80160] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80161] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80164] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "serialnumber")
+	(property_list [transitionmodel_ProjectKB_Class80165])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 0)
+	(y 600))
+
+([transitionmodel_ProjectKB_Class80165] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class80166] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "has_running_applications")
+	(property_list [transitionmodel_ProjectKB_Class80167])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 400)
+	(y 360))
+
+([transitionmodel_ProjectKB_Class80167] of  Property_List
+
+	(properties
+		[transitionmodel_ProjectKB_Class80168]
+		[transitionmodel_ProjectKB_Class80169]))
+
+([transitionmodel_ProjectKB_Class80168] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([transitionmodel_ProjectKB_Class80169] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([transitionmodel_ProjectKB_Class80170] of  Widget
+
+	(height 60)
+	(is_hidden FALSE)
+	(name "assigned_memory")
+	(property_list [transitionmodel_ProjectKB_Class80171])
+	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
+	(width 200)
+	(x 400)
+	(y 480))
+
+([transitionmodel_ProjectKB_Class80171] of  Property_List
+)
+
+([transitionmodel_ProjectKB_Class9] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [transitionmodel_ProjectKB_Class10])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([TransitionModel_ProjectKB_Class9] of  String
+
+	(name "Maintenance_Contract")
+	(string_value "{Maintenance+Contract}"))
+
+([VERTICAL_STRETCHER] of  String
+
+	(name "vertical_stretcher")
+	(string_value ":DIRECT-TEMPLATE-SLOTS"))
